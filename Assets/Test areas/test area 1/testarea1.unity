@@ -303,6 +303,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 149078548412812311, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1396757325067117910, guid: bd94c32b9836d044d8a7c41907637a69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -362,6 +367,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TestArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628672530768827303, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256237222870622925, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878112847014503651, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd94c32b9836d044d8a7c41907637a69, type: 3}
