@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
    
     public Camera cam;
     public UnityEngine.AI.NavMeshAgent agent;
-    public float maxdistance = 20;
+    public float maxdistance = 2 ;
     
     
     // Start is called before the first frame update

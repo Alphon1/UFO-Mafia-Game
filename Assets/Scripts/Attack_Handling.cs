@@ -19,7 +19,7 @@ public class Attack_Handling : MonoBehaviour
         //if the ray hits an enemy, calls the attack
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
         {
-            Friendly_Attack(, hit, );
+          //  Friendly_Attack(, hit, );
         }
     }
 
