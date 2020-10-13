@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Character", menuName = "Character", order = 1)]
-public class Player_Character : ScriptableObject
+public class Player_Character : MonoBehaviour
 {
     public int Range;
     public int Max_Health;
     public int Damage;
+    public int initiative;
+    public bool isyourturn;
+    
+    public void End_turn()
+    {
+        isyourturn =! isyourturn;
 }
+}
+
