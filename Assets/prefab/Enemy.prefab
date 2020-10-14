@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 5197413110071602914}
   - component: {fileID: 5197413110071602915}
   - component: {fileID: 5197413110071602918}
-  - component: {fileID: 5197413110071602919}
-  - component: {fileID: 5197413110071602917}
-  m_Layer: 0
+  - component: {fileID: 6209263157806667539}
+  m_Layer: 8
   m_Name: Enemy
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +118,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5197413110071602919
+--- !u!114 &6209263157806667539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,27 +127,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5197413110071602924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eddd56ec24cc7e64cbcf6197c4c5cbf9, type: 3}
+  m_Script: {fileID: 11500000, guid: d7cbeed3126c0e346afc308bcd2050df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  agent: {fileID: 5197413110071602918}
-  maxdistance: 3
-  Tony: {fileID: 5197413110071602924}
---- !u!114 &5197413110071602917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5197413110071602924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc2f9eb40f965e4ba05c5f5c475dbfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Range: 0
-  Max_Health: 0
-  Damage: 0
-  initiative: 0
+  Current_Health: 0
   isyourturn: 0

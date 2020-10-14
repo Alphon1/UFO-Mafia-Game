@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5197413110071602918}
   - component: {fileID: 5197413110071602919}
   - component: {fileID: 5197413110071602917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -148,7 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 0
-  Max_Health: 0
   Damage: 0
-  initiative: 0
   isyourturn: 0
