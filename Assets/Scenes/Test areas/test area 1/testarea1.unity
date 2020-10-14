@@ -471,6 +471,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tonies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c270020a10175e468921e7e37db4270, type: 3}
 --- !u!1 &321866383
@@ -805,6 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cea546b9ec898b42a4bb34b9a71d11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  char_list: []
 --- !u!4 &750918482
 Transform:
   m_ObjectHideFlags: 0
@@ -1028,6 +1034,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tonies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c270020a10175e468921e7e37db4270, type: 3}
@@ -1482,6 +1493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tony1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tonies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c270020a10175e468921e7e37db4270, type: 3}

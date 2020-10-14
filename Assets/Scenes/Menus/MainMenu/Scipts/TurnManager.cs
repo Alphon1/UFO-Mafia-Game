@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    private List<GameObject> char_list;
+    public List<GameObject> char_list;
     private int Random_Int;
     private GameObject Temp_Char;
     private GameObject Current_Char;
@@ -14,7 +14,7 @@ public class TurnManager : MonoBehaviour
     {
 
                 
-            char_list.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+            char_list.AddRange(GameObject.FindGameObjectsWithTag("Tonies"));
             
         
         System.Random New_Random = new System.Random();
