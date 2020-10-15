@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
                         if (Vector3.Distance(Tony.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                         {
                             hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Tony.GetComponent<Player_Character>().Damage;
+                            Debug.Log("Hit");
                         }
                     }
                 }

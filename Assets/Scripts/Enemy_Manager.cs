@@ -20,5 +20,6 @@ public class Enemy_Manager : MonoBehaviour
     {
         Max_Health = 20;
         Current_Health = Max_Health;
+        
     }
 }
