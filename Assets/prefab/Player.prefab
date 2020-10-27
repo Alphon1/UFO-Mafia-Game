@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc2f9eb40f965e4ba05c5f5c475dbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 0
-  Damage: 0
+  Range: 5
+  Damage: 10
   isyourturn: 0
 --- !u!1 &8401938474097331516
 GameObject:
@@ -209,3 +209,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Character: {fileID: 5197413110071602924}
+  Nearby_Enemies: []
