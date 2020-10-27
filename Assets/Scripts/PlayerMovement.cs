@@ -56,16 +56,6 @@ public class PlayerMovement : MonoBehaviour
                 }                 
             }
         }
-        if (!agent.pathPending)
-        {
-            if (agent.remainingDistance <= agent.stoppingDistance)
-            {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                {
-                    Game_Manager.GetComponent<Game_Manager>().Check_Visible_Enemies();
-                }
-            }
-        }
     }
 }
     
