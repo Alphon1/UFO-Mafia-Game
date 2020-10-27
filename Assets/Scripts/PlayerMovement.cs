@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
+                //if you click an enemy
                 if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                 {
                     //checks if there's nothing in the way of the attack
