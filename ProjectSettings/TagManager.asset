@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tonies
   - Enemy
+  - Game_Manager
   layers:
   - Default
   - TransparentFX

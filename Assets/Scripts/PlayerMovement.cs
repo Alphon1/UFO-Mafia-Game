@@ -9,14 +9,15 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public float maxdistance = 3;
     public GameObject Tony;
-   
+    private GameObject Game_Manager;
+    private bool Movement_Over = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
-        
+        Game_Manager = GameObject.FindWithTag("Game_Manager");
     }
 
     // Update is called once per frame
@@ -38,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
                         if (Vector3.Distance(Tony.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                         {
                             hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Tony.GetComponent<Player_Character>().Damage;
-                            Debug.Log("Hit");
                         }
                     }
                 }
@@ -47,13 +47,23 @@ public class PlayerMovement : MonoBehaviour
                     if (Vector3.Distance(agent.transform.position, hit.point) <= maxdistance)
                     {
                         agent.SetDestination(hit.point);
-                        Debug.Log("Vaid point");
+                        Debug.Log("Valid point");
                     }
                     else
                     {
                         Debug.Log("Invaild point");
                     }
                 }                 
+            }
+        }
+        if (!agent.pathPending)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                {
+                    Game_Manager.GetComponent<Game_Manager>().Check_Visible_Enemies();
+                }
             }
         }
     }
