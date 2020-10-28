@@ -8,9 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public UnityEngine.AI.NavMeshAgent agent;
     public float maxdistance = 3;
-    public GameObject Tony;
+    public GameObject Player_Char;
     private GameObject Game_Manager;
-    private bool Movement_Over = false;
 
 
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Tony.GetComponent<Player_Character>().isyourturn)
+        if (Player_Char.GetComponent<Player_Character>().isyourturn)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -33,12 +32,13 @@ public class PlayerMovement : MonoBehaviour
                 if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                 {
                     //checks if there's nothing in the way of the attack
-                    if (!Physics.Linecast(Tony.transform.position, hit.transform.position, ~(1 << 8)))
+                    if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, ~(1 << 8)))
                     {
                         //checks if the selected enemy is in range
-                        if (Vector3.Distance(Tony.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
+                        if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                         {
-                            hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Tony.GetComponent<Player_Character>().Damage;
+                            //deal the player's damage to the enemy's current health
+                            hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Player_Char.GetComponent<Player_Character>().Damage;
                         }
                     }
                 }
