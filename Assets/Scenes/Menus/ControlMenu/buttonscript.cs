@@ -19,16 +19,16 @@ public class buttonscript : MonoBehaviour
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(7);
     }
     public void Credits()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(9);
     }
 
 

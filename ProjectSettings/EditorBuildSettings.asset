@@ -15,11 +15,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Level Select/LevelSelectMenu.unity
     guid: 5e2631e15e7994a47b74aefd19012bc5
   - enabled: 1
+    path: Assets/Scenes/Menus/Level Select/Misson 1 brief.unity
+    guid: 58cc2732b09fe9845b34fc6f1305b178
+  - enabled: 1
     path: Assets/Scenes/Test areas/test area 1/testarea1.unity
     guid: 8327c4c9fd30e9f43b52f571abf36647
   - enabled: 1
+    path: Assets/Scenes/Menus/Level Select/Misson 2 brief.unity
+    guid: 195531c8bc67d524e874b10360a8fd01
+  - enabled: 1
     path: Assets/Scenes/Test areas/Play Space/Play Space Environment.unity
     guid: a38a9e3c63833df4b80fb2fc56843eae
+  - enabled: 1
+    path: Assets/Scenes/Menus/Level Select/Misson 3 brief.unity
+    guid: 1bc4765310d009a48af87f38dd3760a5
   - enabled: 1
     path: Assets/Scenes/Test areas/level 3 blank/Level3.unity
     guid: 104bc812f9471aa41a3252e422895a4f
