@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (Physics.Raycast(ray, out hit))
                 {
+                    Debug.Log("raycast");
                     if (Vector3.Distance(agent.transform.position, hit.point) <= maxdistance)
                     {
                         agent.SetDestination(hit.point);

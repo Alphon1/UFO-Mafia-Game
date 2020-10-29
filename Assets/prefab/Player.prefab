@@ -135,7 +135,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   agent: {fileID: 5197413110071602918}
   maxdistance: 3
-  Tony: {fileID: 5197413110071602924}
+  Player_Char: {fileID: 5197413110071602924}
 --- !u!114 &5197413110071602917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,4 +209,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Character: {fileID: 5197413110071602924}
-  Nearby_Enemies: []
+  Seen_Enemies: []
