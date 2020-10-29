@@ -9,18 +9,18 @@ public class Player_Character : MonoBehaviour
     private int initiative;
     private int Current_Health;
     public bool isyourturn;
+    public int Action_Points;
+    [SerializeField]
+    private int Max_Action_Points;
 
     //if it was the player's turn, now it isn't and vice versa
     public void End_turn()
     {
-        isyourturn =! isyourturn;
-    }
-
-    private void Start()
-    {
-        //sets some dummy stats
-        Damage = 10;
-        Range = 5;
+        isyourturn = !isyourturn;
+        if (isyourturn)
+        {
+            Action_Points = Max_Action_Points;
+        }
     }
 }
 

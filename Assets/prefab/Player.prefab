@@ -151,6 +151,8 @@ MonoBehaviour:
   Range: 5
   Damage: 10
   isyourturn: 0
+  Action_Points: 0
+  Max_Action_Points: 3
 --- !u!1 &8401938474097331516
 GameObject:
   m_ObjectHideFlags: 0

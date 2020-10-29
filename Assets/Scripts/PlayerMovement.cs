@@ -26,35 +26,55 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                //if you click an enemy
-                if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
+                if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                 {
-                    //checks if there's nothing in the way of the attack
-                    if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, ~(1 << 8)))
+                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+                    //if you click an enemy
+                    if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                     {
-                        //checks if the selected enemy is in range
-                        if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
+                        //checks if there's nothing in the way of the attack
+                        if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, ~(1 << 8)))
                         {
-                            //deal the player's damage to the enemy's current health
-                            hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Player_Char.GetComponent<Player_Character>().Damage;
+                            //checks if the selected enemy is in range
+                            if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
+                            {
+                                Debug.Log("Hit");
+                                //deal the player's damage to the enemy's current health
+                                hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Player_Char.GetComponent<Player_Character>().Damage;
+                                Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+                            }
+                            else
+                            {
+                                Debug.Log("Out of Range");
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("Something's in the way");
+                        }
+                    }
+                    else if (Physics.Raycast(ray, out hit))
+                    {
+                        if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
+                        {
+                            if (Vector3.Distance(agent.transform.position, hit.point) <= maxdistance)
+                            {
+                                agent.SetDestination(hit.point);
+                                Debug.Log("Valid point");
+                                Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+                            }
+                            else
+                            {
+                                Debug.Log("Invaild point");
+                            }
                         }
                     }
                 }
-                else if (Physics.Raycast(ray, out hit))
+                else
                 {
-                    Debug.Log("raycast");
-                    if (Vector3.Distance(agent.transform.position, hit.point) <= maxdistance)
-                    {
-                        agent.SetDestination(hit.point);
-                        Debug.Log("Valid point");
-                    }
-                    else
-                    {
-                        Debug.Log("Invaild point");
-                    }
-                }                 
+                    Debug.Log("Out of AP");
+                }                                                 
             }
         }
     }
