@@ -41,11 +41,17 @@ public class Enemy_Manager : MonoBehaviour
         //turns the enemy visible if the player chars can see it
         if (Seen_By > 0)
         {
-            gameObject.GetComponent<Renderer>().enabled = true;
+            if (gameObject.GetComponent<Renderer>().enabled == false)
+            {
+                gameObject.GetComponent<Renderer>().enabled = true;
+            }
         }
         else
         {
-            gameObject.GetComponent<Renderer>().enabled = false;
+            if (gameObject.GetComponent<Renderer>().enabled == true)
+            {
+                gameObject.GetComponent<Renderer>().enabled = false;
+            }
         }
     }
 }
