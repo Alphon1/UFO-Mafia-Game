@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -50,4 +51,5 @@ public class Game_Manager : MonoBehaviour
         txt.text = APvalue.ToString();
         Debug.Log("APUI "+APvalue);
     }
+   
 }

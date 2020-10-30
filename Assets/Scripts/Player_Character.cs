@@ -20,6 +20,7 @@ public class Player_Character : MonoBehaviour
         if (isyourturn)
         {
             Action_Points = Max_Action_Points;
+            
         }
     }
 }

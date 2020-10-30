@@ -149,7 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 5
+  Max_Health: 100
   Damage: 10
+  Current_Health: 0
   isyourturn: 0
   Action_Points: 0
   Max_Action_Points: 3
