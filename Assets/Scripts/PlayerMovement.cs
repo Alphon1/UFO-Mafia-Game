@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxdistance = 3;
     public GameObject Player_Char;
     private GameObject Game_Manager;
+    private Game_Manager gm;
 
 
     // Start is called before the first frame update
@@ -17,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     {
         cam = Camera.main;
         Game_Manager = GameObject.FindWithTag("Game_Manager");
+        gm = Game_Manager.GetComponent<Game_Manager>();
+        if (!gm)
+        {
+            Debug.LogError("couldn'find GM");
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
                                 //deal the player's damage to the enemy's current health
                                 hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Player_Char.GetComponent<Player_Character>().Damage;
                                 Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+
+                                //Update UI here
+                                gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
                             }
                             else
                             {
@@ -63,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
                                 agent.SetDestination(hit.point);
                                 Debug.Log("Valid point");
                                 Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+                                //Update UI here
+                                gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
                             }
                             else
                             {

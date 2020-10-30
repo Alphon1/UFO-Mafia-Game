@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Game_Manager : MonoBehaviour
 {
+    public TextMeshProUGUI txt;
     public List<GameObject> Player_list;
     private int Random_Int;
     private GameObject Temp_Char;
     private GameObject Current_Char;
     private int Current_Char_Pos;
-    // Start is called before the first frame update
+        // Start is called before the first frame update
     void Start()
     {
         //makes a list of all player characters
@@ -27,6 +29,7 @@ public class Game_Manager : MonoBehaviour
         Current_Char_Pos = 0;
         Current_Char = Player_list[Current_Char_Pos];
         Current_Char.GetComponent<Player_Character>().End_turn();
+        UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
     }
 
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
@@ -40,5 +43,11 @@ public class Game_Manager : MonoBehaviour
         }
         Current_Char = Player_list[Current_Char_Pos];
         Current_Char.GetComponent<Player_Character>().End_turn();
+        UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        }
+    public void UpdateAPUI(int APvalue)
+    {
+        txt.text = APvalue.ToString();
+        Debug.Log("APUI "+APvalue);
     }
 }
