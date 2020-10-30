@@ -8,7 +8,6 @@ public class PauseMenu : MonoBehaviour
     public string mainMenuScene;
     public GameObject pauseMenu;
     public GameObject Buttons;
-    public GameObject skillTree;
     public bool isPaused;
 
 
@@ -26,7 +25,6 @@ public class PauseMenu : MonoBehaviour
                 isPaused = true;
                 pauseMenu.SetActive(true);
                 Buttons.SetActive(false);
-                skillTree.SetActive(false);
                 Time.timeScale = 0f;
             }
         }
