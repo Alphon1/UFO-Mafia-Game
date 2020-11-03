@@ -19,10 +19,7 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main;
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
-        if (!gm)
-        {
-            Debug.LogError("couldn'find GM");
-        }
+       
     }
 
     // Update is called once per frame

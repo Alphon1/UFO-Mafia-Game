@@ -12,6 +12,7 @@ public class Enemy_Manager : MonoBehaviour
     public bool isyourturn;
     public int Seen_By;
     private GameObject Game_Manager;
+    private Game_Manager gm;
 
     //function to reverse if it's this enemy's turn or not
     public void End_turn()
@@ -25,11 +26,15 @@ public class Enemy_Manager : MonoBehaviour
         Max_Health = 20;
         Current_Health = Max_Health;
         Game_Manager = GameObject.FindWithTag("Game_Manager");
+        gm = Game_Manager.GetComponent<Game_Manager>();
         Seen_By = 0;
     }
 
     private void Update()
     {
+        //UI health update
+       gm.UpdateAPUI(GetComponent<Enemy_Manager>().Current_Health);
+
         //detects if it's dead and removes it if it is
         if (Current_Health <= 0)
         {
