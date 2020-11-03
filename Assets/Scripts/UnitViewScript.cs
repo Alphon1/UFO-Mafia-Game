@@ -10,6 +10,7 @@ public class UnitViewScript : MonoBehaviour
     public TextMeshProUGUI txt2;
     public bool isPaused;
     public GameObject unitMenu;
+    public GameObject Buttons;
     public List<GameObject> Player_list;
     public List<GameObject> Enemy_list;
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class UnitViewScript : MonoBehaviour
             if (isPaused)
             {
                 ResumeGame();
+                Buttons.SetActive(true);
 
             }
             else
@@ -40,7 +42,8 @@ public class UnitViewScript : MonoBehaviour
 
                 isPaused = true;
                 unitMenu.SetActive(true);
-                
+                Buttons.SetActive(false);
+
             }
       
         }
@@ -53,19 +56,19 @@ public class UnitViewScript : MonoBehaviour
             
             
         }
-    public void UpdatePlayerUnitView(List<GameObject> Playerlist)
+    public void UpdatePlayerUnitView(List<GameObject> Player_list)
     {
-        int amountOfPlayers = Playerlist.Count;
+        int amountOfPlayers = Player_list.Count;
         int i = 0;
-        while (i <= Playerlist.Count - 1)//for each player character it loop once
+        while (i <= Player_list.Count - 1)//for each player character it loop once
         {
-            if (Playerlist[i] == null)
-            {
-                amountOfPlayers -= 1;
-            }
-            i++;
+          if (Player_list[i] == null)
+        {
+          amountOfPlayers -= 1;
         }
-        txt1.text = Playerlist.ToString();
+        i++;
+        }
+        txt1.text = amountOfPlayers.ToString();
     }
     public void UpdateEnemyUnitView(List<GameObject> Enemylist)//for each Enemy character it loop once
     {
