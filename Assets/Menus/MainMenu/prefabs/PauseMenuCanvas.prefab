@@ -1862,7 +1862,6 @@ MonoBehaviour:
   mainMenuScene: 0
   pauseMenu: {fileID: 9171739443847811448}
   Buttons: {fileID: 9171739444949375921}
-  skillTree: {fileID: 0}
   isPaused: 0
 --- !u!1 &9171739444949375921
 GameObject:

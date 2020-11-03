@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 5197413110071602918}
   - component: {fileID: 6209263157806667539}
   - component: {fileID: 5014927276101673671}
-  - component: {fileID: -4908265286250372889}
+  - component: {fileID: 205903135515489474}
+  - component: {fileID: 740122328867592952}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -151,7 +152,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-4908265286250372889
+--- !u!114 &205903135515489474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197413110071602924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 740122328867592952}
+          m_MethodName: OnMouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 740122328867592952}
+          m_MethodName: OnMouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+--- !u!114 &740122328867592952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,5 +207,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05f153e44efce644a4dd5b0e918aa37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColour: {r: 0.42352945, g: 0.023529414, b: 0.023529414, a: 0}
-  highlightedColour: {r: 1, g: 1, b: 1, a: 0}
+  baseMaterial: {fileID: 2100000, guid: 95db0da21ffe6da4f90a3cb8da38c490, type: 2}
+  highlightedColour: {fileID: 2100000, guid: a119669f80d45d94faaf76680b983a9c, type: 2}

@@ -1,22 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyColourChange : MonoBehaviour
 {
-    public Color baseColour;
-    public Color highlightedColour;
-    bool mouseOver = false;
-    void OnMouseEnter()
-    {
-        mouseOver = true;
-        GetComponent<Renderer>().material.SetColor("_Colour", highlightedColour);
-    }
-    void OnMouseExit()
-    {
-        mouseOver = false;
-        GetComponent<Renderer>().material.SetColor("_Colour", baseColour);
-    }
+    public Material baseMaterial;
+    public Material highlightedColour;
 
+    public void OnMouseOver()
+    {
+
+        GetComponent<Renderer>().material = highlightedColour;
+
+    }
+    public void OnMouseExit()
+     {
+
+            GetComponent<Renderer>().material = baseMaterial;
+     }
+
+     
 }
 
