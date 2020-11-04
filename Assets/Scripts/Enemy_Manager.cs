@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Enemy_Manager : MonoBehaviour
 {
@@ -11,8 +13,7 @@ public class Enemy_Manager : MonoBehaviour
     public int Current_Health;
     public bool isyourturn;
     public int Seen_By;
-    private GameObject Game_Manager;
-    private Game_Manager gm;
+    public Slider healthBar;
 
     //function to reverse if it's this enemy's turn or not
     public void End_turn()
@@ -23,17 +24,14 @@ public class Enemy_Manager : MonoBehaviour
     //sets stats and defines some stuff
     private void Start()
     {
-        Max_Health = 20;
+        Max_Health = 40;
         Current_Health = Max_Health;
-        Game_Manager = GameObject.FindWithTag("Game_Manager");
-        gm = Game_Manager.GetComponent<Game_Manager>();
         Seen_By = 0;
     }
 
     private void Update()
     {
-        //UI health update
-       gm.UpdateAPUI(GetComponent<Enemy_Manager>().Current_Health);
+
 
         //detects if it's dead and removes it if it is
         if (Current_Health <= 0)
@@ -58,6 +56,13 @@ public class Enemy_Manager : MonoBehaviour
                 gameObject.GetComponent<Renderer>().enabled = false;
             }
         }
+    }   
+    public void takedamage(int damagetaken) {
+        Current_Health -= damagetaken;
+        healthBar.value = Current_Health;
+
     }
+
+    
 }
 

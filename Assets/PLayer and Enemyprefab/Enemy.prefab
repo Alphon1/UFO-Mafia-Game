@@ -137,6 +137,7 @@ MonoBehaviour:
   Current_Health: 0
   isyourturn: 0
   Seen_By: 0
+  healthBar: {fileID: 8783471469008454435}
 --- !u!54 &5014927276101673671
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ GameObject:
   - component: {fileID: 8783471469008454434}
   - component: {fileID: 8783471469008454435}
   m_Layer: 0
-  m_Name: Enemy 2 Health Bar
+  m_Name: Enemy Health Bar
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

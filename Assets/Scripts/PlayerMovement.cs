@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
                             {
                                 Debug.Log("Hit");
                                 //deal the player's damage to the enemy's current health
-                                hit.transform.GetComponent<Enemy_Manager>().Current_Health -= Player_Char.GetComponent<Player_Character>().Damage;
+                                hit.transform.GetComponent<Enemy_Manager>().takedamage (Player_Char.GetComponent<Player_Character>().Damage);
+
                                 Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
 
                                 //Update UI here
