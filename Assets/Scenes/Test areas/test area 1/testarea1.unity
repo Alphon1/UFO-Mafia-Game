@@ -3417,7 +3417,7 @@ MonoBehaviour:
   Damage: 10
   isyourturn: 0
   Action_Points: 0
-  Max_Action_Points: 3
+  Max_Action_Points: 5
 --- !u!114 &5197413109390403754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3587,7 +3587,7 @@ MonoBehaviour:
   Damage: 10
   isyourturn: 0
   Action_Points: 0
-  Max_Action_Points: 3
+  Max_Action_Points: 5
 --- !u!23 &5197413109399705588
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3808,7 +3808,7 @@ MonoBehaviour:
   Damage: 10
   isyourturn: 0
   Action_Points: 0
-  Max_Action_Points: 3
+  Max_Action_Points: 5
 --- !u!114 &5197413110345197438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3975,6 +3975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630827942507757118, guid: f3977c1a6e6df4c4fb8318f636333a1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8783471469008454429, guid: f3977c1a6e6df4c4fb8318f636333a1c,
         type: 3}

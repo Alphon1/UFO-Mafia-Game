@@ -47,6 +47,7 @@ public class Enemy_Manager : MonoBehaviour
             if (gameObject.GetComponent<Renderer>().enabled == false)
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
+                healthBar.gameObject.SetActive(true);
             }
         }
         else
@@ -54,6 +55,7 @@ public class Enemy_Manager : MonoBehaviour
             if (gameObject.GetComponent<Renderer>().enabled == true)
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
+                healthBar.gameObject.SetActive(false);
             }
         }
     }   

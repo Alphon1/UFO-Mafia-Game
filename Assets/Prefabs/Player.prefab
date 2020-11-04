@@ -149,12 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 5
-  Max_Health: 100
   Damage: 10
-  Current_Health: 0
   isyourturn: 0
   Action_Points: 0
-  Max_Action_Points: 3
+  Max_Action_Points: 5
 --- !u!1 &8401938474097331516
 GameObject:
   m_ObjectHideFlags: 0
