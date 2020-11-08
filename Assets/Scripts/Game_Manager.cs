@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -17,7 +17,8 @@ public class Game_Manager : MonoBehaviour
     void Start()
     {
         //makes a list of all player characters
-        Player_list.AddRange(GameObject.FindGameObjectsWithTag("Player")); 
+        Player_list.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        
 
         //randomizes the list of player characters
         System.Random New_Random = new System.Random();
@@ -38,6 +39,13 @@ public class Game_Manager : MonoBehaviour
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
     public void Turn_End()
     {
+        //if all enemies are dead
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            //go to level select
+            SceneManager.LoadScene(2);
+            Time.timeScale = 1f;
+        }
         Current_Char.GetComponent<Player_Character>().End_turn();
         Current_Char_Pos += 1;
         if (Current_Char_Pos > Player_list.Count -1)
@@ -47,7 +55,7 @@ public class Game_Manager : MonoBehaviour
         Current_Char = Player_list[Current_Char_Pos];
         Current_Char.GetComponent<Player_Character>().End_turn();
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
-        }
+    }
     public void UpdateAPUI(int APvalue)
     {
         txt.text = APvalue.ToString();
