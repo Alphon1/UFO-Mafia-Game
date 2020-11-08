@@ -12,6 +12,8 @@ public class Player_Character : MonoBehaviour
     public int Action_Points;
     [SerializeField]
     private int Max_Action_Points;
+    [SerializeField]
+    private GameObject Mov_Range_Indicator;
 
     //if it was the player's turn, now it isn't and vice versa
     public void End_turn()
@@ -20,7 +22,11 @@ public class Player_Character : MonoBehaviour
         if (isyourturn)
         {
             Action_Points = Max_Action_Points;
-            
+            Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }
