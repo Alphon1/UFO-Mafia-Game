@@ -146,12 +146,12 @@ PrefabInstance:
     - target: {fileID: 8818889029323205763, guid: 4c882a8e5bf98dd4882b6f38289d367b,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8818889029323205763, guid: 4c882a8e5bf98dd4882b6f38289d367b,
         type: 3}
       propertyPath: m_SkipOnDrop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8818889029630398020, guid: 4c882a8e5bf98dd4882b6f38289d367b,
         type: 3}
