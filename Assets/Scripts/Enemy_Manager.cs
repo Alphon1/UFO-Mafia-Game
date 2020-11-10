@@ -21,6 +21,13 @@ public class Enemy_Manager : MonoBehaviour
         isyourturn = !isyourturn;
     }
 
+    public void Blood_Animation()
+    {
+        GetComponentInChildren<ParticleSystem>().Play();
+        ParticleSystem.EmissionModule Emitter = GetComponent<ParticleSystem>().emission;
+        Emitter.enabled = true;
+    }
+
     //sets stats and defines some stuff
     private void Start()
     {
@@ -62,7 +69,7 @@ public class Enemy_Manager : MonoBehaviour
     public void takedamage(int damagetaken) {
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
-
+        Blood_Animation();
     }
 
     
