@@ -22,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    private void Attack(RaycastHit hit)
+    {
+        Debug.Log("Hit");
+        //deal the player's damage to the enemy's current health
+        hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage);
+        Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -42,12 +50,7 @@ public class PlayerMovement : MonoBehaviour
                             //checks if the selected enemy is in range
                             if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                             {
-                                Debug.Log("Hit");
-                                //deal the player's damage to the enemy's current health
-                                hit.transform.GetComponent<Enemy_Manager>().takedamage (Player_Char.GetComponent<Player_Character>().Damage);
-
-                                Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
-
+                                Attack(hit);
                                 //Update UI here
                                 gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
                             }
