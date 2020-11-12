@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Hit");
         //deal the player's damage to the enemy's current health
         hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage);
-        Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
     }
 
     // Update is called once per frame
@@ -51,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
                             if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                             {
                                 Attack(hit);
+                                Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
                                 //Update UI here
                                 gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
                             }
