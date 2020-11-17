@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Player_Char;
     private GameObject Game_Manager;
     private Game_Manager gm;
+    
 
 
     // Start is called before the first frame update
@@ -24,10 +27,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Attack(RaycastHit hit)
     {
-        Debug.Log("Hit");
+          Debug.Log("Hit");
         //deal the player's damage to the enemy's current health
         hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage);
+        
     }
+
 
     // Update is called once per frame
     void Update()
@@ -36,12 +41,15 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
+                                      
                 if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                 {
                     Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
                     //if you click an enemy
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~(1 << 2)) && hit.transform.tag == "Enemy")
+                    if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                     {
                         //checks if there's nothing in the way of the attack
                         if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, ~(1 << 8)))
@@ -65,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
                             Debug.Log("Something's in the way");
                         }
                     }
-                    else if (Physics.Raycast(ray, out hit,Mathf.Infinity, ~(1 << 2)))
+                    else if (Physics.Raycast(ray, out hit))
                     {
                         if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                         {
@@ -87,7 +95,9 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     Debug.Log("Out of AP");
-                }                                                 
+                }
+                
+                
             }
         }
     }
