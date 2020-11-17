@@ -17,7 +17,7 @@ public class Enemy_Manager : MonoBehaviour
     public int Action_Points;
     [SerializeField]
     private int Max_Action_Points;
-
+    public AudioSource DeathScream;
     //function to reverse if it's this enemy's turn or not
     public void End_turn()
     {
@@ -78,6 +78,7 @@ public class Enemy_Manager : MonoBehaviour
     public void takedamage(int damagetaken) {
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
+        DeathScream.Play();
         Blood_Animation();
     }
 

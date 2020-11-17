@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Player_Char;
     private GameObject Game_Manager;
     private Game_Manager gm;
+    
 
 
     // Start is called before the first frame update
@@ -25,9 +27,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Attack(RaycastHit hit)
     {
-        Debug.Log("Hit");
+          Debug.Log("Hit");
         //deal the player's damage to the enemy's current health
         hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage);
+        
     }
 
 
