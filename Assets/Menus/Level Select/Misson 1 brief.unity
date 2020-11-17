@@ -534,7 +534,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 4
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -711,7 +711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -141, y: 183}
+  m_AnchoredPosition: {x: -141, y: 248}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247095439
@@ -733,13 +733,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Look alive boys.
-
-    We''ve got word on a g-man down in Mud Lane looking
-    to cut a deal on some government gear. He won''t say what he''s got but our ears
-    in city hall say he''s good for it, say he''s done clean deals out of state before.
-    But this is new, something even the top boys don''t know about. Go check him
-    out and see what he''s pushing, but watch yourselves.'
+  m_text: "It was on that cold August afternoon that the word came out of a new face
+    hawking goods on the notorious Mud Lane. His type came in once a month or so,
+    a poor government man looking to make a quick buck selling confiscated goods.
+    But this one was different. He said he had something worth buying, but wouldnt
+    say what it was. Well nothing moves in the city without the Bianchi's knowing
+    about it, so he sent his hounds down to that dirty street looking to sniff it
+    out.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e6b3552f09225f4b9d50b2a90baed30, type: 2}
   m_sharedMaterial: {fileID: 6182779200723862658, guid: 4e6b3552f09225f4b9d50b2a90baed30,
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 438
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -809,12 +809,12 @@ MonoBehaviour:
   m_margin: {x: -617.01294, y: 0, z: -924.3643, w: -632.9135}
   m_textInfo:
     textComponent: {fileID: 1247095439}
-    characterCount: 358
+    characterCount: 470
     spriteCount: 0
-    spaceCount: 71
-    wordCount: 72
+    spaceCount: 89
+    wordCount: 90
     linkCount: 0
-    lineCount: 7
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
