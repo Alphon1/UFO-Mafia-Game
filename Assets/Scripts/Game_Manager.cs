@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Game_Manager : MonoBehaviour
 {
     public TextMeshProUGUI txt;
-    public List<GameObject> Player_list;
+    public List<GameObject> Turn_Order;
     private int Random_Int;
     private GameObject Temp_Char;
     private GameObject Current_Char;
@@ -17,21 +17,29 @@ public class Game_Manager : MonoBehaviour
     void Start()
     {
         //makes a list of all player characters
-        Player_list.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        
+        Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 
         //randomizes the list of player characters
         System.Random New_Random = new System.Random();
-        for (int i = 0; i < Player_list.Count; i++)
+        for (int i = 0; i < Turn_Order.Count; i++)
         {
-            Random_Int = i + (int)(New_Random.NextDouble() * (Player_list.Count - i));
-            Temp_Char = Player_list[Random_Int];
-            Player_list[Random_Int] = Player_list[i];
-            Player_list[i] = Temp_Char;
+            Random_Int = i + (int)(New_Random.NextDouble() * (Turn_Order.Count - i));
+            Temp_Char = Turn_Order[Random_Int];
+            Turn_Order[Random_Int] = Turn_Order[i];
+            Turn_Order[i] = Temp_Char;
         }
         Current_Char_Pos = 0;
-        Current_Char = Player_list[Current_Char_Pos];
-        Current_Char.GetComponent<Player_Character>().End_turn();
+        Current_Char = Turn_Order[Current_Char_Pos];
+        if(Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Character>().End_turn();
+        }
+        else
+        {
+            Current_Char.GetComponent<Enemy_Manager>().End_turn();
+        }
+
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
        
     }
@@ -40,20 +48,34 @@ public class Game_Manager : MonoBehaviour
     public void Turn_End()
     {
         //if all enemies are dead
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             //go to level select
             SceneManager.LoadScene(2);
             Time.timeScale = 1f;
         }
-        Current_Char.GetComponent<Player_Character>().End_turn();
+        if (Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Character>().End_turn();
+        }
+        else
+        {
+            Current_Char.GetComponent<Enemy_Manager>().End_turn();
+        }
         Current_Char_Pos += 1;
-        if (Current_Char_Pos > Player_list.Count -1)
+        if (Current_Char_Pos > Turn_Order.Count -1)
         {
             Current_Char_Pos = 0;
         }
-        Current_Char = Player_list[Current_Char_Pos];
-        Current_Char.GetComponent<Player_Character>().End_turn();
+        Current_Char = Turn_Order[Current_Char_Pos];
+        if (Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Character>().End_turn();
+        }
+        else
+        {
+            Current_Char.GetComponent<Enemy_Manager>().End_turn();
+        }
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
     }
     public void UpdateAPUI(int APvalue)

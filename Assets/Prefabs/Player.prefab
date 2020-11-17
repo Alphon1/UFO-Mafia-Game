@@ -322,7 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddd56ec24cc7e64cbcf6197c4c5cbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 5197413110071602918}
   maxdistance: 3
   Player_Char: {fileID: 5197413110071602924}
@@ -339,12 +338,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 20
+  Max_Health: 40
   Damage: 10
   isyourturn: 0
   Action_Points: 0
   Max_Action_Points: 5
   Mov_Range_Indicator: {fileID: 4151756908128895741}
   Player_cam: {fileID: 2736495564118148811}
+  healthBar: {fileID: 8026839468105863092}
 --- !u!1 &7310902650795011852
 GameObject:
   m_ObjectHideFlags: 0

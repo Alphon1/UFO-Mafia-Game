@@ -4890,12 +4890,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cbeed3126c0e346afc308bcd2050df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Range: 20
+  Max_Health: 40
+  Damage: 10
   Current_Health: 0
   isyourturn: 0
   Seen_By: 0
   healthBar: {fileID: 8783471469008454435}
   Action_Points: 0
-  Max_Action_Points: 0
+  Max_Action_Points: 5
 --- !u!54 &5014927276101673671
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4981,9 +4984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd98aa06a8223724daed0c24f85e9f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  maxdistance: 3
-  Enemy_Man: {fileID: 0}
+  agent: {fileID: 5197413110071602918}
+  maxdistance: 20
+  Enemy_Man: {fileID: 5197413110071602924}
   P_Team: {fileID: 0}
 --- !u!1 &5819563420742471066
 GameObject:
