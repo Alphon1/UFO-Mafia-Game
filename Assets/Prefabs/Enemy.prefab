@@ -4771,6 +4771,7 @@ GameObject:
   - component: {fileID: 5014927276101673671}
   - component: {fileID: 205903135515489474}
   - component: {fileID: 740122328867592952}
+  - component: {fileID: 6984070833512223256}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -4893,6 +4894,8 @@ MonoBehaviour:
   isyourturn: 0
   Seen_By: 0
   healthBar: {fileID: 8783471469008454435}
+  Action_Points: 0
+  Max_Action_Points: 0
 --- !u!54 &5014927276101673671
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4966,6 +4969,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaterial: {fileID: 2100000, guid: 95db0da21ffe6da4f90a3cb8da38c490, type: 2}
   highlightedColour: {fileID: 2100000, guid: a119669f80d45d94faaf76680b983a9c, type: 2}
+--- !u!114 &6984070833512223256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197413110071602924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd98aa06a8223724daed0c24f85e9f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  maxdistance: 3
+  Enemy_Man: {fileID: 0}
+  P_Team: {fileID: 0}
 --- !u!1 &5819563420742471066
 GameObject:
   m_ObjectHideFlags: 0

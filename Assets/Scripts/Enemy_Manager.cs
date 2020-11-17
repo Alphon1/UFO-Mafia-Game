@@ -14,11 +14,19 @@ public class Enemy_Manager : MonoBehaviour
     public bool isyourturn;
     public int Seen_By;
     public Slider healthBar;
+    public int Action_Points;
+    [SerializeField]
+    private int Max_Action_Points;
 
     //function to reverse if it's this enemy's turn or not
     public void End_turn()
     {
         isyourturn = !isyourturn;
+        if (isyourturn)
+        {
+            Action_Points = Max_Action_Points;
+
+        }
     }
 
     public void Blood_Animation()
@@ -31,6 +39,7 @@ public class Enemy_Manager : MonoBehaviour
     //sets stats and defines some stuff
     private void Start()
     {
+        End_turn();
         Max_Health = 40;
         Current_Health = Max_Health;
         Seen_By = 0;
