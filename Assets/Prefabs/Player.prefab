@@ -322,7 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddd56ec24cc7e64cbcf6197c4c5cbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 5197413110071602918}
   maxdistance: 3
   Player_Char: {fileID: 5197413110071602924}
@@ -355,7 +354,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7410486413409165006}
   - component: {fileID: 2736495564118148811}
-  - component: {fileID: 5767966680716796163}
   m_Layer: 8
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -420,14 +418,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5767966680716796163
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310902650795011852}
-  m_Enabled: 1
 --- !u!1 &8026839467756466418
 GameObject:
   m_ObjectHideFlags: 0

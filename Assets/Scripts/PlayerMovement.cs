@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
                     Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
                     //if you click an enemy
-                    if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~(1 << 2)) && hit.transform.tag == "Enemy")
                     {
                         //checks if there's nothing in the way of the attack
                         if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, ~(1 << 8)))
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
                             Debug.Log("Something's in the way");
                         }
                     }
-                    else if (Physics.Raycast(ray, out hit))
+                    else if (Physics.Raycast(ray, out hit,Mathf.Infinity, ~(1 << 2)))
                     {
                         if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                         {
