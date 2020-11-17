@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 
 public class Enemy_Manager : MonoBehaviour
@@ -16,6 +17,7 @@ public class Enemy_Manager : MonoBehaviour
     public int Seen_By;
     public Slider healthBar;
     public int Action_Points;
+    public AudioSource DeathScream;
     [SerializeField]
     private int Max_Action_Points;
     private float Distance_To_Closest_Player = 50;
@@ -79,7 +81,9 @@ public class Enemy_Manager : MonoBehaviour
     public void takedamage(int damagetaken) {
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
+        DeathScream.Play();
         Blood_Animation();
+        
         //detects if it's dead and removes it if it is
         if (Current_Health <= 0)
         {
