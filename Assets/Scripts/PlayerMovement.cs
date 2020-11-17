@@ -49,10 +49,11 @@ public class PlayerMovement : MonoBehaviour
                             //checks if the selected enemy is in range
                             if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                             {
-                                Attack(hit);
                                 Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+                                Debug.Log("attacked AP");
                                 //Update UI here
                                 gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
+                                Attack(hit);
                             }
                             else
                             {
