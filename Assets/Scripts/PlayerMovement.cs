@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public Camera cam;
+  
     public UnityEngine.AI.NavMeshAgent agent;
     public float maxdistance = 3;
     public GameObject Player_Char;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
+        
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
        
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                 {
-                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
                     //if you click an enemy
                     if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
