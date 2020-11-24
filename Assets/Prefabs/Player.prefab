@@ -325,7 +325,7 @@ MonoBehaviour:
   agent: {fileID: 5197413110071602918}
   maxdistance: 3
   Player_Char: {fileID: 5197413110071602924}
-  DeathScream: {fileID: 8301656107652163469, guid: f3977c1a6e6df4c4fb8318f636333a1c,
+  ClickIndicator: {fileID: 6039388146704090743, guid: 5352518489b17584fbc27b3d5990a816,
     type: 3}
 --- !u!114 &5197413110071602917
 MonoBehaviour:

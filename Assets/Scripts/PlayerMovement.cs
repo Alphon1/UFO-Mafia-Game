@@ -7,30 +7,32 @@ using UnityEngine.Audio;
 public class PlayerMovement : MonoBehaviour
 {
 
-  
+
     public UnityEngine.AI.NavMeshAgent agent;
     public float maxdistance = 3;
     public GameObject Player_Char;
+    public GameObject ClickIndicator;
     private GameObject Game_Manager;
     private Game_Manager gm;
+    private GameObject clickindicator;
     private bool Moving;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
-       
+
     }
 
     private void Attack(RaycastHit hit)
     {
-          Debug.Log("Hit");
+        Debug.Log("Hit");
         //deal the player's damage to the enemy's current health
         hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage);
-        
+
     }
 
 
@@ -94,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
                                     Moving = true;
                                     agent.SetDestination(hit.point);
                                     Debug.Log("Valid point");
+                                    clickIndicator();
                                     Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
                                     //Update UI here
                                     gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
@@ -112,6 +115,12 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void clickIndicator()
+    {
+        clickindicator = Instantiate(ClickIndicator,agent.destination , ClickIndicator.transform.rotation);
+        Destroy(clickindicator, 2f);
     }
 }
     
