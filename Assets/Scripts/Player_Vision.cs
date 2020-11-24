@@ -27,13 +27,13 @@ public class Player_Vision : MonoBehaviour
         else
         {
             //if the player was seeing the enemy previously
-            if (Seen_Enemies.Contains(Enemy.gameObject))
-            {
+            //if (Seen_Enemies.Contains(Enemy.gameObject))
+            //{
                 //tell the enemy a player can't see it anymore
-                Enemy.GetComponent<Enemy_Manager>().Seen_By -= 1;
+                //Enemy.GetComponent<Enemy_Manager>().Seen_By -= 1;
                 //notes that the player can't see this enemy
-                Seen_Enemies.Remove(Enemy.gameObject);
-            }
+                //Seen_Enemies.Remove(Enemy.gameObject);
+            //}
         }
     }
 
