@@ -58,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    if (EventSystem.current.IsPointerOverGameObject())
+                        return;
                     if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                     {
                         Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
