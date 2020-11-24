@@ -42,13 +42,6 @@ public class Enemy_Manager : MonoBehaviour
         }
     }
 
-    public void Blood_Animation()
-    {
-        GetComponentInChildren<ParticleSystem>().Play();
-        ParticleSystem.EmissionModule Emitter = GetComponent<ParticleSystem>().emission;
-        Emitter.enabled = true;
-    }
-
     //sets stats and defines some stuff
     private void Start()
     {
@@ -79,21 +72,27 @@ public class Enemy_Manager : MonoBehaviour
         }
     }   
     public void takedamage(int damagetaken) {
+
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
         DeathScream.Play();
-        Blood_Animation();
-        
         //detects if it's dead and removes it if it is
         if (Current_Health <= 0)
-        {
+        {       
             gm.Turn_Order.Remove(gameObject);
             Seen_By = 0;
             Destroy(gameObject);
             Debug.Log("Dead");
         }
+        Blood_Animation();
     }
 
-    
+    public void Blood_Animation()
+    {
+        GetComponentInChildren<ParticleSystem>().Play();
+        ParticleSystem.EmissionModule Emitter = GetComponent<ParticleSystem>().emission;
+        Emitter.enabled = true;
+    }
+
 }
 
