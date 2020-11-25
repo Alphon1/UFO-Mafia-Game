@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Buttons.SetActive(true);
         APMenu.SetActive(true);
+       
         Time.timeScale = 1f;
     }
     public void ReturnToMainMenu()
@@ -57,4 +58,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
 
     }
+
+    
 }

@@ -27,6 +27,7 @@ public class Player_Character : MonoBehaviour
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
         Current_Health = Max_Health;
+        
     }
     //if it was the player's turn, now it isn't and vice versa
     public void End_turn()
@@ -37,11 +38,17 @@ public class Player_Character : MonoBehaviour
             Action_Points = Max_Action_Points;
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
             Player_cam.enabled = true;
+            Cursor.lockState = CursorLockMode.Confined;
+
+
         }
         else
         {
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
             Player_cam.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+
+
         }
     }
 
