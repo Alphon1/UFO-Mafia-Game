@@ -6,11 +6,8 @@ using TMPro;
 public class UnitViewScript : MonoBehaviour
 {
 
-    public TextMeshProUGUI txt1;
-    public TextMeshProUGUI txt2;
-    public bool isPaused;
-    public GameObject unitMenu;
-    public GameObject Buttons;
+    public TextMeshProUGUI Playercount;
+    public TextMeshProUGUI Enemycount;
     public List<GameObject> Player_list;
     public List<GameObject> Enemy_list;
     // Start is called before the first frame update
@@ -27,35 +24,11 @@ public class UnitViewScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-                Buttons.SetActive(true);
 
-            }
-            else
-            {
-                UpdatePlayerUnitView(Player_list);
-                UpdateEnemyUnitView(Enemy_list);
-
-                isPaused = true;
-                unitMenu.SetActive(true);
-                Buttons.SetActive(false);
-
-            }
-      
-        }
-
+        UpdatePlayerUnitView(Player_list);
+        UpdateEnemyUnitView(Enemy_list);
     }
-        public void ResumeGame()
-        {
-            isPaused = false;
-            unitMenu.SetActive(false);
-            
-            
-        }
+       
     public void UpdatePlayerUnitView(List<GameObject> Player_list)
     {
         int amountOfPlayers = Player_list.Count;
@@ -68,7 +41,7 @@ public class UnitViewScript : MonoBehaviour
         }
         i++;
         }
-        txt1.text = amountOfPlayers.ToString();
+        Playercount.text = amountOfPlayers.ToString();
     }
     public void UpdateEnemyUnitView(List<GameObject> Enemylist)//for each Enemy character it loop once
     {
@@ -82,7 +55,7 @@ public class UnitViewScript : MonoBehaviour
             }
             i++;
         }
-        txt2.text = amountOfEnemies.ToString();
+        Enemycount.text = amountOfEnemies.ToString();
     }
 
 }
