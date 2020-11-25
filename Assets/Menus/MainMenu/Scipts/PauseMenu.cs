@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject Buttons;
     public GameObject APMenu;
+    
     public bool isPaused;
 
 
@@ -27,6 +28,7 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Buttons.SetActive(false);
                 APMenu.SetActive(false);
+                
                 Time.timeScale = 0f;
             }
         }
@@ -58,6 +60,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
 
     }
-
+   
     
 }

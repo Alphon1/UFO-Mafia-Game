@@ -12740,7 +12740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cea546b9ec898b42a4bb34b9a71d11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2731137778967749632
+--- !u!1001 &1707403184915605975
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -12752,10 +12752,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 523367596632200215}
-    - target: {fileID: 6307753790927169146, guid: 3890342c67321c940b8cf8cf8633a157,
+    - target: {fileID: 9171739443847811448, guid: 3890342c67321c940b8cf8cf8633a157,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171739443847811449, guid: 3890342c67321c940b8cf8cf8633a157,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171739444867271538, guid: 3890342c67321c940b8cf8cf8633a157,
+        type: 3}
+      propertyPath: PlayercamScript
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9171739444867271541, guid: 3890342c67321c940b8cf8cf8633a157,
         type: 3}
@@ -12873,7 +12883,7 @@ PrefabInstance:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1427822433143005860, guid: 3890342c67321c940b8cf8cf8633a157,
     type: 3}
-  m_PrefabInstance: {fileID: 2731137778967749632}
+  m_PrefabInstance: {fileID: 1707403184915605975}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
