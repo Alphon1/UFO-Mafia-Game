@@ -10,10 +10,10 @@ public class CameraRotate : MonoBehaviour
     private float y;
     private Vector3 rotateValue;
     private PauseMenu pauseMenu;
+
     public void Start()
     {
         pauseMenu = FindObjectOfType<PauseMenu>();
-
 
 
     }
