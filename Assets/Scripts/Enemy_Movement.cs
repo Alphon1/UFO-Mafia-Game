@@ -8,6 +8,10 @@ public class Enemy_Movement : MonoBehaviour
     public float maxdistance;
     public GameObject Enemy_Man;
     public GameObject P_Team;
+    public int damageReduction;
+    private int damageReduced;
+    private LayerMask shotMask;
+    private LayerMask coverMask;
     private GameObject Game_Manager;
     private Game_Manager gm;
     private Vector3 Target;
@@ -17,6 +21,8 @@ public class Enemy_Movement : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
+        shotMask = LayerMask.GetMask("Default");
+        coverMask = LayerMask.GetMask("Cover");
     }
 
     void Update()
@@ -38,12 +44,19 @@ public class Enemy_Movement : MonoBehaviour
             {
                 if (!Moving)
                 {
-                    if (Vector3.Distance(P_Team.transform.position,gameObject.transform.position)< gameObject.GetComponent<Enemy_Manager>().Range && !Physics.Linecast(gameObject.transform.position, P_Team.transform.position, ~(1 << 8)))
+                    if (Vector3.Distance(P_Team.transform.position,gameObject.transform.position)< gameObject.GetComponent<Enemy_Manager>().Range && !Physics.Linecast(gameObject.transform.position, P_Team.transform.position, shotMask))
                     {
+                        damageReduced = 0;
                         Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
                         //Update UI here
                         gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
-                        P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage);
+                        if (Physics.Linecast(gameObject.transform.position, P_Team.transform.position, coverMask))
+                        {
+                            damageReduced = damageReduction;
+                            Debug.Log("Target_Covered");
+                        }
+                            P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
+                        Debug.Log("Enemy_Shoot");
                     }
                     Target = new Vector3(Random.Range(Enemy_Man.transform.position.x - maxdistance / 2, Enemy_Man.transform.position.x + maxdistance / 2), 0, Random.Range(Enemy_Man.transform.position.z - maxdistance / 2, Enemy_Man.transform.position.z + maxdistance / 2));
                     //Checks to see if the enemies target position is closer to the players

@@ -12,10 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public float maxdistance = 3;
     public GameObject Player_Char;
     public GameObject ClickIndicator;
+    public int damageReduction;
+    private int damageReduced;
     private GameObject Game_Manager;
     private Game_Manager gm;
     private GameObject clickindicator;
     private bool Moving;
+    private LayerMask coverMask;
+    private LayerMask shotMask;
 
 
     // Start is called before the first frame update
@@ -24,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
+        coverMask = LayerMask.GetMask("Cover");
+        shotMask = LayerMask.GetMask("Default");
 
     }
 
@@ -31,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Hit");
         //deal the player's damage to the enemy's current health
-        hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage);
+        hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage - damageReduced);
 
     }
 
@@ -68,9 +74,15 @@ public class PlayerMovement : MonoBehaviour
                         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                         {
                             //checks if there's nothing in the way of the attack
-                            if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, ~(1 << 8)))
+                            if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, shotMask))
                             {
-                                //checks if the selected enemy is in range
+                                damageReduced = 0;
+                                if (Physics.Linecast(Player_Char.transform.position, hit.transform.position, coverMask))
+                                {
+                                    damageReduced = damageReduction;
+                                    Debug.Log("Damage Reduced");
+                                }
+                                //checks if the selected enemy is in range and/or in cover
                                 if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                                 {
                                     Player_Char.GetComponent<Player_Character>().Action_Points -= 1;

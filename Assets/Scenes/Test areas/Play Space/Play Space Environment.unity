@@ -539,6 +539,11 @@ PrefabInstance:
       propertyPath: maxdistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602919, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
       propertyPath: m_Name
@@ -927,7 +932,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14980
+  m_Name: pb_Mesh22210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2085,6 +2090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxdistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602919, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
@@ -5397,6 +5407,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6984070833512223256, guid: f3977c1a6e6df4c4fb8318f636333a1c,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8783471469008454434, guid: f3977c1a6e6df4c4fb8318f636333a1c,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5495,6 +5510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984070833512223256, guid: f3977c1a6e6df4c4fb8318f636333a1c,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8630827942507757117, guid: f3977c1a6e6df4c4fb8318f636333a1c,
         type: 3}
@@ -5717,7 +5737,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14946
+  m_Name: pb_Mesh22176
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5880,7 +5900,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14818
+  m_Name: pb_Mesh22048
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6126,7 +6146,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15004
+  m_Name: pb_Mesh22236
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6538,6 +6558,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6984070833512223256, guid: f3977c1a6e6df4c4fb8318f636333a1c,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3977c1a6e6df4c4fb8318f636333a1c, type: 3}
 --- !u!43 &1423151168
@@ -6794,6 +6819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984070833512223256, guid: f3977c1a6e6df4c4fb8318f636333a1c,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8783471469008454434, guid: f3977c1a6e6df4c4fb8318f636333a1c,
         type: 3}
@@ -9659,6 +9689,11 @@ PrefabInstance:
       propertyPath: maxdistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602919, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
       propertyPath: m_Name
@@ -9842,6 +9877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxdistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197413110071602919, guid: 0c270020a10175e468921e7e37db4270,
+        type: 3}
+      propertyPath: damageReduction
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5197413110071602924, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
@@ -11086,7 +11126,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14912
+  m_Name: pb_Mesh22142
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12271,7 +12311,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14992
+  m_Name: pb_Mesh22222
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
