@@ -8,6 +8,8 @@ public class UnitViewScript : MonoBehaviour
 
     public TextMeshProUGUI Playercount;
     public TextMeshProUGUI Enemycount;
+    public TextMeshProUGUI PlayercountChangeable;
+    public TextMeshProUGUI EnemycountChangeable;
     public List<GameObject> Player_list;
     public List<GameObject> Enemy_list;
     // Start is called before the first frame update
@@ -18,6 +20,11 @@ public class UnitViewScript : MonoBehaviour
 
         UpdatePlayerUnitView(Player_list);
         UpdateEnemyUnitView(Enemy_list);
+        UpdatePlayerUnitViewchangeable(Player_list);
+        UpdateEnemyUnitViewchangeable(Enemy_list);
+
+
+
 
     }
 
@@ -25,11 +32,13 @@ public class UnitViewScript : MonoBehaviour
     void Update()
     {
 
-        UpdatePlayerUnitView(Player_list);
-        UpdateEnemyUnitView(Enemy_list);
+        
+        UpdatePlayerUnitViewchangeable(Player_list);
+        UpdateEnemyUnitViewchangeable(Enemy_list);
+       
     }
        
-    public void UpdatePlayerUnitView(List<GameObject> Player_list)
+    public void UpdatePlayerUnitViewchangeable(List<GameObject> Player_list)
     {
         int amountOfPlayers = Player_list.Count;
         int i = 0;
@@ -41,9 +50,9 @@ public class UnitViewScript : MonoBehaviour
         }
         i++;
         }
-        Playercount.text = amountOfPlayers.ToString();
+        PlayercountChangeable.text = amountOfPlayers.ToString();
     }
-    public void UpdateEnemyUnitView(List<GameObject> Enemylist)//for each Enemy character it loop once
+    public void UpdateEnemyUnitViewchangeable(List<GameObject> Enemylist)//for each Enemy character it loop once
     {
         int amountOfEnemies = Enemylist.Count;
         int i = 0;
@@ -55,6 +64,18 @@ public class UnitViewScript : MonoBehaviour
             }
             i++;
         }
+        EnemycountChangeable.text = amountOfEnemies.ToString();
+    }
+    public void UpdatePlayerUnitView(List<GameObject> Player_list)
+    {
+        int amountOfPlayers = Player_list.Count;
+       
+        Playercount.text = amountOfPlayers.ToString();
+    }
+    public void UpdateEnemyUnitView(List<GameObject> Enemylist)//for each Enemy character it loop once
+    {
+        int amountOfEnemies = Enemylist.Count;
+
         Enemycount.text = amountOfEnemies.ToString();
     }
 
