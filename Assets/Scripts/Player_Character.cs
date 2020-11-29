@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Player_Character : MonoBehaviour
 {
     public int Range;
+    public ParticleSystem blood;
+    public AudioSource DeathScream;
     [SerializeField]
     private int Max_Health;
     public int Damage;
@@ -54,14 +56,26 @@ public class Player_Character : MonoBehaviour
 
     public void Take_Damage(int damagetaken)
     {
+        
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
+        DeathScream.Play();
         if (Current_Health <= 0)
         {
+            Blood_Animation();
             gm.Turn_Order.Remove(gameObject);
             Destroy(gameObject);
             Debug.Log("Dead");
         }
+        Blood_Animation();
+    }
+
+    public void Blood_Animation()
+    {
+
+        blood.Play();
+        ParticleSystem.EmissionModule Emitter = blood.emission;
+        Emitter.enabled = true;
     }
 }
 
