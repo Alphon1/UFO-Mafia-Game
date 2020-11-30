@@ -32,6 +32,10 @@ public class buttonscript : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
+    public void BacktoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     
 
 
