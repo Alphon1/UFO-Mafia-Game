@@ -40,11 +40,11 @@ public class Enemy_Movement : MonoBehaviour
                     }
                 }
             }
-            if (Enemy_Man.GetComponent<Enemy_Manager>().Action_Points > 0)
+            if (!Moving)
             {
-                if (!Moving)
+                if (Enemy_Man.GetComponent<Enemy_Manager>().Action_Points > 0)
                 {
-                    if (Vector3.Distance(P_Team.transform.position,gameObject.transform.position)< gameObject.GetComponent<Enemy_Manager>().Range && !Physics.Linecast(gameObject.transform.position, P_Team.transform.position, shotMask))
+                    if (Vector3.Distance(P_Team.transform.position, gameObject.transform.position) < gameObject.GetComponent<Enemy_Manager>().Range && !Physics.Linecast(gameObject.transform.position, P_Team.transform.position, shotMask))
                     {
                         damageReduced = 0;
                         Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
@@ -55,7 +55,7 @@ public class Enemy_Movement : MonoBehaviour
                             damageReduced = damageReduction;
                             Debug.Log("Target_Covered");
                         }
-                            P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
+                        P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
                         Debug.Log("Enemy_Shoot");
                     }
                     Target = new Vector3(Random.Range(Enemy_Man.transform.position.x - maxdistance / 2, Enemy_Man.transform.position.x + maxdistance / 2), 0, Random.Range(Enemy_Man.transform.position.z - maxdistance / 2, Enemy_Man.transform.position.z + maxdistance / 2));
@@ -69,10 +69,10 @@ public class Enemy_Movement : MonoBehaviour
                         gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
                     }
                 }
-            }
-            else
-            {
-                Game_Manager.GetComponent<Game_Manager>().Turn_End();
+                else
+                {
+                    Game_Manager.GetComponent<Game_Manager>().Turn_End();
+                }
             }
         }
     }
