@@ -14,29 +14,38 @@ public class buttonscript : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void LevelOne()
+    public void LevelOnetutscreen()
     {
         SceneManager.LoadScene(3);
        
     }
      public void LevelTwo()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(7);
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(8);
     }
     public void Credits()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(9);
     }
     public void BacktoMenu()
     {
         SceneManager.LoadScene(0);
     }
-    
+    public void Continue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void Tolevelone()
+    {
+        SceneManager.LoadScene(6);
+    }
+
+
 
 
 }

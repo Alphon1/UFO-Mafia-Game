@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Menus/Level Select/LevelSelectMenu.unity
     guid: 5e2631e15e7994a47b74aefd19012bc5
   - enabled: 1
+    path: Assets/Menus/Level Select/Movetutscreen.unity
+    guid: 58cc2732b09fe9845b34fc6f1305b178
+  - enabled: 1
+    path: Assets/Menus/Level Select/attacktutscreen.unity
+    guid: 785f95595983d1942a69e5e04b289df7
+  - enabled: 1
+    path: Assets/Menus/Level Select/Covertutscreen.unity
+    guid: 195531c8bc67d524e874b10360a8fd01
+  - enabled: 1
     path: Assets/Scenes/Test areas/Play Space/Play Space Environment.unity
     guid: a38a9e3c63833df4b80fb2fc56843eae
   - enabled: 1
