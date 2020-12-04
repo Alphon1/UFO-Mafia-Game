@@ -9,6 +9,7 @@ public class Enemy_Movement : MonoBehaviour
     public GameObject Enemy_Man;
     public GameObject P_Team;
     public int damageReduction;
+    private Transform coverDetect;
     private int damageReduced;
     private LayerMask shotMask;
     private LayerMask coverMask;
@@ -19,6 +20,7 @@ public class Enemy_Movement : MonoBehaviour
 
     void Start()
     {
+        coverDetect = gameObject.transform.Find("CoverDetect");
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
         shotMask = LayerMask.GetMask("Default");
@@ -48,6 +50,7 @@ public class Enemy_Movement : MonoBehaviour
                     {
                         damageReduced = 0;
                         Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
+                        coverDetect.gameObject.transform.localPosition = new Vector3(0, 0, 0);
                         //Update UI here
                         gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
                         if (Physics.Linecast(gameObject.transform.position, P_Team.transform.position, coverMask))
@@ -57,6 +60,7 @@ public class Enemy_Movement : MonoBehaviour
                         }
                         P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
                         Debug.Log("Enemy_Shoot");
+                        coverDetect.gameObject.transform.localPosition = new Vector3(0, 100, 0);
                     }
                     Target = new Vector3(Random.Range(Enemy_Man.transform.position.x - maxdistance / 2, Enemy_Man.transform.position.x + maxdistance / 2), 0, Random.Range(Enemy_Man.transform.position.z - maxdistance / 2, Enemy_Man.transform.position.z + maxdistance / 2));
                     //Checks to see if the enemies target position is closer to the players
