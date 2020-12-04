@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public UnityEngine.AI.NavMeshAgent agent;
+    public Camera MainCamera;
     public float maxdistance = 3;
     public ParticleSystem Muzzleflash;
     public AudioSource Gunsound;
@@ -71,7 +72,8 @@ public class PlayerMovement : MonoBehaviour
                         return;
                     if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                     {
-                        Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
+                        //Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
+                        Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hit;
                         //if you click an enemy
                         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
