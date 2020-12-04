@@ -6,17 +6,17 @@ public class Cover : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Cover")
+        if (other.gameObject.layer == 9)
         {
-            other.tag = "!Cover";
+            other.gameObject.layer = 10;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "!Cover")
+        if (other.gameObject.layer == 10)
         {
-            other.tag = "Cover";
+            other.gameObject.layer = 9;
         }
     }
 }

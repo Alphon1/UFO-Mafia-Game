@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Player_Char;
     public GameObject ClickIndicator;
     public int damageReduction;
+    private Transform coverDetect;
     private int damageReduced;
     private GameObject Game_Manager;
     private Game_Manager gm;
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        coverDetect = gameObject.transform.Find("CoverDetect");
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
         coverMask = LayerMask.GetMask("Cover");
@@ -75,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
                         //if you click an enemy
                         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                         {
+                            coverDetect.gameObject.transform.localPosition = new Vector3 (0, 0, 0);
                             //muzzle flash goes here
                             muzzleFlash();
                             Gunsound.Play();
@@ -105,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
                             {
                                 Debug.Log("Something's in the way");
                             }
+                            coverDetect.gameObject.transform.localPosition = new Vector3(0, 100, 0);
                         }
                         else if (Physics.Raycast(ray, out hit))
                         {
