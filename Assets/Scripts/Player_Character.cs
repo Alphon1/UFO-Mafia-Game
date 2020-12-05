@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 public class Player_Character : MonoBehaviour
 {
     public int Range;
@@ -18,22 +19,50 @@ public class Player_Character : MonoBehaviour
     private int Max_Action_Points;
     [SerializeField]
     private GameObject Mov_Range_Indicator;
-    public Camera Player_cam;
+    public GameObject playerCam;
+    private GameObject Main_camera;
     [SerializeField]
     private Slider healthBar;
     private GameObject Game_Manager;
     private Game_Manager gm;
+   
+    
 
     private void Start()
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
         Current_Health = Max_Health;
-        playercameraSwitch();
+        
+        
 
 
 
+    }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (isyourturn)
+            {
+                playerCamOn();
+            }
+            else 
+            {
+                playerCamOff();
+                
+            }
+            
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                playerCamOff();
+            }
+        }
+        
     }
     //if it was the player's turn, now it isn't and vice versa
     public void End_turn()
@@ -43,16 +72,27 @@ public class Player_Character : MonoBehaviour
         {
             Action_Points = Max_Action_Points;
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
-           
             Cursor.lockState = CursorLockMode.Confined;
+            
+            
+            
+
+
+
+
+
+
 
 
         }
         else
         {
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
-          
             Cursor.lockState = CursorLockMode.None;
+            
+            
+
+
 
 
         }
@@ -60,7 +100,7 @@ public class Player_Character : MonoBehaviour
 
     public void Take_Damage(int damagetaken)
     {
-        
+
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
         DeathScream.Play();
@@ -81,16 +121,18 @@ public class Player_Character : MonoBehaviour
         ParticleSystem.EmissionModule Emitter = blood.emission;
         Emitter.enabled = true;
     }
-    public void playercameraSwitch()
+    void playerCamOn()
     {
-        if (Input.GetKey(KeyCode.C))
-        {
-            Player_cam.enabled = true;
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Player_cam.enabled = false;
-        }
+        playerCam.GetComponentInChildren<CinemachineFreeLook>().enabled = true;
+        Main_camera.SetActive(false);
+        //playerCam.SetActive(true);
+    }
+    void playerCamOff()
+    {
+        playerCam.GetComponentInChildren<CinemachineFreeLook>(enabled).enabled = false;
+        Main_camera.SetActive(true);
+        //playerCam.SetActive(false);
     }
 }
+   
 

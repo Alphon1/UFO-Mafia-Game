@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class CameraRotate : MonoBehaviour
 {
-    public Camera Player_cam;
+    public CinemachineVirtualCamera Player_cam;
     private float x;
     private float y;
     private Vector3 rotateValue;

@@ -20,6 +20,8 @@ public class Cameracontroller : MonoBehaviour
     public Vector3 rotateStartPosition;
     public Vector3 rotateCurrentPosition;
 
+    public Transform playerCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class Cameracontroller : MonoBehaviour
         newPosition = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
+        
     }
 
     // Update is called once per frame
@@ -35,6 +38,10 @@ public class Cameracontroller : MonoBehaviour
 
         HandleMovemntInput();
         HandleMouseInput();
+        
+        
+        
+
     }
 
     void HandleMouseInput()
@@ -103,5 +110,8 @@ public class Cameracontroller : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * MovementTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * MovementTime);
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * MovementTime);
-    } 
+        }
+    
+
+
 }

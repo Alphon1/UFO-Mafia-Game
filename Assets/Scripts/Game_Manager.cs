@@ -10,10 +10,10 @@ public class Game_Manager : MonoBehaviour
     public TextMeshProUGUI txt;
     public List<GameObject> Turn_Order;
     private int Random_Int;
-    private GameObject Temp_Char;
-    private GameObject Current_Char;
+    private GameObject Temp_Char;    
     private int Current_Char_Pos;
-        // Start is called before the first frame update
+    private GameObject Current_Char;
+    // Start is called before the first frame update
     void Start()
     {
         //makes a list of all player characters
@@ -41,12 +41,15 @@ public class Game_Manager : MonoBehaviour
         }
 
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
-       
+        
+
+
     }
 
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
     public void Turn_End()
     {
+        
         //if all enemies are dead
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
@@ -77,6 +80,7 @@ public class Game_Manager : MonoBehaviour
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
         }
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        
     }
     public void UpdateAPUI(int APvalue)
     {
