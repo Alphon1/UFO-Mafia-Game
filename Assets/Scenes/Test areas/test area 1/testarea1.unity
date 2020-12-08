@@ -454,11 +454,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0553066f9b5a3546be40db4092b7440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt1: {fileID: 809430062}
-  txt2: {fileID: 1218127663}
-  isPaused: 0
-  unitMenu: {fileID: 1106446499}
-  Buttons: {fileID: 9098796005490760608}
+  Playercount: {fileID: 0}
+  Enemycount: {fileID: 0}
+  PlayercountChangeable: {fileID: 0}
+  EnemycountChangeable: {fileID: 0}
   Player_list: []
   Enemy_list: []
 --- !u!1 &175550506
@@ -1088,6 +1087,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938658444607229898, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d003c2c6e7179c843913044852176dc2, type: 2}
+    - target: {fileID: 2092491629814312517, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092491630445210721, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092491630601927150, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092491630735641490, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092491630884351834, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092491630944592303, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092491631387148467, guid: bd94c32b9836d044d8a7c41907637a69,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2493924058320391023, guid: bd94c32b9836d044d8a7c41907637a69,
         type: 3}
@@ -3414,11 +3453,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 5
+  blood: {fileID: 0}
+  DeathScream: {fileID: 0}
+  Max_Health: 0
   Damage: 10
   isyourturn: 0
   Action_Points: 0
   Max_Action_Points: 5
   Mov_Range_Indicator: {fileID: 0}
+  playerCam: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &5197413109390403754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3431,10 +3475,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddd56ec24cc7e64cbcf6197c4c5cbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 5197413109390403755}
+  MainCamera: {fileID: 0}
   maxdistance: 3
+  Muzzleflash: {fileID: 0}
+  Gunsound: {fileID: 0}
   Player_Char: {fileID: 5197413109390403745}
+  ClickIndicator: {fileID: 0}
+  damageReduction: 0
 --- !u!195 &5197413109390403755
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3568,10 +3616,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddd56ec24cc7e64cbcf6197c4c5cbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 5197413109399705584}
+  MainCamera: {fileID: 0}
   maxdistance: 3
+  Muzzleflash: {fileID: 0}
+  Gunsound: {fileID: 0}
   Player_Char: {fileID: 5197413109399705594}
+  ClickIndicator: {fileID: 0}
+  damageReduction: 0
 --- !u!114 &5197413109399705587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3585,11 +3637,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 5
+  blood: {fileID: 0}
+  DeathScream: {fileID: 0}
+  Max_Health: 0
   Damage: 10
   isyourturn: 0
   Action_Points: 0
   Max_Action_Points: 5
   Mov_Range_Indicator: {fileID: 0}
+  playerCam: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!23 &5197413109399705588
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3807,11 +3864,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 5
+  blood: {fileID: 0}
+  DeathScream: {fileID: 0}
+  Max_Health: 0
   Damage: 10
   isyourturn: 0
   Action_Points: 0
   Max_Action_Points: 5
   Mov_Range_Indicator: {fileID: 0}
+  playerCam: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &5197413110345197438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,10 +3886,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddd56ec24cc7e64cbcf6197c4c5cbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 5197413110345197439}
+  MainCamera: {fileID: 0}
   maxdistance: 3
+  Muzzleflash: {fileID: 0}
+  Gunsound: {fileID: 0}
   Player_Char: {fileID: 5197413110345197429}
+  ClickIndicator: {fileID: 0}
+  damageReduction: 0
 --- !u!195 &5197413110345197439
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3886,7 +3952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1954288600}
-  Player_list: []
+  Turn_Order: []
 --- !u!4 &5321017249678431906
 Transform:
   m_ObjectHideFlags: 0
@@ -5103,6 +5169,8 @@ MonoBehaviour:
   mainMenuScene: 0
   pauseMenu: {fileID: 9098796004322087273}
   Buttons: {fileID: 9098796005490760608}
+  APMenu: {fileID: 0}
+  tutorialMenu: {fileID: 0}
   isPaused: 0
 --- !u!1 &9098796005043784548
 GameObject:
