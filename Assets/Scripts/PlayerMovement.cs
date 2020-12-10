@@ -21,9 +21,11 @@ public class PlayerMovement : MonoBehaviour
     private GameObject Game_Manager;
     private Game_Manager gm;
     private GameObject clickindicator;
-    private bool Moving;
+    public bool Moving;
     private LayerMask coverMask;
     private LayerMask shotMask;
+    private Transform gfx;
+    private Animator animator;
 
 
     // Start is called before the first frame update
@@ -34,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
         gm = Game_Manager.GetComponent<Game_Manager>();
         coverMask = LayerMask.GetMask("Cover");
         shotMask = LayerMask.GetMask("Default");
+        gfx = this.gameObject.transform.GetChild(0);
+        animator = gfx.gameObject.GetComponent<Animator>();
 
     }
 
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
                         if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                         {
                             Moving = false;
+                            animator.SetBool("isWalking", false);
                         }
                     }
                 }
@@ -78,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
                         //if you click an enemy
                         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                         {
-                            coverDetect.gameObject.transform.localPosition = new Vector3 (0, 0, 0);
                             //muzzle flash goes here
                             muzzleFlash();
                             Gunsound.Play();
@@ -94,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
                                 //checks if the selected enemy is in range and/or in cover
                                 if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
                                 {
+                                    animator.SetTrigger("Shoot");
                                     Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
                                     Debug.Log("attacked AP");
                                     //Update UI here
@@ -117,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
                             {
                                 if (Vector3.Distance(agent.transform.position, hit.point) <= maxdistance)
                                 {
+                                    animator.SetBool("isWalking", true);
                                     Moving = true;
                                     agent.SetDestination(hit.point);
                                     Debug.Log("Valid point");
