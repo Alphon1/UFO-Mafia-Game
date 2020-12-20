@@ -39,9 +39,10 @@ public class Game_Manager : MonoBehaviour
         {
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
         }
-
-        UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
-        
+        if (Current_Char.GetComponent<Player_Character>())
+        {
+            UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        }
 
 
     }
