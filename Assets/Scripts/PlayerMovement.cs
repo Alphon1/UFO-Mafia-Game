@@ -158,6 +158,8 @@ public class PlayerMovement : MonoBehaviour
         Destroy(clickindicator, 2f);
     }
 
+   
+
     public void muzzleFlash()
     {
         Muzzleflash.Play();

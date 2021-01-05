@@ -8,6 +8,7 @@ public class Player_Character : MonoBehaviour
     public int Range;
     public ParticleSystem blood;
     public AudioSource DeathScream;
+    public GameObject PlayerIndicator;
     [SerializeField]
     private int Max_Health;
     public int Damage;
@@ -25,16 +26,16 @@ public class Player_Character : MonoBehaviour
     private Slider healthBar;
     private GameObject Game_Manager;
     private Game_Manager gm;
-   
-    
+
+
 
     private void Start()
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
         Current_Health = Max_Health;
-        
-        
+
+
 
 
 
@@ -48,12 +49,12 @@ public class Player_Character : MonoBehaviour
             {
                 playerCamOn();
             }
-            else 
+            else
             {
                 playerCamOff();
-                
+
             }
-            
+
         }
         else
         {
@@ -62,9 +63,11 @@ public class Player_Character : MonoBehaviour
                 playerCamOff();
             }
         }
-        
+
     }
+
     //if it was the player's turn, now it isn't and vice versa
+    [System.Obsolete]
     public void End_turn()
     {
         isyourturn = !isyourturn;
@@ -72,10 +75,11 @@ public class Player_Character : MonoBehaviour
         {
             Action_Points = Max_Action_Points;
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
+            PlayerIndicator.GetComponent<MeshRenderer>().enabled = true;
             Cursor.lockState = CursorLockMode.Confined;
-            
-            
-            
+
+
+
 
 
 
@@ -88,9 +92,10 @@ public class Player_Character : MonoBehaviour
         else
         {
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
+            PlayerIndicator.GetComponent<MeshRenderer>().enabled = false;
             Cursor.lockState = CursorLockMode.None;
-            
-            
+
+
 
 
 
@@ -133,6 +138,8 @@ public class Player_Character : MonoBehaviour
         Main_camera.SetActive(true);
         //playerCam.SetActive(false);
     }
+
+   
 }
    
 
