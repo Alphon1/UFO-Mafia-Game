@@ -50,7 +50,7 @@ public class Game_Manager : MonoBehaviour
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
     public void Turn_End()
     {
-        
+        Debug.Log("EndTurn");
         //if all enemies are dead
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
