@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menus/EndCredits/End Credits.unity
     guid: dbb19cf5cb3b2ad4da11410b8846a2cf
+  - enabled: 1
+    path: Assets/Scenes/Test areas/Warehouse/WareHouse.unity
+    guid: 155a742bffec153469814dd731ecc5e6
   m_configObjects: {}

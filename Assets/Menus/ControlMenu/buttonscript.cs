@@ -42,7 +42,7 @@ public class buttonscript : MonoBehaviour
     }
     public void Tolevelone()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(10);
     }
 
 
