@@ -429,5 +429,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5203607022648714649, guid: eee5c888fe2c02645923ad18ac722755,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73ab4a5f77885ae4bb21b4670ffc0fcf,
+        type: 3}
+    - target: {fileID: 5357959087202235615, guid: eee5c888fe2c02645923ad18ac722755,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eee5c888fe2c02645923ad18ac722755, type: 3}

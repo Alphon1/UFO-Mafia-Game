@@ -2160,6 +2160,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_text
+      value: PLEASE DO NOT CLICK THIS ONE!
+      objectReference: {fileID: 0}
     - target: {fileID: 2416196286548004364, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
       propertyPath: m_Name
@@ -2733,6 +2738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916814467487529282, guid: 970ce22b291c8344680a13154655c772,
+        type: 3}
+      propertyPath: m_text
+      value: PLEASE DO NOT CLICK THIS ONE!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970ce22b291c8344680a13154655c772, type: 3}
