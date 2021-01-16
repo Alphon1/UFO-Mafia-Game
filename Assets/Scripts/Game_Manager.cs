@@ -9,10 +9,13 @@ public class Game_Manager : MonoBehaviour
 {
     public TextMeshProUGUI txt;
     public List<GameObject> Turn_Order;
+    public GameObject playerTurnIndicator;
+    public GameObject enemyTurnIndicator;
     private int Random_Int;
     private GameObject Temp_Char;    
     private int Current_Char_Pos;
     private GameObject Current_Char;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,7 @@ public class Game_Manager : MonoBehaviour
         }
         else
         {
+            
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
         }
         if (Current_Char.GetComponent<Player_Character>())
@@ -60,11 +64,15 @@ public class Game_Manager : MonoBehaviour
         }
         if (Current_Char.tag == "Player")
         {
+            
             Current_Char.GetComponent<Player_Character>().End_turn();
+            
         }
         else
         {
+            
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
+            
         }
         Current_Char_Pos += 1;
         if (Current_Char_Pos > Turn_Order.Count -1)
@@ -74,11 +82,21 @@ public class Game_Manager : MonoBehaviour
         Current_Char = Turn_Order[Current_Char_Pos];
         if (Current_Char.tag == "Player")
         {
+            playerTurnIndicator.SetActive(true);
+            enemyTurnIndicator.SetActive(false);
             Current_Char.GetComponent<Player_Character>().End_turn();
+            
+
         }
         else
         {
+            playerTurnIndicator.SetActive(false);
+            enemyTurnIndicator.SetActive(true);
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
+            
+           
+
+
         }
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
         
@@ -88,6 +106,6 @@ public class Game_Manager : MonoBehaviour
         txt.text = APvalue.ToString();
         
     }
-  
+    
 
 }
