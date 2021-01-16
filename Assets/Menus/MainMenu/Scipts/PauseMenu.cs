@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject Buttons;
     public GameObject APMenu;
     public GameObject tutorialMenu;
+    public GameObject Playercounter;
 
     public bool isPaused;
 
@@ -45,7 +46,8 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Buttons.SetActive(false);
                 APMenu.SetActive(false);
-                
+                Playercounter.SetActive(false);
+
                 Time.timeScale = 0f;
             }
         }
@@ -57,7 +59,8 @@ public class PauseMenu : MonoBehaviour
         tutorialMenu.SetActive(false);
         Buttons.SetActive(true);
         APMenu.SetActive(true);
-       
+        Playercounter.SetActive(true);
+
         Time.timeScale = 1f;
     }
     public void ReturnToMainMenu()

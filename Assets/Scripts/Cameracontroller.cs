@@ -11,7 +11,9 @@ public class Cameracontroller : MonoBehaviour
     public float MovementSpeed;
     public float MovementTime;
     public float RotationAmount;
-    public Vector3 ZommInAmount;
+    public Vector3 ZoomInAmount;
+    public float minZoom;
+    public float maxZoom;
 
     public Vector3 newPosition;
     public Quaternion newRotation;
@@ -46,9 +48,17 @@ public class Cameracontroller : MonoBehaviour
 
     void HandleMouseInput()
     {
-        if(Input.mouseScrollDelta.y != 0)
+        if (Input.mouseScrollDelta.y != 0)
         {
-            newZoom += Input.mouseScrollDelta.y * ZommInAmount;
+            if (Input.mouseScrollDelta.y > 0 && newZoom.z < maxZoom)
+            {
+                newZoom += Input.mouseScrollDelta.y * ZoomInAmount;
+            }
+            if (Input.mouseScrollDelta.y < 0 && newZoom.z > minZoom)
+            {
+                newZoom += Input.mouseScrollDelta.y * ZoomInAmount;
+            }
+
         }
 
         if (Input.GetMouseButtonDown(2))
@@ -101,11 +111,11 @@ public class Cameracontroller : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.R))
         {
-            newZoom += ZommInAmount;
+            newZoom += ZoomInAmount;
         }
         if (Input.GetKey(KeyCode.F))
         {
-            newZoom -= ZommInAmount;
+            newZoom -= ZoomInAmount;
         }
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * MovementTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * MovementTime);

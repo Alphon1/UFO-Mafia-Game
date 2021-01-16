@@ -947,7 +947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687677915531486453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2593,6 +2593,7 @@ MonoBehaviour:
   Buttons: {fileID: 5201552382867141376}
   APMenu: {fileID: 6307753790927169146}
   tutorialMenu: {fileID: 1687677915531486452}
+  Playercounter: {fileID: 4528474547106345176}
   isPaused: 0
 --- !u!1 &9171739445219895897
 GameObject:
@@ -3220,6 +3221,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f95fe6ba8892f4496d0d5d4a264358, type: 3}
+--- !u!1 &4528474547106345176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 723166728422718952, guid: 37f95fe6ba8892f4496d0d5d4a264358,
+    type: 3}
+  m_PrefabInstance: {fileID: 3805941723946782000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6394952871187277134 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7813186889255807102, guid: 37f95fe6ba8892f4496d0d5d4a264358,
