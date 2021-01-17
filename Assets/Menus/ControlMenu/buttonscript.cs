@@ -21,7 +21,7 @@ public class buttonscript : MonoBehaviour
     }
      public void LevelTwo()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(10);
     }
 
     public void LevelThree()
@@ -42,7 +42,7 @@ public class buttonscript : MonoBehaviour
     }
     public void Tolevelone()
     {
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(6);
     }
 
 
