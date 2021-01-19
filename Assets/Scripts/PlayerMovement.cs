@@ -45,12 +45,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Attack(RaycastHit hit)
     {
+        End_if_0ap();
         Debug.Log("Hit");
         //deal the player's damage to the enemy's current health
         hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage - damageReduced);
-
     }
 
+    private void End_if_0ap()
+    {
+        Debug.Log("endif0ap");
+        if (Player_Char.GetComponent<Player_Character>().Action_Points < 1)
+        {
+            gm.Turn_End();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -105,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
                                     Debug.Log("attacked AP");
                                     //Update UI here
                                     gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
-                                    Attack(hit);
+                                    Attack(hit);                                   
                                     GameObject bulletObject = Instantiate (bulletPrefab);
                                     bulletObject.transform.position = gun.transform.position + gun.transform.forward;
                                     bulletObject.transform.forward = gun.transform.forward;
@@ -135,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
                                     Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
                                     //Update UI here
                                     gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
+                                    End_if_0ap();
                                 }
                                 else
                                 {

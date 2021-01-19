@@ -2163,7 +2163,23 @@ PrefabInstance:
     - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
       propertyPath: m_text
-      value: PLEASE DO NOT CLICK THIS ONE!
+      value: "WORK IN PROGRESS\nListen closely, this ain't the type of job you want
+        to be screwin' around with.\r\nWe got word of some of them Paper Boys hustling
+        in on our turf, using a piece of that new space tech to collect our protection
+        payments down on broad street with nothin' we can do about it. But now we
+        got some tech of our own, and the boss wants you boys to give it a test run.
+        We found the rat's nest a block over on the top floor of an apartment building
+        and we're sending you to exterminate them, you understand? \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392777008377479392, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_text
+      value: Broad Stree - Rat Poison
       objectReference: {fileID: 0}
     - target: {fileID: 2416196286548004364, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
@@ -2499,6 +2515,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 693289274}
     m_Modifications:
+    - target: {fileID: 4611137820412539175, guid: eaf2588cc03fdb24bb4569fd20337f2e,
+        type: 3}
+      propertyPath: m_text
+      value: 'Look alive boys.
+
+        We''ve got word on a g-man down in Mud Lane
+        looking to cut a deal on some government gear. He won''t say what he''s got
+        but our ears in city hall say he''s good for it, say he''s done clean deals
+        out of state before. But this is new, something even the top boys don''t
+        know about. Go check him out and see what he''s pushing, but watch yourselves.
+        He ain''t exactly subtle so we weren''t the only one to sniff him out. Get
+        down there and make it quick.
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 7968551283601155748, guid: eaf2588cc03fdb24bb4569fd20337f2e,
         type: 3}
       propertyPath: m_Name
@@ -2739,10 +2770,40 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4923236213205225434, guid: 970ce22b291c8344680a13154655c772,
+        type: 3}
+      propertyPath: m_text
+      value: 5th and Main Street - Dire Consequences
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923236213205225434, guid: 970ce22b291c8344680a13154655c772,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923236213205225434, guid: 970ce22b291c8344680a13154655c772,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923236213205225434, guid: 970ce22b291c8344680a13154655c772,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6916814467487529282, guid: 970ce22b291c8344680a13154655c772,
         type: 3}
       propertyPath: m_text
-      value: PLEASE DO NOT CLICK THIS ONE!
+      value: 'WORK IN PROGRESS
+
+        I got a job for you boys.
+
+        We got
+        word of some two-bit thieves sitting on a stash of tech down on 5th and Main.
+        They tried to get one past the boss and sold Tony some junkyard scrap. Tony''s
+        already got a lashing but we need you to clean up loose ends. Go make an
+        example of those punks and show the city why you dont try and play games
+        with the Family, understand? And make sure you get that tech, we dont want
+        to waste a good score on this scum.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970ce22b291c8344680a13154655c772, type: 3}
