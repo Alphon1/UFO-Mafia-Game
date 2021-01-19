@@ -118,6 +118,11 @@ public class Player_Character : MonoBehaviour
             Debug.Log("Dead");
         }
         Blood_Animation();
+        if (Current_Health < int(Max_Health/2))
+        {
+            Moving = false;
+            animator.SetBool("isWounded", true); 
+        }
     }
 
     public void Blood_Animation()
