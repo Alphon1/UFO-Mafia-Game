@@ -34,11 +34,6 @@ public class Player_Character : MonoBehaviour
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
         Current_Health = Max_Health;
-
-
-
-
-
     }
 
     void Update()
@@ -52,9 +47,7 @@ public class Player_Character : MonoBehaviour
             else
             {
                 playerCamOff();
-
             }
-
         }
         else
         {
@@ -63,7 +56,6 @@ public class Player_Character : MonoBehaviour
                 playerCamOff();
             }
         }
-
     }
 
     //if it was the player's turn, now it isn't and vice versa
@@ -77,30 +69,12 @@ public class Player_Character : MonoBehaviour
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = true;
             Cursor.lockState = CursorLockMode.Confined;
-
-
-
-
-
-
-
-
-
-
-
-
         }
         else
         {
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = false;
             Cursor.lockState = CursorLockMode.None;
-
-
-
-
-
-
         }
     }
 
@@ -118,16 +92,14 @@ public class Player_Character : MonoBehaviour
             Debug.Log("Dead");
         }
         Blood_Animation();
-        if (Current_Health < int(Max_Health/2))
+        if (Current_Health < Max_Health/2)
         {
-            Moving = false;
-            animator.SetBool("isWounded", true); 
+            gameObject.GetComponent<PlayerMovement>().Set_Wounded_Idle();
         }
     }
 
     public void Blood_Animation()
     {
-
         blood.Play();
         ParticleSystem.EmissionModule Emitter = blood.emission;
         Emitter.enabled = true;

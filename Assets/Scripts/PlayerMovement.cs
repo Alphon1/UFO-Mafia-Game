@@ -60,6 +60,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Set_Wounded_Idle()
+    {
+        Moving = false;
+        animator.SetBool("isWounded", true);
+    }
+
     // Update is called once per frame
     void Update()
     {
