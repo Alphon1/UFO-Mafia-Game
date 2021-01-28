@@ -32,13 +32,6 @@ public class Enemy_Manager : MonoBehaviour
         if (isyourturn)
         {
             Action_Points = Max_Action_Points;
-            foreach (GameObject Player in GameObject.FindGameObjectsWithTag("Player"))
-            {
-                if(Vector3.Distance(Player.transform.position, gameObject.transform.position) < Distance_To_Closest_Player)
-                Distance_To_Closest_Player = Vector3.Distance(Player.transform.position, gameObject.transform.position);
-                Closest_Player = Player;
-            }
-            gameObject.GetComponent<Enemy_Movement>().P_Team = Closest_Player;
         }
     }
 
