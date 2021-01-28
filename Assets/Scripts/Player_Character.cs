@@ -9,6 +9,7 @@ public class Player_Character : MonoBehaviour
     public ParticleSystem blood;
     public AudioSource DeathScream;
     public GameObject PlayerIndicator;
+    public GameObject ragDoll;
     [SerializeField]
     private int Max_Health;
     public int Damage;
@@ -88,6 +89,7 @@ public class Player_Character : MonoBehaviour
         {
             Blood_Animation();
             gm.Turn_Order.Remove(gameObject);
+            Instantiate(ragDoll, this.gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
             Debug.Log("Dead");
         }
