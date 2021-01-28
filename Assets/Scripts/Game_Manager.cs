@@ -14,8 +14,9 @@ public class Game_Manager : MonoBehaviour
     private int Random_Int;
     private GameObject Temp_Char;    
     private int Current_Char_Pos;
-    private GameObject Current_Char;
-   
+    public GameObject Current_Char;
+    public bool Is_Player_Turn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +37,12 @@ public class Game_Manager : MonoBehaviour
         Current_Char = Turn_Order[Current_Char_Pos];
         if(Current_Char.tag == "Player")
         {
+            Is_Player_Turn = true;
             Current_Char.GetComponent<Player_Character>().End_turn();
         }
         else
         {
-            
+            Is_Player_Turn = false;
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
         }
         if (Current_Char.GetComponent<Player_Character>())
@@ -54,7 +56,6 @@ public class Game_Manager : MonoBehaviour
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
     public void Turn_End()
     {
-        Debug.Log("EndTurn");
         //if all enemies are dead
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
@@ -64,15 +65,11 @@ public class Game_Manager : MonoBehaviour
         }
         if (Current_Char.tag == "Player")
         {
-            
-            Current_Char.GetComponent<Player_Character>().End_turn();
-            
+            Current_Char.GetComponent<Player_Character>().End_turn();   
         }
         else
         {
-            
-            Current_Char.GetComponent<Enemy_Manager>().End_turn();
-            
+            Current_Char.GetComponent<Enemy_Manager>().End_turn();   
         }
         Current_Char_Pos += 1;
         if (Current_Char_Pos > Turn_Order.Count -1)
@@ -85,18 +82,14 @@ public class Game_Manager : MonoBehaviour
             playerTurnIndicator.SetActive(true);
             enemyTurnIndicator.SetActive(false);
             Current_Char.GetComponent<Player_Character>().End_turn();
-            
-
+            Is_Player_Turn = true;
         }
         else
         {
             playerTurnIndicator.SetActive(false);
             enemyTurnIndicator.SetActive(true);
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
-            
-           
-
-
+            Is_Player_Turn = false;
         }
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
         

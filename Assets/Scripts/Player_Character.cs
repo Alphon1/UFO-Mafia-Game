@@ -68,13 +68,13 @@ public class Player_Character : MonoBehaviour
             Action_Points = Max_Action_Points;
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            //Cursor.lockState = CursorLockMode.Confined;
         }
         else
         {
             Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = false;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
         }
     }
 
