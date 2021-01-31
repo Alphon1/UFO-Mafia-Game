@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Menus/Level Select/attacktutscreen.unity
     guid: 785f95595983d1942a69e5e04b289df7
   - enabled: 1
+    path: Assets/Menus/Level Select/cameratutscreen.unity
+    guid: 94b955b6d688888418f6cbd7420f9788
+  - enabled: 1
     path: Assets/Menus/Level Select/Covertutscreen.unity
     guid: 195531c8bc67d524e874b10360a8fd01
   - enabled: 1
