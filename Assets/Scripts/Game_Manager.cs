@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Game_Manager : MonoBehaviour
     public List<GameObject> Turn_Order;
     public GameObject playerTurnIndicator;
     public GameObject enemyTurnIndicator;
+    private NavMeshObstacle navMO;
     private int Random_Int;
     private GameObject Temp_Char;    
     private int Current_Char_Pos;
@@ -99,6 +101,4 @@ public class Game_Manager : MonoBehaviour
         txt.text = APvalue.ToString();
         
     }
-    
-
 }

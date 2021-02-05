@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523367596868884126}
   - component: {fileID: 523367596868884125}
+  - component: {fileID: 3026299841220129808}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Game_Manager
@@ -45,3 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txt: {fileID: 0}
   Turn_Order: []
+  playerTurnIndicator: {fileID: 0}
+  enemyTurnIndicator: {fileID: 0}
+  Current_Char: {fileID: 0}
+  Is_Player_Turn: 0
+--- !u!114 &3026299841220129808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523367596868884124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52fba1487a8911478b1510942dcf4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
