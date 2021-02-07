@@ -39,11 +39,13 @@ public class Game_Manager : MonoBehaviour
         Current_Char = Turn_Order[Current_Char_Pos];
         if(Current_Char.tag == "Player")
         {
+            playerTurnIndicator.SetActive(true);
             Is_Player_Turn = true;
             Current_Char.GetComponent<Player_Character>().End_turn();
         }
         else
         {
+            enemyTurnIndicator.SetActive(true);
             Is_Player_Turn = false;
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
         }
