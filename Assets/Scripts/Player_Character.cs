@@ -60,7 +60,6 @@ public class Player_Character : MonoBehaviour
     }
 
     //if it was the player's turn, now it isn't and vice versa
-    [System.Obsolete]
     public void End_turn()
     {
         isyourturn = !isyourturn;
