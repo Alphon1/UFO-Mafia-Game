@@ -11,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject APMenu;
     public GameObject tutorialMenu;
     public GameObject Playercounter;
+    public GameObject popUps;
+    public GameObject Turnorder;
+    public GameObject Playerobj;
 
     public bool isPaused;
 
@@ -46,7 +49,9 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Buttons.SetActive(false);
                 APMenu.SetActive(false);
-                Playercounter.SetActive(false);
+                popUps.SetActive(false);
+                Turnorder.SetActive(false);
+                Playerobj.SetActive(false);
 
                 Time.timeScale = 0f;
             }
@@ -60,6 +65,9 @@ public class PauseMenu : MonoBehaviour
         Buttons.SetActive(true);
         APMenu.SetActive(true);
         Playercounter.SetActive(true);
+        popUps.SetActive(true);
+        Turnorder.SetActive(true);
+        Playerobj.SetActive(true);
 
         Time.timeScale = 1f;
     }
@@ -71,7 +79,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToLevelselect()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }
 

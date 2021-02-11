@@ -29,6 +29,8 @@ public class Turn_Order_UI : MonoBehaviour
         Turn_Order_Slots.Add(Slot5);     
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         Game_Manager_Script = Game_Manager.GetComponent<Game_Manager>();
+      
+
     }
     public void Update_UI()
     {

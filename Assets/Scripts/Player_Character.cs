@@ -27,6 +27,7 @@ public class Player_Character : MonoBehaviour
     private Slider healthBar;
     private GameObject Game_Manager;
     private Game_Manager gm;
+    
 
 
 
@@ -34,6 +35,7 @@ public class Player_Character : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
+        
         Current_Health = Max_Health;
     }
 

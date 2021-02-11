@@ -16,21 +16,21 @@ public class buttonscript : MonoBehaviour
 
     public void LevelOnetutscreen()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
        
     }
      public void LevelTwo()
     {
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(3);
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(4);
     }
     public void Credits()
     {
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(5);
     }
     public void BacktoMenu()
     {
