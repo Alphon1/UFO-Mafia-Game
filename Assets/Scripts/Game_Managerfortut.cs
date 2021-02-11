@@ -180,7 +180,7 @@ public class Game_Managerfortut : MonoBehaviour
             if (popUpIndex == 9)
             {
                 waitTime -= Time.deltaTime;
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(1);
             }  
         }
     }
