@@ -32,6 +32,15 @@ public class EnemyColourChange : MonoBehaviour
                 StartCoroutine(Flash_Healthbar());
             }
         }
+        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Manager>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Manager>().Current_Char.GetComponent<Player_Character>().Range)
+        {
+
+            GetComponent<Renderer>().material = highlightedColour;
+            if (Health_Flashing == false)
+            {
+                StartCoroutine(Flash_Healthbar());
+            }
+        }
     }
     public void OnMouseExit()
     {
