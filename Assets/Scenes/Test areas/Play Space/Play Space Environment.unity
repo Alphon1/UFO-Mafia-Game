@@ -14679,8 +14679,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hold down the scroll wheel and move the mouse to rotate the camera or Q
-    and E.
+  m_text: Press down the middle mouse button and move the mouse left and right to
+    rotate the camera.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e6b3552f09225f4b9d50b2a90baed30, type: 2}
   m_sharedMaterial: {fileID: 6182779200723862658, guid: 4e6b3552f09225f4b9d50b2a90baed30,
@@ -14750,7 +14750,7 @@ MonoBehaviour:
   m_margin: {x: -1.1277097, y: 0, z: -2.109674, w: -0.23416138}
   m_textInfo:
     textComponent: {fileID: 1690199926}
-    characterCount: 78
+    characterCount: 90
     spriteCount: 0
     spaceCount: 16
     wordCount: 17
@@ -16448,7 +16448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2021650406
 Transform:
   m_ObjectHideFlags: 0
