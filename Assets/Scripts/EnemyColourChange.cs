@@ -7,6 +7,7 @@ public class EnemyColourChange : MonoBehaviour
 {
     public Material baseMaterial;
     public Material highlightedColour;
+    public LinePoints linePoints;
     private Game_Manager Game_Manager_Script;
     private GameObject Game_Manager;
     private bool Health_Visible = true;
@@ -17,6 +18,7 @@ public class EnemyColourChange : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         Game_Manager_Script = Game_Manager.GetComponent<Game_Manager>();
+        linePoints = Game_Manager.GetComponent<LinePoints>();
         Health_Bar = gameObject.GetComponentInChildren<Slider>();
     }
 
@@ -25,16 +27,7 @@ public class EnemyColourChange : MonoBehaviour
         //Checks if it's the player's turn, and the enemy is within range
         if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Manager>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Manager>().Current_Char.GetComponent<Player_Character>().Range)
         {
-            
-            GetComponent<Renderer>().material = highlightedColour;
-            if (Health_Flashing == false)
-            {
-                StartCoroutine(Flash_Healthbar());
-            }
-        }
-        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Manager>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Manager>().Current_Char.GetComponent<Player_Character>().Range)
-        {
-
+            linePoints.enemyTarget = this.gameObject;
             GetComponent<Renderer>().material = highlightedColour;
             if (Health_Flashing == false)
             {
@@ -44,6 +37,7 @@ public class EnemyColourChange : MonoBehaviour
     }
     public void OnMouseExit()
     {
+        linePoints.enemyTarget = Game_Manager_Script.Current_Char;
         GetComponent<Renderer>().material = baseMaterial;
         Health_Bar.value = gameObject.GetComponent<Enemy_Manager>().Current_Health;
         StopCoroutine(Flash_Healthbar());
