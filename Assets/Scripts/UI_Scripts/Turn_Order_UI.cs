@@ -44,7 +44,6 @@ public class Turn_Order_UI : MonoBehaviour
             {
                 Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i;
             }
-            Debug.Log(Turn_Order_Slots[i].name);
             Turn_Order_Slots[i].GetComponentInChildren<TextMeshProUGUI>().text = Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].name;
             if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Enemy")
             {

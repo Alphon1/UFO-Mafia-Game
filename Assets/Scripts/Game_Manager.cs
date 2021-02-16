@@ -83,7 +83,6 @@ public class Game_Manager : MonoBehaviour
             Current_Char_Pos = 0;
         }
         Current_Char = Turn_Order[Current_Char_Pos];
-        Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
         if (Current_Char.tag == "Player")
         {
             playerTurnIndicator.SetActive(true);
@@ -98,6 +97,7 @@ public class Game_Manager : MonoBehaviour
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
             Is_Player_Turn = false;
         }
+        Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
     }
     public void UpdateAPUI(int APvalue)
