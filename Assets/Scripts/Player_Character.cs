@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.VFX;
 public class Player_Character : MonoBehaviour
 {
     public int Range;
-    public ParticleSystem blood;
+    public VisualEffect blood;
+    public AudioSource PainScream;
     public AudioSource DeathScream;
     public GameObject PlayerIndicator;
     public GameObject ragDoll;
@@ -35,7 +37,7 @@ public class Player_Character : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
-        
+                
         Current_Health = Max_Health;
     }
 
@@ -85,12 +87,14 @@ public class Player_Character : MonoBehaviour
 
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
-        DeathScream.Play();
+        PainScream.Play();
         if (Current_Health <= 0)
         {
+            
             Blood_Animation();
             gm.Turn_Order.Remove(gameObject);
             Instantiate(ragDoll, this.gameObject.transform.position, Quaternion.identity);
+            DeathScream.Play();
             Destroy(gameObject);
             Debug.Log("Dead");
         }
@@ -104,8 +108,8 @@ public class Player_Character : MonoBehaviour
     public void Blood_Animation()
     {
         blood.Play();
-        ParticleSystem.EmissionModule Emitter = blood.emission;
-        Emitter.enabled = true;
+        
+        
     }
     void playerCamOn()
     {
