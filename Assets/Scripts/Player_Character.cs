@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.VFX;
 public class Player_Character : MonoBehaviour
 {
     public int Range;
-    public ParticleSystem blood;
+    public VisualEffect blood;
     public AudioSource DeathScream;
     public GameObject PlayerIndicator;
     public GameObject ragDoll;
@@ -35,7 +36,7 @@ public class Player_Character : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
-        
+                
         Current_Health = Max_Health;
     }
 
@@ -104,8 +105,8 @@ public class Player_Character : MonoBehaviour
     public void Blood_Animation()
     {
         blood.Play();
-        ParticleSystem.EmissionModule Emitter = blood.emission;
-        Emitter.enabled = true;
+        
+        
     }
     void playerCamOn()
     {

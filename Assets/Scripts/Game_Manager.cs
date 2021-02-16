@@ -66,7 +66,7 @@ public class Game_Manager : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             //go to level select
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
             Time.timeScale = 1f;
         }
         if (Current_Char.tag == "Player")
