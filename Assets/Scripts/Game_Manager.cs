@@ -18,12 +18,15 @@ public class Game_Manager : MonoBehaviour
     public int Current_Char_Pos;
     public GameObject Current_Char;
     public bool Is_Player_Turn;
+    private LinePoints linePoints;
     [SerializeField]
     private GameObject Turn_Order_Manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        linePoints = this.gameObject.GetComponent<LinePoints>();
+
         //makes a list of all player characters
         Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Player"));
         Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
@@ -39,6 +42,7 @@ public class Game_Manager : MonoBehaviour
         }
         Current_Char_Pos = 0;
         Current_Char = Turn_Order[Current_Char_Pos];
+        linePoints.enemyTarget = Current_Char;
         if(Current_Char.tag == "Player")
         {
             playerTurnIndicator.SetActive(true);
@@ -83,6 +87,7 @@ public class Game_Manager : MonoBehaviour
             Current_Char_Pos = 0;
         }
         Current_Char = Turn_Order[Current_Char_Pos];
+        linePoints.enemyTarget = Current_Char;
         if (Current_Char.tag == "Player")
         {
             playerTurnIndicator.SetActive(true);
