@@ -8,6 +8,7 @@ public class Player_Character : MonoBehaviour
 {
     public int Range;
     public VisualEffect blood;
+    public AudioSource PainScream;
     public AudioSource DeathScream;
     public GameObject PlayerIndicator;
     public GameObject ragDoll;
@@ -86,12 +87,14 @@ public class Player_Character : MonoBehaviour
 
         Current_Health -= damagetaken;
         healthBar.value = Current_Health;
-        DeathScream.Play();
+        PainScream.Play();
         if (Current_Health <= 0)
         {
+            
             Blood_Animation();
             gm.Turn_Order.Remove(gameObject);
             Instantiate(ragDoll, this.gameObject.transform.position, Quaternion.identity);
+            DeathScream.Play();
             Destroy(gameObject);
             Debug.Log("Dead");
         }

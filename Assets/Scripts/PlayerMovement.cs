@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask shotMask;
     private Transform gfx;
     private Animator animator;
+    public AudioSource Movingup;
 
 
     // Start is called before the first frame update
@@ -94,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
                         //Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
                         Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hit;
+                        //audio goes here
+                        Movingup.Play();
                         //if you click an enemy
                         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                         {
