@@ -128,7 +128,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28572
+  m_Name: pb_Mesh19818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -291,7 +291,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28702
+  m_Name: pb_Mesh19948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -618,7 +618,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28360
+  m_Name: pb_Mesh19606
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1363,7 +1363,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21982
+  m_Name: pb_Mesh19786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4434,9 +4434,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "In this game there are action points known as AP for short each action
-    you perform like walking costs an action point. Each character has 5 AP and Shooting
-    and moving costs 1 AP each. \nClick to continue"
+  m_text: "There are action points known as AP for short. Each action you perform
+    like walking costs an action point. Every character has 5 AP, shooting and moving
+    costs 1 AP each. \nClick to continue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e6b3552f09225f4b9d50b2a90baed30, type: 2}
   m_sharedMaterial: {fileID: 6182779200723862658, guid: 4e6b3552f09225f4b9d50b2a90baed30,
@@ -4482,7 +4482,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 156
+  m_firstOverflowCharacterIndex: 153
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4506,10 +4506,10 @@ MonoBehaviour:
   m_margin: {x: 0.37794676, y: 0, z: 2.469729, w: -1.738121}
   m_textInfo:
     textComponent: {fileID: 783047444}
-    characterCount: 202
+    characterCount: 188
     spriteCount: 0
-    spaceCount: 38
-    wordCount: 38
+    spaceCount: 34
+    wordCount: 34
     linkCount: 0
     lineCount: 4
     pageCount: 1
@@ -7643,7 +7643,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28334
+  m_Name: pb_Mesh19580
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8360,7 +8360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In this game there is a turn order you can see above this tells you who''s
+  m_text: 'There is also a turn order which you can see above, this tells you who''s
     current turn it is and who''s turn is next.
 
     Click to continue'
@@ -8433,10 +8433,10 @@ MonoBehaviour:
   m_margin: {x: -1.9592464, y: 0, z: 0.24774356, w: -1.7038684}
   m_textInfo:
     textComponent: {fileID: 1236484625}
-    characterCount: 134
+    characterCount: 133
     spriteCount: 0
-    spaceCount: 27
-    wordCount: 28
+    spaceCount: 26
+    wordCount: 27
     linkCount: 0
     lineCount: 3
     pageCount: 1
@@ -8633,7 +8633,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28372
+  m_Name: pb_Mesh19618
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9733,7 +9733,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28186
+  m_Name: pb_Mesh19432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10816,7 +10816,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28304
+  m_Name: pb_Mesh19550
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10979,7 +10979,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28628
+  m_Name: pb_Mesh19874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14423,7 +14423,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28802
+  m_Name: pb_Mesh20048
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14637,7 +14637,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: You can Click on the ground to move the player character there will be
-    a green circle that shows a certain radius you can only move wthin.
+    a green circle that shows a certain radius you can only move within.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e6b3552f09225f4b9d50b2a90baed30, type: 2}
   m_sharedMaterial: {fileID: 6182779200723862658, guid: 4e6b3552f09225f4b9d50b2a90baed30,
@@ -14707,7 +14707,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 2.482321, w: 0.93610126}
   m_textInfo:
     textComponent: {fileID: 1534898658}
-    characterCount: 138
+    characterCount: 139
     spriteCount: 0
     spaceCount: 26
     wordCount: 27
@@ -16021,7 +16021,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28224
+  m_Name: pb_Mesh19470
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17004,7 +17004,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28756
+  m_Name: pb_Mesh20002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17968,7 +17968,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28778
+  m_Name: pb_Mesh20024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18182,8 +18182,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Enemies only appear within a certain radius there is one now in red, you
-    can click on the enemy to shoot them but you can only shoot within an enemy when
-    in a certain range.
+    can click on the enemy to shoot them but only when they're enemy when in range
+    of the green circle.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e6b3552f09225f4b9d50b2a90baed30, type: 2}
   m_sharedMaterial: {fileID: 6182779200723862658, guid: 4e6b3552f09225f4b9d50b2a90baed30,
@@ -18253,10 +18253,10 @@ MonoBehaviour:
   m_margin: {x: -4.8963695, y: -2.8730886, z: 15.457997, w: 8.154086}
   m_textInfo:
     textComponent: {fileID: 2073711153}
-    characterCount: 173
+    characterCount: 172
     spriteCount: 0
-    spaceCount: 34
-    wordCount: 35
+    spaceCount: 33
+    wordCount: 34
     linkCount: 0
     lineCount: 3
     pageCount: 1
