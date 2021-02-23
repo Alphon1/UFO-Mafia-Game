@@ -2665,6 +2665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuzzleFlash
       objectReference: {fileID: 0}
+    - target: {fileID: 4448534242482296137, guid: 668f747ff8331ce4d9e7016ed31907cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668f747ff8331ce4d9e7016ed31907cf, type: 3}
 --- !u!198 &8597754166810726718 stripped
