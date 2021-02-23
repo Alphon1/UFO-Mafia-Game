@@ -44,6 +44,7 @@ public class Enemy_Manager : MonoBehaviour
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
 
+        //Finds the linePoints scripts
         linePoints = Game_Manager.gameObject.GetComponent<LinePoints>();
     }
 
