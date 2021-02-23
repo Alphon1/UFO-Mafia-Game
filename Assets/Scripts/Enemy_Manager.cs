@@ -76,7 +76,7 @@ public class Enemy_Manager : MonoBehaviour
         //detects if it's dead and removes it if it is
         if (Current_Health <= 0)
         {
-            //linePoints.enemyTarget = gm.Current_Char;
+            linePoints.enemyTarget = gm.Current_Char;
             gm.Turn_Order.Remove(gameObject);
             Seen_By = 0;
             Destroy(gameObject);

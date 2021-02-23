@@ -123,8 +123,6 @@ public class Player_Character : MonoBehaviour
         Main_camera.SetActive(true);
         //playerCam.SetActive(false);
     }
-
-   
 }
    
 
