@@ -35,11 +35,12 @@ public class Turn_Order_UI : MonoBehaviour
     public void Update_UI()
     {
         for (int i = 0; i < 5; i++)
-        {        
-            if (Game_Manager_Script.Current_Char_Pos + i > Game_Manager_Script.Turn_Order.Count)
+        {
+            if (Game_Manager_Script.Current_Char_Pos + i > (Game_Manager_Script.Turn_Order.Count -1))
             {
-                Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i - Game_Manager_Script.Turn_Order.Count;
-            }
+                Debug.Log("looping char position");
+                Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i - (Game_Manager_Script.Turn_Order.Count - 1);
+            }            
             else
             {
                 Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i;
