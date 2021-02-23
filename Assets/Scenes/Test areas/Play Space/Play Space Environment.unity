@@ -1035,7 +1035,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53674
+  m_Name: pb_Mesh28546
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9779,7 +9779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439718156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -412.73, y: -357.2387, z: 2.2613065}
+  m_LocalPosition: {x: -405.65, y: -358.93, z: 1.44}
   m_LocalScale: {x: 1.0050251, y: 1.0050251, z: 1.0050251}
   m_Children: []
   m_Father: {fileID: 1848141093}
@@ -15518,7 +15518,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.4669e-41, y: 1.01e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -Infinity, y: 0, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -18707,6 +18707,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165739747452143435, guid: b9997ab2c47f2fc42b628ece5097247d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 7.09e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 165739747452143435, guid: b9997ab2c47f2fc42b628ece5097247d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.29e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 165739747452143435, guid: b9997ab2c47f2fc42b628ece5097247d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165739747452143435, guid: b9997ab2c47f2fc42b628ece5097247d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.58e-43
+      objectReference: {fileID: 0}
     - target: {fileID: 1634798997301960387, guid: b9997ab2c47f2fc42b628ece5097247d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19655,6 +19675,7 @@ MonoBehaviour:
   popUps: {fileID: 960540258}
   Turnorder: {fileID: 9067987902202606380}
   Playerobj: {fileID: 1711562542}
+  Optionsmenu: {fileID: 0}
   isPaused: 0
 --- !u!114 &7503918857219159115
 MonoBehaviour:

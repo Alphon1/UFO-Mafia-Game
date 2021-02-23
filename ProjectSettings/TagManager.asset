@@ -7,6 +7,7 @@ TagManager:
   - Tonies
   - Enemy
   - Game_Manager
+  - PostProcessing
   layers:
   - Default
   - TransparentFX

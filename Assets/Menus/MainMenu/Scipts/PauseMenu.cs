@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject popUps;
     public GameObject Turnorder;
     public GameObject Playerobj;
+    public GameObject Optionsmenu;
 
     public bool isPaused;
 
@@ -81,6 +82,11 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
+    }
+
+    public void Options()
+    {
+        Optionsmenu.SetActive(true);
     }
 
     public void Quit()
