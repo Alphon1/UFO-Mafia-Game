@@ -23,7 +23,7 @@ public class EnemyColourChangefortut: MonoBehaviour
     public void OnMouseOver()
     {
         //Checks if it's the player's turn, and the enemy is within range
-        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Character>().Range)
+        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Range)
         {
             
             GetComponent<Renderer>().material = highlightedColour;
@@ -32,7 +32,7 @@ public class EnemyColourChangefortut: MonoBehaviour
                 StartCoroutine(Flash_Healthbar());
             }
         }
-        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Character>().Range)
+        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Range)
         {
 
             GetComponent<Renderer>().material = highlightedColour;
@@ -45,7 +45,7 @@ public class EnemyColourChangefortut: MonoBehaviour
     public void OnMouseExit()
     {
         GetComponent<Renderer>().material = baseMaterial;
-        Health_Bar.value = gameObject.GetComponent<Enemy_Manager>().Current_Health;
+        Health_Bar.value = gameObject.GetComponent<Enemy_Managerfortut>().Current_Health;
         StopCoroutine(Flash_Healthbar());
         Health_Flashing = false;
     }
@@ -56,12 +56,12 @@ public class EnemyColourChangefortut: MonoBehaviour
         if (Health_Visible)
         {
             //simulates the healthbar to if the current character hits this enemy
-            Health_Bar.value = Health_Bar.value - (Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Character>().Damage - Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<PlayerMovement>().damageReduction);
+            Health_Bar.value = Health_Bar.value - (Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Damage - Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<PlayerMovementfortut>().damageReduction);
             Health_Visible = false;
         }
         else
         {
-            Health_Bar.value = gameObject.GetComponent<Enemy_Manager>().Current_Health;
+            Health_Bar.value = gameObject.GetComponent<Enemy_Managerfortut>().Current_Health;
             Health_Visible = true;
         }
         yield return new WaitForSeconds(0.5f);

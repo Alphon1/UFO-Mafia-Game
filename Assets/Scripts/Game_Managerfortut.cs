@@ -51,11 +51,11 @@ public class Game_Managerfortut : MonoBehaviour
             
             playerTurnIndicator.SetActive(true);
             Is_Player_Turn = true;
-            Current_Char.GetComponent<Player_Character>().End_turn();
+            Current_Char.GetComponent<Player_Characterfortut>().End_turn();
         }        
-        if (Current_Char.GetComponent<Player_Character>())
+        if (Current_Char.GetComponent<Player_Characterfortut>())
         {
-            UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+            UpdateAPUI(Current_Char.GetComponent<Player_Characterfortut>().Action_Points);
             
         }
         //Turn_Order_Manager.GetComponent<Turn_Order_UI_fortut>().Update_UI();
@@ -66,7 +66,7 @@ public class Game_Managerfortut : MonoBehaviour
 
    void Update()
     {
-        UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
+        UpdateAPUI(Player_Char.GetComponent<Player_Characterfortut>().Action_Points);
  
 
         if (Is_Player_Turn == true)
@@ -197,11 +197,11 @@ public class Game_Managerfortut : MonoBehaviour
         }
         if (Current_Char.tag == "Player")
         {
-            Current_Char.GetComponent<Player_Character>().End_turn();   
+            Current_Char.GetComponent<Player_Characterfortut>().End_turn();   
         }
         else
         {
-            Current_Char.GetComponent<Enemy_Manager>().End_turn();   
+            Current_Char.GetComponent<Enemy_Managerfortut>().End_turn();   
         }
         Current_Char_Pos += 1;
         if (Current_Char_Pos > Turn_Order.Count - 1)
@@ -220,7 +220,7 @@ public class Game_Managerfortut : MonoBehaviour
             
         }
        
-        UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        UpdateAPUI(Current_Char.GetComponent<Player_Characterfortut>().Action_Points);
         //Turn_Order_Manager.GetComponent<Turn_Order_UI_fortut>().Update_UI();
     }
     public void UpdateAPUI(int APvalue)

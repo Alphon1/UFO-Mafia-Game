@@ -14303,22 +14303,22 @@ PrefabInstance:
     - target: {fileID: 6150821588705224247, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: -0.00002107711
       objectReference: {fileID: 0}
     - target: {fileID: 6150821588705224247, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: -0.000018333812
       objectReference: {fileID: 0}
     - target: {fileID: 6150821588705224247, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: NaN
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6150821588705224247, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0.0000000018773108
+      value: 9.26e-43
       objectReference: {fileID: 0}
     - target: {fileID: 8026839468529582002, guid: 0c270020a10175e468921e7e37db4270,
         type: 3}
@@ -16870,7 +16870,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -190.43481, z: 8.87e-43, w: -98.41809}
+  m_BoundingSphereOverride: {x: 0, y: 4.2476e-41, z: 0, w: -9.193914e+9}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -19297,6 +19297,16 @@ PrefabInstance:
     - target: {fileID: 5152629887922154349, guid: a16cf43c3be865140b35daab8f1d3d5a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452112125938832030, guid: a16cf43c3be865140b35daab8f1d3d5a,
+        type: 3}
+      propertyPath: Max_Health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452112125938832030, guid: a16cf43c3be865140b35daab8f1d3d5a,
+        type: 3}
+      propertyPath: Max_Action_Points
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6873060532263962646, guid: a16cf43c3be865140b35daab8f1d3d5a,
