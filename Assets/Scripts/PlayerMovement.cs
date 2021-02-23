@@ -94,9 +94,10 @@ public class PlayerMovement : MonoBehaviour
                     {
                         //Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
                         Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
+                        
                         RaycastHit hit;
                         //audio goes here
-                        Movingup.Play();
+                        
                         //if you click an enemy
                         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
                         {
@@ -144,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
                                 {
                                     animator.SetBool("isWalking", true);
                                     Moving = true;
+                                    Movingup.Play();
                                     agent.SetDestination(hit.point);
                                     Debug.Log("Valid point");
                                     clickIndicator();

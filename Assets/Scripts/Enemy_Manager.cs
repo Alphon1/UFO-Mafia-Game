@@ -24,6 +24,7 @@ public class Enemy_Manager : MonoBehaviour
     private GameObject Closest_Player;
     private GameObject Game_Manager;
     private Game_Manager gm;
+    private LinePoints linePoints;
 
     //function to reverse if it's this enemy's turn or not
     public void End_turn()
@@ -42,6 +43,9 @@ public class Enemy_Manager : MonoBehaviour
         Seen_By = 0;
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
+
+        //Finds the linePoints scripts
+        linePoints = Game_Manager.gameObject.GetComponent<LinePoints>();
     }
 
     private void Update()
@@ -71,7 +75,8 @@ public class Enemy_Manager : MonoBehaviour
         DeathScream.Play();
         //detects if it's dead and removes it if it is
         if (Current_Health <= 0)
-        {       
+        {
+            //linePoints.enemyTarget = gm.Current_Char;
             gm.Turn_Order.Remove(gameObject);
             Seen_By = 0;
             Destroy(gameObject);
