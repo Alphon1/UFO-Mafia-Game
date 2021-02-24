@@ -20,7 +20,7 @@ public class Turn_Order_UI : MonoBehaviour
     private List<GameObject> Turn_Order_Slots = new List<GameObject>();
     private int Current_Displayed_Char_Pos;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Turn_Order_Slots.Add(Slot1);
         Turn_Order_Slots.Add(Slot2);
@@ -29,8 +29,12 @@ public class Turn_Order_UI : MonoBehaviour
         Turn_Order_Slots.Add(Slot5);     
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         Game_Manager_Script = Game_Manager.GetComponent<Game_Manager>();
-      
 
+    }
+
+    private void Start()
+    {
+        Update_UI();
     }
     public void Update_UI()
     {
@@ -39,7 +43,7 @@ public class Turn_Order_UI : MonoBehaviour
             if (Game_Manager_Script.Current_Char_Pos + i > (Game_Manager_Script.Turn_Order.Count -1))
             {
                 Debug.Log("looping char position");
-                Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i - (Game_Manager_Script.Turn_Order.Count - 1);
+                Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i - (Game_Manager_Script.Turn_Order.Count);
             }            
             else
             {

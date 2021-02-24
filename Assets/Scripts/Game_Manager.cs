@@ -23,7 +23,7 @@ public class Game_Manager : MonoBehaviour
     private GameObject Turn_Order_Manager;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         linePoints = this.gameObject.GetComponent<LinePoints>();
 
@@ -59,8 +59,6 @@ public class Game_Manager : MonoBehaviour
         {
             UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
         }
-        Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
-
     }
 
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
