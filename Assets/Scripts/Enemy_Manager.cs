@@ -25,6 +25,8 @@ public class Enemy_Manager : MonoBehaviour
     private GameObject Game_Manager;
     private Game_Manager gm;
     private LinePoints linePoints;
+    [SerializeField]
+    private GameObject Model;
 
     //function to reverse if it's this enemy's turn or not
     public void End_turn()
@@ -53,17 +55,17 @@ public class Enemy_Manager : MonoBehaviour
         //turns the enemy visible if the player chars can see it
         if (Seen_By > 0)
         {
-            if (gameObject.GetComponent<Renderer>().enabled == false)
+            if (Model.activeSelf == false)
             {
-                gameObject.GetComponent<Renderer>().enabled = true;
+                Model.SetActive(true);
                 healthBar.gameObject.SetActive(true);
             }
         }
         else
         {
-            if (gameObject.GetComponent<Renderer>().enabled == true)
+            if (Model.activeSelf == true)
             {
-                gameObject.GetComponent<Renderer>().enabled = false;
+                Model.SetActive(true);
                 healthBar.gameObject.SetActive(false);
             }
         }
