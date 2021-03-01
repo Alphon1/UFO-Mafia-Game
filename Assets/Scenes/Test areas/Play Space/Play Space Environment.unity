@@ -372,6 +372,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!43 &187737437
@@ -380,7 +390,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58940
+  m_Name: pb_Mesh36992
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -966,7 +976,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh59112
+  m_Name: pb_Mesh37164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1369,17 +1379,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 04000000
-  m_SelectedEdges:
-  - a: 16
-    b: 17
-  - a: 18
-    b: 16
-  - a: 17
-    b: 19
-  - a: 19
-    b: 18
-  m_SelectedVertices: 10000000110000001200000013000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &327655990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1518,6 +1520,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Crate_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d37a5b1f3d0b394a83e07cdb04b7e08,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d37a5b1f3d0b394a83e07cdb04b7e08,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d37a5b1f3d0b394a83e07cdb04b7e08, type: 3}
 --- !u!1001 &375265889
@@ -1612,6 +1624,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_Pillar_Corner
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e9275cf03bc4164fbd78887af043d1e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e9275cf03bc4164fbd78887af043d1e,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e9275cf03bc4164fbd78887af043d1e, type: 3}
 --- !u!1001 &404877314
@@ -1705,6 +1727,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -2567,6 +2599,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Crate_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21742e1d7c9e7c940b35e1db10e12dd9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21742e1d7c9e7c940b35e1db10e12dd9,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21742e1d7c9e7c940b35e1db10e12dd9, type: 3}
 --- !u!1001 &659823587
@@ -2660,6 +2702,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -2986,6 +3038,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_Pillar_Corner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e9275cf03bc4164fbd78887af043d1e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e9275cf03bc4164fbd78887af043d1e,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e9275cf03bc4164fbd78887af043d1e, type: 3}
@@ -4306,6 +4368,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -5791,6 +5863,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!1 &946996018
@@ -6415,6 +6497,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!1 &1069931644
@@ -6540,6 +6632,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!1001 &1102213857
@@ -6628,6 +6730,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Crate_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e8693f4066ef75249b8f5798fd548bfb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e8693f4066ef75249b8f5798fd548bfb,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8693f4066ef75249b8f5798fd548bfb, type: 3}
@@ -6722,6 +6834,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -7644,6 +7766,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!1001 &1247266028
@@ -7737,6 +7869,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -8185,6 +8327,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -9703,7 +9855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439718156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -411.1915, y: -357.5851, z: 0.7446809}
+  m_LocalPosition: {x: -405.38, y: -357.5851, z: 0.7446809}
   m_LocalScale: {x: 1.0050251, y: 1.0050251, z: 1.0050251}
   m_Children: []
   m_Father: {fileID: 1848141093}
@@ -9800,6 +9952,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -10441,6 +10603,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -11548,6 +11720,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!1 &1754249138
@@ -11777,6 +11959,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Crate_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc22da6322508cc408718cc7b791c972,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc22da6322508cc408718cc7b791c972,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc22da6322508cc408718cc7b791c972, type: 3}
@@ -12265,17 +12457,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 04000000
-  m_SelectedEdges:
-  - a: 16
-    b: 17
-  - a: 18
-    b: 16
-  - a: 17
-    b: 19
-  - a: 19
-    b: 18
-  m_SelectedVertices: 10000000110000001200000013000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &1907749890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12428,6 +12612,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
@@ -12598,6 +12792,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}
 --- !u!1 &1948789984
@@ -12750,7 +12954,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: 2.7107536e-20, w: 7.737127e+25}
+  m_BoundingSphereOverride: {x: 0, y: 3.9999e-41, z: 0, w: 0.000000053551048}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -13463,6 +13667,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wall_with_Pillar (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 500c5756622aea249acbd0737d6b53f5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c5756622aea249acbd0737d6b53f5, type: 3}

@@ -1340,6 +1340,10 @@ MonoBehaviour:
   APMenu: {fileID: 8302906043714983643}
   tutorialMenu: {fileID: 8302906043031474632}
   Playercounter: {fileID: 8302906042773181738}
+  popUps: {fileID: 0}
+  Turnorder: {fileID: 0}
+  Playerobj: {fileID: 0}
+  Optionsmenu: {fileID: 0}
   isPaused: 0
 --- !u!1 &1953048757271427150
 GameObject:
@@ -1618,7 +1622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1953048757472830555
 RectTransform:
   m_ObjectHideFlags: 0
