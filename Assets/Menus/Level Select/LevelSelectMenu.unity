@@ -2261,12 +2261,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "WORK IN PROGRESS\nListen closely, this ain't the type of job you want
-        to be screwin' around with.\r\nWe got word of some of them Paper Boys hustling
-        in on our turf, using a piece of that new space tech to collect our protection
-        payments down on broad street with nothin' we can do about it. But now we
-        got some tech of our own, and the boss wants you boys to give it a test run.
-        We found the rat's nest a block over on the top floor of an apartment building
-        and we're sending you to exterminate them, you understand? \n"
+        to be screwin' around with.\r\nA little birdie told us some of them Paper
+        Boys are hustling in on our turf, using a piece of that new space tech to
+        collect our protection payments down on broad street with nothin' we can
+        do about it. But now we got some tech of our own, and the boss wants you
+        boys to give it a test run. We found the rat's nest a block over on the top
+        floor of an apartment building and we're sending you to exterminate them,
+        you understand? \n"
       objectReference: {fileID: 0}
     - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
@@ -2620,10 +2621,9 @@ PrefabInstance:
         We''ve got word on a g-man down in Mud Lane
         looking to cut a deal on some government gear. He won''t say what he''s got
         but our ears in city hall say he''s good for it, say he''s done clean deals
-        out of state before. But this is new, something even the top boys don''t
-        know about. Go check him out and see what he''s pushing, but watch yourselves.
-        He ain''t exactly subtle so we weren''t the only one to sniff him out. Get
-        down there and make it quick.
+        out of state before.  Go check him out and see what he''s pushing, but watch
+        yourselves. We weren''t the only ones looking for him. Take out the competetion
+        and nab the gear, send a message to those boys trying to push in on our turf.
 
 '
       objectReference: {fileID: 0}
