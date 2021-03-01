@@ -42,7 +42,6 @@ public class Turn_Order_UI : MonoBehaviour
         {
             if (Game_Manager_Script.Current_Char_Pos + i > (Game_Manager_Script.Turn_Order.Count -1))
             {
-                Debug.Log("looping char position");
                 Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i - (Game_Manager_Script.Turn_Order.Count);
             }            
             else

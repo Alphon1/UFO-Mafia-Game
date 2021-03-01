@@ -42,7 +42,7 @@ public class Enemy_Movement : MonoBehaviour
                     if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                     {
                         Moving = false;
-                        animator.SetBool("isWalking", false);
+                        animator.SetBool("isWalking", false);                    
                     }
                 }
             }
