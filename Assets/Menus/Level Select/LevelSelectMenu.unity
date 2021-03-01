@@ -382,7 +382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 740, y: 293.15}
+  m_AnchoredPosition: {x: 740, y: 353}
   m_SizeDelta: {x: 256.5271, y: 63.43409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597838287
@@ -603,7 +603,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: def28c6f513a6684dba0bb3778c5df7b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.303
   m_Pitch: 1
@@ -707,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &965427713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1284371803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1658,7 +1658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 740, y: 388}
+  m_AnchoredPosition: {x: 740, y: 447}
   m_SizeDelta: {x: 256.5271, y: 63.43409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690823020
@@ -2260,29 +2260,68 @@ PrefabInstance:
     - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
       propertyPath: m_text
-      value: "WORK IN PROGRESS\nListen closely, this ain't the type of job you want
-        to be screwin' around with.\r\nA little birdie told us some of them Paper
-        Boys are hustling in on our turf, using a piece of that new space tech to
-        collect our protection payments down on broad street with nothin' we can
-        do about it. But now we got some tech of our own, and the boss wants you
-        boys to give it a test run. We found the rat's nest a block over on the top
-        floor of an apartment building and we're sending you to exterminate them,
-        you understand? \n"
+      value: "Listen closely, this ain't the type of job you want to be screwin'
+        around with.\r\nA little birdie told us some of them Paper Boys are hustling
+        in on our turf, using a piece of that new space tech to collect our protection
+        payments down on broad street with nothin' we can do about it. But now we
+        got some tech of our own, and the boss wants you boys to give it a test run.
+        We found the rat's nest a block over on the top floor of an apartment building
+        and we're sending you to exterminate them, you understand? \n"
       objectReference: {fileID: 0}
     - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 27.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 511
+      objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 900071384214229688, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1392777008377479392, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
       propertyPath: m_text
-      value: Broad Stree - Rat Poison
+      value: Broad Street - Rat Poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392777008377479392, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2416196286548004364, guid: 81e4d0355ee8d524baad254fdd05e305,
         type: 3}
       propertyPath: m_Name
       value: mission brief 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416196286548004364, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162100883964623132, guid: 81e4d0355ee8d524baad254fdd05e305,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81e4d0355ee8d524baad254fdd05e305, type: 3}

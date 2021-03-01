@@ -30,7 +30,7 @@ public class buttonscript : MonoBehaviour
     }
     public void Credits()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
     public void BacktoMenu()
     {
