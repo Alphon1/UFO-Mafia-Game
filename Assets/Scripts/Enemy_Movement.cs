@@ -19,6 +19,7 @@ public class Enemy_Movement : MonoBehaviour
     private bool Moving;
     private float Distance_To_Closest_Player = 50;
     private GameObject Closest_Player;
+    private Animator animator;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Enemy_Movement : MonoBehaviour
         gm = Game_Manager.GetComponent<Game_Manager>();
         shotMask = LayerMask.GetMask("Default");
         coverMask = LayerMask.GetMask("Cover");
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -40,6 +42,7 @@ public class Enemy_Movement : MonoBehaviour
                     if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                     {
                         Moving = false;
+                        animator.SetBool("isWalking", false);
                     }
                 }
             }
@@ -74,6 +77,7 @@ public class Enemy_Movement : MonoBehaviour
                         //Checks to see if the enemies target position is closer to the players
                         if (Vector3.Distance(agent.transform.position, P_Team.transform.position) > Vector3.Distance(Target, P_Team.transform.position))
                         {
+                            animator.SetBool("isWalking", true);
                             Moving = true;
                             agent.SetDestination(Target);
                             Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
