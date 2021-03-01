@@ -248,6 +248,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1427822433143005862, guid: 3890342c67321c940b8cf8cf8633a157,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1516103058379743168, guid: 3890342c67321c940b8cf8cf8633a157,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -373,6 +378,22 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5201552382243562761, guid: 3890342c67321c940b8cf8cf8633a157,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201552382243562761, guid: 3890342c67321c940b8cf8cf8633a157,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533708717371811760, guid: 3890342c67321c940b8cf8cf8633a157,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9acf61c07ba93244d9a550656396d72f,
+        type: 3}
     - target: {fileID: 6716518614706886673, guid: 3890342c67321c940b8cf8cf8633a157,
         type: 3}
       propertyPath: m_textInfo.characterCount
