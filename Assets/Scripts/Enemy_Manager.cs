@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 
 public class Enemy_Manager : MonoBehaviour
@@ -81,6 +82,13 @@ public class Enemy_Manager : MonoBehaviour
             linePoints.enemyTarget = gm.Current_Char;
             gm.Turn_Order.Remove(gameObject);
             Seen_By = 0;
+            //if all enemies are dead
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
+            {
+                //go to level select
+                SceneManager.LoadScene(1);
+                Time.timeScale = 1f;
+            }
             Destroy(gameObject);
             Debug.Log("Dead");
         }

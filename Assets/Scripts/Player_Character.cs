@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 using UnityEngine.VFX;
+using UnityEngine.SceneManagement;
 public class Player_Character : MonoBehaviour
 {
     public int Range;
@@ -95,6 +96,12 @@ public class Player_Character : MonoBehaviour
             gm.Turn_Order.Remove(gameObject);
             Instantiate(ragDoll, this.gameObject.transform.position, Quaternion.identity);
             DeathScream.Play();
+            if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+            {
+                //go to level select
+                SceneManager.LoadScene(1);
+                Time.timeScale = 1f;
+            }
             Destroy(gameObject);
             Debug.Log("Dead");
         }

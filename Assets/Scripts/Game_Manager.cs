@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 public class Game_Manager : MonoBehaviour
@@ -64,13 +63,6 @@ public class Game_Manager : MonoBehaviour
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
     public void Turn_End()
     {
-        //if all enemies are dead
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
-        {
-            //go to level select
-            SceneManager.LoadScene(1);
-            Time.timeScale = 1f;
-        }
         if (Current_Char.tag == "Player")
         {
             Current_Char.GetComponent<Player_Character>().End_turn();   
