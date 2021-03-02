@@ -98,9 +98,7 @@ public class Player_Character : MonoBehaviour
             DeathScream.Play();
             if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
             {
-                //go to level select
-                SceneManager.LoadScene(1);
-                Time.timeScale = 1f;
+                gm.End_Game(false);
             }
             Destroy(gameObject);
             Debug.Log("Dead");

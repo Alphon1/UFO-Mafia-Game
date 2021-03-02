@@ -20,6 +20,10 @@ public class Game_Manager : MonoBehaviour
     private LinePoints linePoints;
     [SerializeField]
     private GameObject Turn_Order_Manager;
+    [SerializeField]
+    private GameObject End_Text;
+    [SerializeField]
+    private GameObject End_Screen;
 
     // Start is called before the first frame update
     void Awake()
@@ -60,6 +64,18 @@ public class Game_Manager : MonoBehaviour
         }
     }
 
+    public void End_Game(bool Victory)
+    {
+        End_Screen.SetActive(true);
+        if (Victory)
+        {
+            End_Text.GetComponent<TextMeshProUGUI>().text = "VICTORY";
+        }
+        else
+        {
+            End_Text.GetComponent<TextMeshProUGUI>().text = "DEFEAT";
+        }
+    }
     //is called when the end turn button is pressed, disables control of the current character and enables it for the next
     public void Turn_End()
     {

@@ -85,9 +85,7 @@ public class Enemy_Manager : MonoBehaviour
             //if all enemies are dead
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
             {
-                //go to level select
-                SceneManager.LoadScene(1);
-                Time.timeScale = 1f;
+                gm.End_Game(true);
             }
             Destroy(gameObject);
             Debug.Log("Dead");
