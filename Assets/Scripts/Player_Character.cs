@@ -7,7 +7,8 @@ using UnityEngine.VFX;
 using UnityEngine.SceneManagement;
 public class Player_Character : MonoBehaviour
 {
-    public int Range;
+    public int Move_Range;
+    public int Shoot_Range;
     public VisualEffect blood;
     public AudioSource PainScream;
     public AudioSource DeathScream;
@@ -39,7 +40,7 @@ public class Player_Character : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
-        Action_Range_Indicator.transform.localScale = new Vector3(Range * 2, 0, Range * 2);
+        Action_Range_Indicator.transform.localScale = new Vector3(Move_Range *2, 0, Move_Range*2);
         Current_Health = Max_Health;
     }
 
@@ -139,14 +140,14 @@ public class Player_Character : MonoBehaviour
         if (Is_Attacking)
         {
             Is_Attacking = !Is_Attacking;
-            Range = Range / 2;
+            Action_Range_Indicator.transform.localScale = new Vector3(Move_Range*2, 0, Move_Range*2);
         }
         else
         {
             Is_Attacking = !Is_Attacking;
-            Range = Range * 2;
+            Action_Range_Indicator.transform.localScale = new Vector3(Shoot_Range * 2, 0, Shoot_Range * 2);
         }
-        Action_Range_Indicator.transform.localScale = new Vector3(Range * 2, 0, Range * 2);
+        
     }
 }
    

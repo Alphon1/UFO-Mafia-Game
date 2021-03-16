@@ -697,7 +697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc2f9eb40f965e4ba05c5f5c475dbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 10
+  Move_Range: 10
+  Shoot_Range: 20
   blood: {fileID: 9191302010364701914}
   PainScream: {fileID: 4133585786393334009}
   DeathScream: {fileID: 3272781407204226962}
