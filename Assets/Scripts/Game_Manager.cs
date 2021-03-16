@@ -11,6 +11,9 @@ public class Game_Manager : MonoBehaviour
     public List<GameObject> Turn_Order = new List<GameObject>();
     public GameObject playerTurnIndicator;
     public GameObject enemyTurnIndicator;
+    public GameObject APMenu;
+    public GameObject Turnorder;
+    public GameObject Playercounter;
     private NavMeshObstacle navMO;
     private int Random_Int;
     private GameObject Temp_Char;    
@@ -71,10 +74,16 @@ public class Game_Manager : MonoBehaviour
         End_Screen.SetActive(true);
         if (Victory)
         {
+            APMenu.SetActive(false);
+            Turnorder.SetActive(false);
+            Playercounter.SetActive(false);
             End_Text.GetComponent<TextMeshProUGUI>().text = "VICTORY";
         }
         else
         {
+            APMenu.SetActive(false);
+            Turnorder.SetActive(false);
+            Playercounter.SetActive(false);
             End_Text.GetComponent<TextMeshProUGUI>().text = "DEFEAT";
         }
     }
