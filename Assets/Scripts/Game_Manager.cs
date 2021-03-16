@@ -112,6 +112,7 @@ public class Game_Manager : MonoBehaviour
         }
         Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
         UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        Mode_Change_Button_Text.text = "Attack";
     }
     public void UpdateAPUI(int APvalue)
     {

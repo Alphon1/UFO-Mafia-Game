@@ -74,6 +74,10 @@ public class Player_Character : MonoBehaviour
             Action_Points = Max_Action_Points;
             Action_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = true;
+            if (Is_Attacking)
+            {
+                Switch_Action();
+            }
             //Cursor.lockState = CursorLockMode.Confined;
         }
         else
