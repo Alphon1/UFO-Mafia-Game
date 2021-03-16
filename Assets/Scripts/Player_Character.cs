@@ -23,13 +23,14 @@ public class Player_Character : MonoBehaviour
     [SerializeField]
     private int Max_Action_Points;
     [SerializeField]
-    private GameObject Mov_Range_Indicator;
+    private GameObject Action_Range_Indicator;
     public GameObject playerCam;
     private GameObject Main_camera;
     [SerializeField]
     private Slider healthBar;
     private GameObject Game_Manager;
     private Game_Manager gm;
+    public bool Is_Attacking;
     
 
 
@@ -38,7 +39,7 @@ public class Player_Character : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Manager>();
-                
+        Action_Range_Indicator.transform.localScale = new Vector3(Range * 2, 0, Range * 2);
         Current_Health = Max_Health;
     }
 
@@ -71,13 +72,13 @@ public class Player_Character : MonoBehaviour
         if (isyourturn)
         {
             Action_Points = Max_Action_Points;
-            Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
+            Action_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = true;
             //Cursor.lockState = CursorLockMode.Confined;
         }
         else
         {
-            Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
+            Action_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = false;
             //Cursor.lockState = CursorLockMode.None;
         }
@@ -127,6 +128,21 @@ public class Player_Character : MonoBehaviour
         playerCam.GetComponentInChildren<CinemachineFreeLook>(enabled).enabled = false;
         Main_camera.SetActive(true);
         //playerCam.SetActive(false);
+    }
+
+    public void Switch_Action()
+    {
+        if (Is_Attacking)
+        {
+            Is_Attacking = !Is_Attacking;
+            Range = Range / 2;
+        }
+        else
+        {
+            Is_Attacking = !Is_Attacking;
+            Range = Range * 2;
+        }
+        Action_Range_Indicator.transform.localScale = new Vector3(Range * 2, 0, Range * 2);
     }
 }
    

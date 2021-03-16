@@ -24,6 +24,8 @@ public class Game_Manager : MonoBehaviour
     private GameObject End_Text;
     [SerializeField]
     private GameObject End_Screen;
+    [SerializeField]
+    private Text Mode_Change_Button_Text;
 
     // Start is called before the first frame update
     void Awake()
@@ -115,5 +117,20 @@ public class Game_Manager : MonoBehaviour
     {
         txt.text = APvalue.ToString();
         
+    }
+    public void Change_Player_Mode()
+    {
+        if (Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Character>().Switch_Action();
+            if (Mode_Change_Button_Text.text == "Attack")
+            {
+                Mode_Change_Button_Text.text = "Move";
+            }
+            else
+            {
+                Mode_Change_Button_Text.text = "Attack";
+            }
+        }
     }
 }

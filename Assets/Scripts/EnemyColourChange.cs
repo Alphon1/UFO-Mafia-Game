@@ -24,8 +24,8 @@ public class EnemyColourChange : MonoBehaviour
 
     public void OnMouseOver()
     {
-        //Checks if it's the player's turn, and the enemy is within range
-        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Manager>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Manager>().Current_Char.GetComponent<Player_Character>().Range)
+        //Checks if it's the player's turn, and the enemy is within range, and the player is in attack mode
+        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Manager>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Manager>().Current_Char.GetComponent<Player_Character>().Range && Game_Manager.GetComponent<Game_Manager>().Current_Char.GetComponent<Player_Character>().Is_Attacking)
         {
             linePoints.enemyTarget = this.gameObject;
             GetComponent<Renderer>().material = highlightedColour;
