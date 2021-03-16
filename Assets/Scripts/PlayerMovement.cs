@@ -70,24 +70,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player_Char.GetComponent<Player_Character>().isyourturn)
+        if (Moving == true)
         {
-            if (Moving == true)
+            if (!agent.pathPending)
             {
-                if (!agent.pathPending)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    //if (agent.remainingDistance <= agent.stoppingDistance)
-                    //{
-                        if (agent.velocity.sqrMagnitude == 0f)
-                        {
-                            Moving = false;
-                            animator.SetBool("isWalking", false);
-                        }
-                    //}
+                    if (agent.velocity.sqrMagnitude == 0f)
+                    {
+                        Moving = false;
+                        animator.SetBool("isWalking", false);
+                    }
                 }
             }
-            else
-            {
+        }
+        if (Player_Char.GetComponent<Player_Character>().isyourturn)
+        {
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (EventSystem.current.IsPointerOverGameObject())
@@ -173,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
                         Debug.Log("Out of AP");
                     }
                 }
-            }
+            //}
         }
     }
 
