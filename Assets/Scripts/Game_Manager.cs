@@ -111,7 +111,14 @@ public class Game_Manager : MonoBehaviour
             Is_Player_Turn = false;
         }
         Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
-        UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        if (Current_Char.tag == "Player")
+        {
+            UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        }
+        else
+        {
+            UpdateAPUI(Current_Char.GetComponent<Enemy_Manager>().Action_Points);
+        }
         Mode_Change_Button_Text.text = "Attack";
     }
     public void UpdateAPUI(int APvalue)
