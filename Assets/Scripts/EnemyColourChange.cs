@@ -19,7 +19,7 @@ public class EnemyColourChange : MonoBehaviour
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         Game_Manager_Script = Game_Manager.GetComponent<Game_Manager>();
         linePoints = Game_Manager.GetComponent<LinePoints>();
-        Health_Bar = gameObject.GetComponentInChildren<Slider>();
+        Health_Bar = gameObject.GetComponentInChildren<Slider>(true);
     }
 
     public void OnMouseOver()
