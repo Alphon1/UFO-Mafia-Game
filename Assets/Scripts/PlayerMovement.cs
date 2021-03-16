@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
-
 
     public UnityEngine.AI.NavMeshAgent agent;
     public Camera MainCamera;
@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     private Transform gfx;
     private Animator animator;
     public AudioSource Movingup;
+    private bool blocked = false;
+    private NavMeshHit navHit;
 
 
     // Start is called before the first frame update
@@ -74,14 +76,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (!agent.pathPending)
                 {
-                    if (agent.remainingDistance <= agent.stoppingDistance)
-                    {
-                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                    //if (agent.remainingDistance <= agent.stoppingDistance)
+                    //{
+                        if (agent.velocity.sqrMagnitude == 0f)
                         {
                             Moving = false;
                             animator.SetBool("isWalking", false);
                         }
-                    }
+                    //}
                 }
             }
             else
@@ -115,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
                                         Debug.Log("Damage Reduced");
                                     }
                                     //checks if the selected enemy is in range
-                                    if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Range)
+                                    if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Shoot_Range)
                                     {
                                         animator.SetTrigger("Shoot");
                                         Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
@@ -145,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
                                 {
                                     if (Player_Char.GetComponent<Player_Character>().Is_Attacking == false)
                                     {
-                                        if (Vector3.Distance(Player_Char.transform.position, hit.point) < gameObject.GetComponent<Player_Character>().Range)
+                                        if (Vector3.Distance(Player_Char.transform.position, hit.point) < gameObject.GetComponent<Player_Character>().Move_Range)
                                         {
                                             animator.SetBool("isWalking", true);
                                             Moving = true;
