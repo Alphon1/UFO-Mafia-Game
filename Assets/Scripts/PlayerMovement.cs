@@ -86,22 +86,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Player_Char.GetComponent<Player_Character>().isyourturn)
         {
-            //if (Moving == true)
-            //{
-                //if (!agent.pathPending)
-                //{
-                    //if (agent.remainingDistance <= agent.stoppingDistance)
-                    //{
-                        //if (agent.velocity.sqrMagnitude == 0f)
-                        //{
-                            //Moving = false;
-                            //animator.SetBool("isWalking", false);
-                        //}
-                    //}
-                //}
-            //}
-            //else
-            //{
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (EventSystem.current.IsPointerOverGameObject())
