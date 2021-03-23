@@ -32,7 +32,10 @@ public class Player_Character : MonoBehaviour
     private GameObject Game_Manager;
     private Game_Manager gm;
     public bool Is_Attacking;
-    
+    [SerializeField]
+    private Material Move_Circle;
+    [SerializeField]
+    private Material Attack_Circle;
 
 
 
@@ -141,11 +144,13 @@ public class Player_Character : MonoBehaviour
         {
             Is_Attacking = !Is_Attacking;
             Action_Range_Indicator.transform.localScale = new Vector3(Move_Range*2, 0, Move_Range*2);
+            Action_Range_Indicator.GetComponent<MeshRenderer>().material = Move_Circle;
         }
         else
         {
             Is_Attacking = !Is_Attacking;
             Action_Range_Indicator.transform.localScale = new Vector3(Shoot_Range * 2, 0, Shoot_Range * 2);
+            Action_Range_Indicator.GetComponent<MeshRenderer>().material = Attack_Circle;
         }
         
     }

@@ -713,6 +713,8 @@ MonoBehaviour:
   playerCam: {fileID: 9186159161292601827}
   healthBar: {fileID: 8026839468105863092}
   Is_Attacking: 0
+  Move_Circle: {fileID: 2100000, guid: 6f48fcd6bad136a409de8a80baa08de3, type: 2}
+  Attack_Circle: {fileID: 2100000, guid: cd992f7de2554a04ebd2d8fb08604ff1, type: 2}
 --- !u!82 &4133585786393334009
 AudioSource:
   m_ObjectHideFlags: 0
