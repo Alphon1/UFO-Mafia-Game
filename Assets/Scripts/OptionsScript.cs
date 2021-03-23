@@ -7,15 +7,44 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class OptionsScript : MonoBehaviour
 {
-   // public GameObject Postprocessing;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Postprocessing = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<Volume>
-    }
 
-    void BlackandWhiteMode()
+    public GameObject scoutscreen;
+    public GameObject allrounderscreen;
+    public GameObject Tankscreen;
+    public GameObject Sniperscreen;
+    public GameObject Charselectscreen;
+    public void Scoutscreen()
+    {
+        scoutscreen.SetActive(true);
+        Charselectscreen.SetActive(false);
+    }
+    public void AllRounderscreen()
+    {
+        allrounderscreen.SetActive(true);
+        Charselectscreen.SetActive(false);
+    }
+    public void tankscreen()
+    {
+        Tankscreen.SetActive(true);
+        Charselectscreen.SetActive(false);
+    }
+    public void sniperScreen()
+    {
+        Sniperscreen.SetActive(true);
+        Charselectscreen.SetActive(false);
+    }
+    public void BacktoCharinfomenu()
+    {
+        scoutscreen.SetActive(false);
+        allrounderscreen.SetActive(false);
+        Tankscreen.SetActive(false);
+        Sniperscreen.SetActive(false);
+        Charselectscreen.SetActive(true);
+    }
+    public void Backtopausemenu()
     {
         
+        Charselectscreen.SetActive(false);
+
     }
 }

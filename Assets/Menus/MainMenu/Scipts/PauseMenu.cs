@@ -14,7 +14,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject popUps;
     public GameObject Turnorder;
     public GameObject Playerobj;
-    public GameObject Optionsmenu;
+    public GameObject Characterinfomenu;
+    public GameObject playerturnicon;
+    public GameObject enemyturnicon;
 
     public bool isPaused;
 
@@ -53,6 +55,8 @@ public class PauseMenu : MonoBehaviour
                 popUps.SetActive(false);
                 Turnorder.SetActive(false);
                 Playerobj.SetActive(false);
+                playerturnicon.SetActive(false);
+                enemyturnicon.SetActive(false);
 
                 Time.timeScale = 0f;
             }
@@ -69,6 +73,8 @@ public class PauseMenu : MonoBehaviour
         popUps.SetActive(true);
         Turnorder.SetActive(true);
         Playerobj.SetActive(true);
+        playerturnicon.SetActive(true);
+        enemyturnicon.SetActive(true);
 
         Time.timeScale = 1f;
     }
@@ -84,9 +90,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Options()
+    public void Characterinfomenubutton()
     {
-        Optionsmenu.SetActive(true);
+        Characterinfomenu.SetActive(true);
     }
 
     public void Quit()
