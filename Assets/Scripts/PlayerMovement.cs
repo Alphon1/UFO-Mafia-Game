@@ -70,108 +70,106 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player_Char.GetComponent<Player_Character>().isyourturn)
+        if (Moving == true)
         {
-            if (Moving == true)
+            if (!agent.pathPending)
             {
-                if (!agent.pathPending)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    //if (agent.remainingDistance <= agent.stoppingDistance)
-                    //{
-                        if (agent.velocity.sqrMagnitude == 0f)
-                        {
-                            Moving = false;
-                            animator.SetBool("isWalking", false);
-                        }
-                    //}
+                    if (agent.velocity.sqrMagnitude == 0f)
+                    {
+                        Moving = false;
+                        animator.SetBool("isWalking", false);
+                    }
                 }
             }
-            else
+        }
+
+        if (Player_Char.GetComponent<Player_Character>().isyourturn)
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                if (Input.GetMouseButtonDown(0))
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
+                if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
                 {
-                    if (EventSystem.current.IsPointerOverGameObject())
-                        return;
-                    if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
-                    {
-                        //Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
-                        Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
+                    //Ray ray = Player_Char.GetComponent<Player_Character>().Player_cam.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
                         
-                        RaycastHit hit;
-                        //audio goes here
-                        //if you click an enemy
-                        if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
+                    RaycastHit hit;
+                    //audio goes here
+                    //if you click an enemy
+                    if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Enemy")
+                    {
+                        if (Player_Char.GetComponent<Player_Character>().Is_Attacking)
                         {
-                            if (Player_Char.GetComponent<Player_Character>().Is_Attacking)
+                            //muzzle flash goes here
+                            muzzleFlash();
+                            Gunsound.Play();
+                            //checks if there's nothing in the way of the attack
+                            if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, shotMask))
                             {
-                                //muzzle flash goes here
-                                muzzleFlash();
-                                Gunsound.Play();
-                                //checks if there's nothing in the way of the attack
-                                if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, shotMask))
+                                damageReduced = 0;
+                                if (Physics.Linecast(Player_Char.transform.position, hit.transform.position, coverMask))
                                 {
-                                    damageReduced = 0;
-                                    if (Physics.Linecast(Player_Char.transform.position, hit.transform.position, coverMask))
-                                    {
-                                        damageReduced = damageReduction;
-                                        Debug.Log("Damage Reduced");
-                                    }
-                                    //checks if the selected enemy is in range
-                                    if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Shoot_Range)
-                                    {
-                                        animator.SetTrigger("Shoot");
-                                        Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
-                                        Debug.Log("attacked AP");
-                                        //Update UI here
-                                        gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
-                                        Attack(hit);
-                                        GameObject bulletObject = Instantiate(bulletPrefab);
-                                        bulletObject.transform.position = gun.transform.position + gun.transform.forward;
-                                        bulletObject.transform.forward = gun.transform.forward;
-                                    }
-                                    else
-                                    {
-                                        Debug.Log("Out of Range");
-                                    }
+                                    damageReduced = damageReduction;
+                                    Debug.Log("Damage Reduced");
+                                }
+                                //checks if the selected enemy is in range
+                                if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Character>().Shoot_Range)
+                                {
+                                    animator.SetTrigger("Shoot");
+                                    Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+                                    Debug.Log("attacked AP");
+                                    //Update UI here
+                                    gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
+                                    Attack(hit);
+                                    GameObject bulletObject = Instantiate(bulletPrefab);
+                                    bulletObject.transform.position = gun.transform.position + gun.transform.forward;
+                                    bulletObject.transform.forward = gun.transform.forward;
                                 }
                                 else
                                 {
-                                    Debug.Log("Something's in the way");
+                                    Debug.Log("Out of Range");
                                 }
-                                coverDetect.gameObject.transform.localPosition = new Vector3(0, 100, 0);
                             }
-                        }
-                        else if (Physics.Raycast(ray, out hit))
-                        {
-                                if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
-                                {
-                                    if (Player_Char.GetComponent<Player_Character>().Is_Attacking == false)
-                                    {
-                                        if (Vector3.Distance(Player_Char.transform.position, hit.point) < gameObject.GetComponent<Player_Character>().Move_Range)
-                                        {
-                                            animator.SetBool("isWalking", true);
-                                            Moving = true;
-                                            Movingup.Play();
-                                            agent.SetDestination(hit.point);
-                                            Debug.Log("Valid point");
-                                            clickIndicator();
-                                            Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
-                                            //Update UI here
-                                            gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
-                                            End_if_0ap();
-                                        }
-                                        else
-                                        {
-                                            Debug.Log("Invaild point");
-                                        }
-                                    }
-                                }                           
+                            else
+                            {
+                                Debug.Log("Something's in the way");
+                            }
+                            coverDetect.gameObject.transform.localPosition = new Vector3(0, 100, 0);
                         }
                     }
-                    else
+                    else if (Physics.Raycast(ray, out hit))
                     {
-                        Debug.Log("Out of AP");
+                        if (Player_Char.GetComponent<Player_Character>().Action_Points > 0)
+                        {
+                            if (Player_Char.GetComponent<Player_Character>().Is_Attacking == false)
+                            {
+                                if (Vector3.Distance(Player_Char.transform.position, hit.point) < gameObject.GetComponent<Player_Character>().Move_Range)
+                                {
+                                    animator.SetBool("isWalking", true);
+                                    Moving = true;
+                                    Movingup.Play();
+                                    agent.SetDestination(hit.point);
+                                    Debug.Log("Valid point");
+                                    clickIndicator();
+                                    Player_Char.GetComponent<Player_Character>().Action_Points -= 1;
+                                    //Update UI here
+                                    gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
+                                    End_if_0ap();
+                                }
+                                    else
+                                    {
+                                        Debug.Log("Invaild point");
+                                    }
+                                }
+                            }                           
                     }
+                }
+                else
+                {
+                    Debug.Log("Out of AP");
                 }
             }
         }
