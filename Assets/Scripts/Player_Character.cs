@@ -83,6 +83,7 @@ public class Player_Character : MonoBehaviour
                 Switch_Action();
             }
             //Cursor.lockState = CursorLockMode.Confined;
+            StartCoroutine(Turn_Delay());
         }
         else
         {
@@ -153,6 +154,13 @@ public class Player_Character : MonoBehaviour
             Action_Range_Indicator.GetComponent<MeshRenderer>().material = Attack_Circle;
         }
         
+    }
+
+    private IEnumerator Turn_Delay()
+    {
+        gameObject.GetComponent<PlayerMovement>().can_act = false;
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<PlayerMovement>().can_act = true;
     }
 }
    
