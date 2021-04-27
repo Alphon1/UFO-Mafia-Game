@@ -71,6 +71,11 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToLevelselect()
     {
+        SceneManager.LoadScene(3);
+        Time.timeScale = 1f;
+    }
+    public void ReturnToLevelselectfortut()
+    {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }

@@ -10,6 +10,7 @@ public class Game_Managerfortut : MonoBehaviour
 {
     public TextMeshProUGUI txt;
     public List<GameObject> Turn_Order = new List<GameObject>();
+    public GameObject APMenu;
     public GameObject playerTurnIndicator;
     public GameObject enemyTurnIndicator;
     private NavMeshObstacle navMO;
@@ -22,6 +23,8 @@ public class Game_Managerfortut : MonoBehaviour
     private int popUpIndex;
     public float waitTime = 2f;
     public GameObject Player_Char;
+    [SerializeField]
+    private Text Mode_Change_Button_Text;
 
 
     [SerializeField]
@@ -106,21 +109,25 @@ public class Game_Managerfortut : MonoBehaviour
             }
             else if (popUpIndex == 2)
             {
+
                 popUps[popUpIndex].SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
                     popUps[popUpIndex].SetActive(false);
                     popUpIndex++;
                 }
+
             }
             else if (popUpIndex == 3)
             {
+
                 popUps[popUpIndex].SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
                     popUps[popUpIndex].SetActive(false);
                     popUpIndex++;
                 }
+
             }
             else if (popUpIndex == 4)
             {
@@ -134,7 +141,7 @@ public class Game_Managerfortut : MonoBehaviour
             else if (popUpIndex == 5)
             {
                 popUps[popUpIndex].SetActive(true);
-                if (Input.GetMouseButtonDown(2))
+                if (Input.GetMouseButtonDown(0))
                 {
                     popUps[popUpIndex].SetActive(false);
                     popUpIndex++;
@@ -143,13 +150,40 @@ public class Game_Managerfortut : MonoBehaviour
             else if (popUpIndex == 6)
             {
                 popUps[popUpIndex].SetActive(true);
-                if (Input.GetKeyDown(KeyCode.C) || (Input.GetKeyDown(KeyCode.X)))
+                if (Input.GetMouseButtonDown(0))
                 {
                     popUps[popUpIndex].SetActive(false);
                     popUpIndex++;
                 }
             }
             else if (popUpIndex == 7)
+            {
+                popUps[popUpIndex].SetActive(true);
+                if (Input.GetMouseButtonDown(2))
+                {
+                    popUps[popUpIndex].SetActive(false);
+                    popUpIndex++;
+                }
+            }
+            else if (popUpIndex == 8)
+            {
+                popUps[popUpIndex].SetActive(true);
+                if (Input.GetKeyDown(KeyCode.C) || (Input.GetKeyDown(KeyCode.X)))
+                {
+                    popUps[popUpIndex].SetActive(false);
+                    popUpIndex++;
+                }
+            }
+            else if (popUpIndex == 9)
+            {
+                popUps[popUpIndex].SetActive(true);
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    popUps[popUpIndex].SetActive(false);
+                    popUpIndex++;
+                }
+            }
+            else if (popUpIndex == 10)
             {
                 popUps[popUpIndex].SetActive(true);
                 if (Input.GetMouseButtonDown(0))
@@ -159,7 +193,7 @@ public class Game_Managerfortut : MonoBehaviour
                 }
                 
             }
-            else if (popUpIndex == 8)
+            else if (popUpIndex == 11)
             {
                 popUps[popUpIndex].SetActive(true);
 
@@ -171,16 +205,17 @@ public class Game_Managerfortut : MonoBehaviour
 
                 }
             }
-            else if (popUpIndex == 9)
+            
+            else if (popUpIndex == 12)
             {
-                
 
-                
+
+
             }
-            if (popUpIndex == 9)
+            if (popUpIndex == 12)
             {
                 waitTime -= Time.deltaTime;
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3);
             }  
         }
     }
@@ -219,7 +254,8 @@ public class Game_Managerfortut : MonoBehaviour
             Is_Player_Turn = true;
             
         }
-       
+        Mode_Change_Button_Text.text = "Attack";
+
         UpdateAPUI(Current_Char.GetComponent<Player_Characterfortut>().Action_Points);
         //Turn_Order_Manager.GetComponent<Turn_Order_UI_fortut>().Update_UI();
     }
@@ -228,8 +264,23 @@ public class Game_Managerfortut : MonoBehaviour
         txt.text = APvalue.ToString();
         
     }
+    public void Change_Player_Mode()
+    {
+        if (Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Characterfortut>().Switch_Action();
+            if (Mode_Change_Button_Text.text == "Attack")
+            {
+                Mode_Change_Button_Text.text = "Move";
+            }
+            else
+            {
+                Mode_Change_Button_Text.text = "Attack";
+            }
+        }
+    }
 
-    
-        
+
+
 }
 

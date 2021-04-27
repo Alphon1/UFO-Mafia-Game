@@ -113,7 +113,7 @@ public class PlayerMovementfortut : MonoBehaviour
                                     Debug.Log("Damage Reduced");
                                 }
                                 //checks if the selected enemy is in range and/or in cover
-                                if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Characterfortut>().Range)
+                                if (Vector3.Distance(Player_Char.transform.position, hit.transform.position) < gameObject.GetComponent<Player_Characterfortut>().Move_Range)
                                 {
                                     animator.SetTrigger("Shoot");
                                     Player_Char.GetComponent<Player_Characterfortut>().Action_Points -= 1;

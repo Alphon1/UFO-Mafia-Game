@@ -6,7 +6,8 @@ using Cinemachine;
 using UnityEngine.VFX;
 public class Player_Characterfortut : MonoBehaviour
 {
-    public int Range;
+    public int Move_Range;
+    public int Shoot_Range;
     public VisualEffect blood;
     public AudioSource PainScream;
     public AudioSource DeathScream;
@@ -22,14 +23,19 @@ public class Player_Characterfortut : MonoBehaviour
     [SerializeField]
     private int Max_Action_Points;
     [SerializeField]
-    private GameObject Mov_Range_Indicator;
+    private GameObject Action_Range_Indicator;
     public GameObject playerCam;
     private GameObject Main_camera;
     [SerializeField]
     private Slider healthBar;
     private GameObject Game_Manager;
     private Game_Managerfortut gm;
-    
+    public bool Is_Attacking;
+    [SerializeField]
+    private Material Move_Circle;
+    [SerializeField]
+    private Material Attack_Circle;
+
 
 
 
@@ -37,7 +43,7 @@ public class Player_Characterfortut : MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         gm = Game_Manager.GetComponent<Game_Managerfortut>();
-                
+        Action_Range_Indicator.transform.localScale = new Vector3(Move_Range * 2, 0, Move_Range * 2);
         Current_Health = Max_Health;
     }
 
@@ -70,13 +76,17 @@ public class Player_Characterfortut : MonoBehaviour
         if (isyourturn)
         {
             Action_Points = Max_Action_Points;
-            Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
+            Action_Range_Indicator.GetComponent<MeshRenderer>().enabled = true;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = true;
             //Cursor.lockState = CursorLockMode.Confined;
+            if (Is_Attacking)
+            {
+                Switch_Action();
+            }
         }
         else
         {
-            Mov_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
+            Action_Range_Indicator.GetComponent<MeshRenderer>().enabled = false;
             PlayerIndicator.GetComponent<MeshRenderer>().enabled = false;
             //Cursor.lockState = CursorLockMode.None;
         }
@@ -123,8 +133,23 @@ public class Player_Characterfortut : MonoBehaviour
         Main_camera.SetActive(true);
         //playerCam.SetActive(false);
     }
+    public void Switch_Action()
+    {
+        if (Is_Attacking)
+        {
+            Is_Attacking = !Is_Attacking;
+            Action_Range_Indicator.transform.localScale = new Vector3(Move_Range * 2, 0, Move_Range * 2);
+            Action_Range_Indicator.GetComponent<MeshRenderer>().material = Move_Circle;
+        }
+        else
+        {
+            Is_Attacking = !Is_Attacking;
+            Action_Range_Indicator.transform.localScale = new Vector3(Shoot_Range * 2, 0, Shoot_Range * 2);
+            Action_Range_Indicator.GetComponent<MeshRenderer>().material = Attack_Circle;
+        }
 
-   
+    }
+
 }
    
 

@@ -23,7 +23,7 @@ public class EnemyColourChangefortut: MonoBehaviour
     public void OnMouseOver()
     {
         //Checks if it's the player's turn, and the enemy is within range
-        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Range)
+        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Move_Range)
         {
             
             GetComponent<Renderer>().material = highlightedColour;
@@ -32,7 +32,7 @@ public class EnemyColourChangefortut: MonoBehaviour
                 StartCoroutine(Flash_Healthbar());
             }
         }
-        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Range)
+        if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Move_Range)
         {
 
             GetComponent<Renderer>().material = highlightedColour;
