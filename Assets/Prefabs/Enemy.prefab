@@ -4868,10 +4868,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
@@ -4994,7 +4994,6 @@ MonoBehaviour:
   Enemy_Man: {fileID: 5197413110071602924}
   P_Team: {fileID: 0}
   damageReduction: 5
-  Model: {fileID: 3154843659074227011}
 --- !u!82 &7134045984474203163
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5532,6 +5531,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6833311126390149132, guid: d35de88c0b78c2d44b6aca00196c112d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729224428464104270, guid: d35de88c0b78c2d44b6aca00196c112d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d35de88c0b78c2d44b6aca00196c112d, type: 3}

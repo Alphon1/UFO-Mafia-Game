@@ -49,9 +49,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Attack(RaycastHit hit)
     {
-        End_if_0ap();
         //deal the player's damage to the enemy's current health
         hit.transform.GetComponent<Enemy_Manager>().takedamage(Player_Char.GetComponent<Player_Character>().Damage - damageReduced);
+
+        End_if_0ap();
     }
 
     private void End_if_0ap()

@@ -68,7 +68,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.777612, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -306,7 +306,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.777612, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -648,10 +648,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
@@ -685,6 +685,7 @@ MonoBehaviour:
   gun: {fileID: 0}
   bulletPrefab: {fileID: 0}
   Movingup: {fileID: 4983440832602598846}
+  can_act: 1
 --- !u!114 &5197413110071602917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,7 +1466,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.777612, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
