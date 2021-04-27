@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject Buttons;
     public GameObject APMenu;
-    public GameObject tutorialMenu;
+    //public GameObject tutorialMenu;
     public GameObject Playercounter;
     public GameObject popUps;
     public GameObject Turnorder;
@@ -23,22 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-
-            }
-            else
-            {
-                isPaused = true;
-                tutorialMenu.SetActive(true);
-                
-
-                Time.timeScale = 0f;
-            }
-        }
+       
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -66,15 +51,15 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = false;
         pauseMenu.SetActive(false);
-        tutorialMenu.SetActive(false);
+        //tutorialMenu.SetActive(false);
         Buttons.SetActive(true);
         APMenu.SetActive(true);
         Playercounter.SetActive(true);
         popUps.SetActive(true);
         Turnorder.SetActive(true);
         Playerobj.SetActive(true);
-        playerturnicon.SetActive(true);
-        enemyturnicon.SetActive(true);
+        playerturnicon.SetActive(false);
+        enemyturnicon.SetActive(false);
 
         Time.timeScale = 1f;
     }
