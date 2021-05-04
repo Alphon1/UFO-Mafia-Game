@@ -20,6 +20,7 @@ public class Enemy_Movement : MonoBehaviour
     private float Distance_To_Closest_Player = 50;
     private GameObject Closest_Player;
     private Animator animator;
+    private Collider capCollider;
     private bool Taking_Action = false;
 
     void Start()
@@ -30,12 +31,15 @@ public class Enemy_Movement : MonoBehaviour
         shotMask = LayerMask.GetMask("Default");
         coverMask = LayerMask.GetMask("Cover");
         animator = gameObject.GetComponentInChildren<Animator>();
+        capCollider = gameObject.GetComponent<CapsuleCollider>();
     }
 
     void Update()
     {
         if (Enemy_Man.GetComponent<Enemy_Manager>().isyourturn)
         {
+            capCollider.enabled = false;
+
             if (!Taking_Action)
             {
                 if (!agent.pathPending)
@@ -93,6 +97,7 @@ public class Enemy_Movement : MonoBehaviour
                     }
                     else
                     {
+                        capCollider.enabled = true;
                         Game_Manager.GetComponent<Game_Manager>().Turn_End();
                     }
                 }
