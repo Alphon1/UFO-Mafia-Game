@@ -50,7 +50,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   earthPreset:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   sphericalMode:
     m_OverrideState: 0
@@ -232,14 +232,14 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 75
   albedo:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 0.5424528, g: 0.90169996, b: 1, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 40
+    m_Value: 60
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
