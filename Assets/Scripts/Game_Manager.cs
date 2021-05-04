@@ -3,22 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class Game_Manager : MonoBehaviour
 {
     public TextMeshProUGUI txt;
-    public List<GameObject> Turn_Order;
+    public List<GameObject> Turn_Order = new List<GameObject>();
     public GameObject playerTurnIndicator;
     public GameObject enemyTurnIndicator;
+    public GameObject APMenu;
+    public GameObject Turnorder;
+    public GameObject Playercounter;
+    private NavMeshObstacle navMO;
     private int Random_Int;
     private GameObject Temp_Char;    
-    private int Current_Char_Pos;
-    private GameObject Current_Char;
-   
+    public int Current_Char_Pos;
+    public GameObject Current_Char;
+    public bool Is_Player_Turn;
+    private LinePoints linePoints;
+    [SerializeField]
+    private GameObject Turn_Order_Manager;
+    [SerializeField]
+    private GameObject End_Text;
+    [SerializeField]
+    private GameObject End_Screen;
+    [SerializeField]
+    private Text Mode_Change_Button_Text;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        linePoints = this.gameObject.GetComponent<LinePoints>();
+
         //makes a list of all player characters
         Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Player"));
         Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
@@ -34,78 +50,104 @@ public class Game_Manager : MonoBehaviour
         }
         Current_Char_Pos = 0;
         Current_Char = Turn_Order[Current_Char_Pos];
+        linePoints.enemyTarget = Current_Char;
         if(Current_Char.tag == "Player")
         {
+            playerTurnIndicator.SetActive(true);
+            Is_Player_Turn = true;
             Current_Char.GetComponent<Player_Character>().End_turn();
         }
         else
         {
-            
+            enemyTurnIndicator.SetActive(true);
+            Is_Player_Turn = false;
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
         }
         if (Current_Char.GetComponent<Player_Character>())
         {
             UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
         }
-
-
     }
 
-    //is called when the end turn button is pressed, disables control of the current character and enables it for the next
-    public void Turn_End()
+    public void End_Game(bool Victory)
     {
-        Debug.Log("EndTurn");
-        //if all enemies are dead
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || GameObject.FindGameObjectsWithTag("Player").Length == 0)
+        End_Screen.SetActive(true);
+        if (Victory)
         {
-            //go to level select
-            SceneManager.LoadScene(2);
-            Time.timeScale = 1f;
-        }
-        if (Current_Char.tag == "Player")
-        {
-            
-            Current_Char.GetComponent<Player_Character>().End_turn();
-            
+            APMenu.SetActive(false);
+            Turnorder.SetActive(false);
+            Playercounter.SetActive(false);
+            End_Text.GetComponent<TextMeshProUGUI>().text = "VICTORY";
         }
         else
         {
-            
-            Current_Char.GetComponent<Enemy_Manager>().End_turn();
-            
+            APMenu.SetActive(false);
+            Turnorder.SetActive(false);
+            Playercounter.SetActive(false);
+            End_Text.GetComponent<TextMeshProUGUI>().text = "DEFEAT";
+        }
+    }
+    //is called when the end turn button is pressed, disables control of the current character and enables it for the next
+    public void Turn_End()
+    {
+        if (Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Character>().End_turn();   
+        }
+        else
+        {
+            Current_Char.GetComponent<Enemy_Manager>().End_turn();   
         }
         Current_Char_Pos += 1;
-        if (Current_Char_Pos > Turn_Order.Count -1)
+        if (Current_Char_Pos > Turn_Order.Count - 1)
         {
             Current_Char_Pos = 0;
         }
         Current_Char = Turn_Order[Current_Char_Pos];
+        linePoints.enemyTarget = Current_Char;
         if (Current_Char.tag == "Player")
         {
             playerTurnIndicator.SetActive(true);
             enemyTurnIndicator.SetActive(false);
             Current_Char.GetComponent<Player_Character>().End_turn();
-            
-
+            Is_Player_Turn = true;
         }
         else
         {
             playerTurnIndicator.SetActive(false);
             enemyTurnIndicator.SetActive(true);
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
-            
-           
-
-
+            Is_Player_Turn = false;
         }
-        UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
-        
+        Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
+        if (Current_Char.tag == "Player")
+        {
+            UpdateAPUI(Current_Char.GetComponent<Player_Character>().Action_Points);
+        }
+        else
+        {
+            UpdateAPUI(Current_Char.GetComponent<Enemy_Manager>().Action_Points);
+        }
+        Mode_Change_Button_Text.text = "Attack";
     }
     public void UpdateAPUI(int APvalue)
     {
         txt.text = APvalue.ToString();
         
     }
-    
-
+    public void Change_Player_Mode()
+    {
+        if (Current_Char.tag == "Player")
+        {
+            Current_Char.GetComponent<Player_Character>().Switch_Action();
+            if (Mode_Change_Button_Text.text == "Attack")
+            {
+                Mode_Change_Button_Text.text = "Move";
+            }
+            else
+            {
+                Mode_Change_Button_Text.text = "Attack";
+            }
+        }
+    }
 }

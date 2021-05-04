@@ -9,30 +9,21 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject Buttons;
     public GameObject APMenu;
-    public GameObject tutorialMenu;
+    //public GameObject tutorialMenu;
     public GameObject Playercounter;
+    public GameObject popUps;
+    public GameObject Turnorder;
+    public GameObject Playerobj;
+    public GameObject Characterinfomenu;
+    public GameObject playerturnicon;
+    public GameObject enemyturnicon;
 
     public bool isPaused;
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-
-            }
-            else
-            {
-                isPaused = true;
-                tutorialMenu.SetActive(true);
-                
-
-                Time.timeScale = 0f;
-            }
-        }
+       
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -46,7 +37,11 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Buttons.SetActive(false);
                 APMenu.SetActive(false);
-                Playercounter.SetActive(false);
+                popUps.SetActive(false);
+                Turnorder.SetActive(false);
+                Playerobj.SetActive(false);
+                playerturnicon.SetActive(false);
+                enemyturnicon.SetActive(false);
 
                 Time.timeScale = 0f;
             }
@@ -56,10 +51,15 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = false;
         pauseMenu.SetActive(false);
-        tutorialMenu.SetActive(false);
+        //tutorialMenu.SetActive(false);
         Buttons.SetActive(true);
         APMenu.SetActive(true);
         Playercounter.SetActive(true);
+        popUps.SetActive(true);
+        Turnorder.SetActive(true);
+        Playerobj.SetActive(true);
+        playerturnicon.SetActive(false);
+        enemyturnicon.SetActive(false);
 
         Time.timeScale = 1f;
     }
@@ -71,8 +71,18 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToLevelselect()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
         Time.timeScale = 1f;
+    }
+    public void ReturnToLevelselectfortut()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+    }
+
+    public void Characterinfomenubutton()
+    {
+        Characterinfomenu.SetActive(true);
     }
 
     public void Quit()

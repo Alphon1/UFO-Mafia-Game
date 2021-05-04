@@ -17,6 +17,10 @@ public class Enemy_Movement : MonoBehaviour
     private Game_Manager gm;
     private Vector3 Target;
     private bool Moving;
+    private float Distance_To_Closest_Player = 50;
+    private GameObject Closest_Player;
+    private Animator animator;
+    private bool Taking_Action = false;
 
     void Start()
     {
@@ -25,59 +29,81 @@ public class Enemy_Movement : MonoBehaviour
         gm = Game_Manager.GetComponent<Game_Manager>();
         shotMask = LayerMask.GetMask("Default");
         coverMask = LayerMask.GetMask("Cover");
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        //Enemies currently aren't in the turn order as such they have one immediate turn.
         if (Enemy_Man.GetComponent<Enemy_Manager>().isyourturn)
         {
-            if (!agent.pathPending)
+            if (!Taking_Action)
             {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (!agent.pathPending)
                 {
-                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                    if (agent.remainingDistance <= agent.stoppingDistance)
                     {
-                        Moving = false;
-                    }
-                }
-            }
-            if (!Moving)
-            {
-                if (Enemy_Man.GetComponent<Enemy_Manager>().Action_Points > 0)
-                {
-                    if (Vector3.Distance(P_Team.transform.position, gameObject.transform.position) < gameObject.GetComponent<Enemy_Manager>().Range && !Physics.Linecast(gameObject.transform.position, P_Team.transform.position, shotMask))
-                    {
-                        damageReduced = 0;
-                        Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
-                        coverDetect.gameObject.transform.localPosition = new Vector3(0, 0, 0);
-                        //Update UI here
-                        gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
-                        if (Physics.Linecast(gameObject.transform.position, P_Team.transform.position, coverMask))
+                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                         {
-                            damageReduced = damageReduction;
-                            Debug.Log("Target_Covered");
+                            Moving = false;
+                            animator.SetBool("isWalking", false);
                         }
-                        P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
-                        Debug.Log("Enemy_Shoot");
-                        coverDetect.gameObject.transform.localPosition = new Vector3(0, 100, 0);
-                    }
-                    Target = new Vector3(Random.Range(Enemy_Man.transform.position.x - maxdistance / 2, Enemy_Man.transform.position.x + maxdistance / 2), 0, Random.Range(Enemy_Man.transform.position.z - maxdistance / 2, Enemy_Man.transform.position.z + maxdistance / 2));
-                    //Checks to see if the enemies target position is closer to the players
-                    if (Vector3.Distance(agent.transform.position, P_Team.transform.position) > Vector3.Distance(Target, P_Team.transform.position))
-                    {
-                        Moving = true;
-                        agent.SetDestination(Target);
-                        Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
-                        //Update UI here
-                        gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
                     }
                 }
-                else
+                if (!Moving)
                 {
-                    Game_Manager.GetComponent<Game_Manager>().Turn_End();
+                    foreach (GameObject Player in GameObject.FindGameObjectsWithTag("Player"))
+                    {
+                        if (Vector3.Distance(Player.transform.position, gameObject.transform.position) < Distance_To_Closest_Player)
+                            Distance_To_Closest_Player = Vector3.Distance(Player.transform.position, gameObject.transform.position);
+                        Closest_Player = Player;
+                    }
+                    P_Team = Closest_Player;
+                    if (Enemy_Man.GetComponent<Enemy_Manager>().Action_Points > 0)
+                    {
+                        if (Vector3.Distance(P_Team.transform.position, gameObject.transform.position) < gameObject.GetComponent<Enemy_Manager>().Range && !Physics.Raycast(gameObject.transform.position, P_Team.transform.position, shotMask))
+                        {
+                            damageReduced = 0;
+                            Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
+                            //Update UI here
+                            gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
+                            if (Physics.Raycast(gameObject.transform.position, P_Team.transform.position, coverMask))
+                            {
+                                damageReduced = damageReduction;
+                                Debug.Log("Target_Covered");
+                            }
+                            P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
+                            Debug.Log("Enemy_Shoot");
+                            StartCoroutine(Slow_Actions());
+                        }
+                        else
+                        {
+                            Target = new Vector3(Random.Range(Enemy_Man.transform.position.x - maxdistance / 2, Enemy_Man.transform.position.x + maxdistance / 2), 0, Random.Range(Enemy_Man.transform.position.z - maxdistance / 2, Enemy_Man.transform.position.z + maxdistance / 2));
+                            //Checks to see if the enemies target position is closer to the players
+                            if (Vector3.Distance(agent.transform.position, P_Team.transform.position) > Vector3.Distance(Target, P_Team.transform.position))
+                            {
+                                animator.SetBool("isWalking", true);
+                                Moving = true;
+                                agent.SetDestination(Target);
+                                Enemy_Man.GetComponent<Enemy_Manager>().Action_Points -= 1;
+                                //Update UI here
+                                gm.UpdateAPUI(Enemy_Man.GetComponent<Enemy_Manager>().Action_Points);
+                                StartCoroutine(Slow_Actions());
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Game_Manager.GetComponent<Game_Manager>().Turn_End();
+                    }
                 }
             }
         }
+    }
+
+    private IEnumerator Slow_Actions()
+    {
+        Taking_Action = true;
+        yield return new WaitForSeconds(2);
+        Taking_Action = false;
     }
 }
