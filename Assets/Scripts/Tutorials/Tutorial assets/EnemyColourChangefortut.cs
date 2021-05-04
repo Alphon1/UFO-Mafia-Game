@@ -7,6 +7,7 @@ public class EnemyColourChangefortut: MonoBehaviour
 {
     public Material baseMaterial;
     public Material highlightedColour;
+    public Linepointsfortut linePoints;
     private Game_Managerfortut Game_Manager_Script;
     private GameObject Game_Manager;
     private bool Health_Visible = true;
@@ -17,6 +18,7 @@ public class EnemyColourChangefortut: MonoBehaviour
     {
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         Game_Manager_Script = Game_Manager.GetComponent<Game_Managerfortut>();
+        linePoints = Game_Manager.GetComponent<Linepointsfortut>();
         Health_Bar = gameObject.GetComponentInChildren<Slider>();
     }
 
@@ -25,7 +27,7 @@ public class EnemyColourChangefortut: MonoBehaviour
         //Checks if it's the player's turn, and the enemy is within range
         if (Game_Manager_Script.Is_Player_Turn && Vector3.Distance(Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.transform.position, gameObject.transform.position) < Game_Manager.GetComponent<Game_Managerfortut>().Current_Char.GetComponent<Player_Characterfortut>().Move_Range)
         {
-            
+            linePoints.enemyTarget = this.gameObject;
             GetComponent<Renderer>().material = highlightedColour;
             if (Health_Flashing == false)
             {
@@ -44,6 +46,7 @@ public class EnemyColourChangefortut: MonoBehaviour
     }
     public void OnMouseExit()
     {
+        linePoints.enemyTarget = Game_Manager_Script.Current_Char;
         GetComponent<Renderer>().material = baseMaterial;
         Health_Bar.value = gameObject.GetComponent<Enemy_Managerfortut>().Current_Health;
         StopCoroutine(Flash_Healthbar());

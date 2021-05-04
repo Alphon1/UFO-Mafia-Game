@@ -23,6 +23,7 @@ public class Game_Managerfortut : MonoBehaviour
     private int popUpIndex;
     public float waitTime = 2f;
     public GameObject Player_Char;
+    private Linepointsfortut linePoints;
     [SerializeField]
     private Text Mode_Change_Button_Text;
 
@@ -33,6 +34,7 @@ public class Game_Managerfortut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        linePoints = this.gameObject.GetComponent<Linepointsfortut>();
         //makes a list of all player characters
         Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Player"));
         //Turn_Order.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
@@ -49,7 +51,8 @@ public class Game_Managerfortut : MonoBehaviour
         }
         Current_Char_Pos = 0;
         Current_Char = Turn_Order[Current_Char_Pos];
-        if(Current_Char.tag == "Player")
+        linePoints.enemyTarget = Current_Char;
+        if (Current_Char.tag == "Player")
         {
             
             playerTurnIndicator.SetActive(true);
@@ -244,6 +247,7 @@ public class Game_Managerfortut : MonoBehaviour
             Current_Char_Pos = 0;
         }
         Current_Char = Turn_Order[Current_Char_Pos];
+        linePoints.enemyTarget = Current_Char;
         //Turn_Order_Manager.GetComponent<Turn_Order_UI_fortut>().Update_UI();
 
         if (Current_Char.tag == "Player")

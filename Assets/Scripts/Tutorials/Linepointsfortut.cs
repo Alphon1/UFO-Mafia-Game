@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LinePointfortut : MonoBehaviour
+public class Linepointsfortut : MonoBehaviour
 {
     [SerializeField] public Transform[] points;
     [SerializeField] private LineController line;
