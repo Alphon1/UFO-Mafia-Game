@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public Camera MainCamera;
     public float maxdistance = 3;
-    public ParticleSystem Muzzleflash;
+    public VisualEffect Muzzleflash;
     public AudioSource Gunsound;
     public GameObject Player_Char;
     public GameObject ClickIndicator;
@@ -191,8 +192,6 @@ public class PlayerMovement : MonoBehaviour
     public void muzzleFlash()
     {
         Muzzleflash.Play();
-        ParticleSystem.EmissionModule Emitter = Muzzleflash.emission;
-        Emitter.enabled = true;
     }
 }
     

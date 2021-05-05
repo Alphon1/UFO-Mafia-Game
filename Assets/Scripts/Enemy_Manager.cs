@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 
 public class Enemy_Manager : MonoBehaviour
@@ -18,6 +19,7 @@ public class Enemy_Manager : MonoBehaviour
     public int Seen_By;
     public Slider healthBar;
     public int Action_Points;
+    public VisualEffect blood;
     public AudioSource DeathScream;
     [SerializeField]
     private int Max_Action_Points;
@@ -95,9 +97,9 @@ public class Enemy_Manager : MonoBehaviour
 
     public void Blood_Animation()
     {
-        GetComponentInChildren<ParticleSystem>().Play();
-        ParticleSystem.EmissionModule Emitter = GetComponent<ParticleSystem>().emission;
-        Emitter.enabled = true;
+        blood.Play();
+
+
     }
 
 }

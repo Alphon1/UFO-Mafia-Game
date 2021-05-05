@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Enemy_Movement : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Enemy_Movement : MonoBehaviour
     public GameObject Enemy_Man;
     public GameObject P_Team;
     public int damageReduction;
+    public VisualEffect Muzzleflash;
+    public AudioSource Gunsound;
     private Transform coverDetect;
     private int damageReduced;
     private LayerMask shotMask;
@@ -76,6 +79,8 @@ public class Enemy_Movement : MonoBehaviour
                                 Debug.Log("Target_Covered");
                             }
                             P_Team.GetComponent<Player_Character>().Take_Damage(gameObject.GetComponent<Enemy_Manager>().Damage - damageReduced);
+                            muzzleFlash();
+                            Gunsound.Play();
                             Debug.Log("Enemy_Shoot");
                             StartCoroutine(Slow_Actions());
                         }
@@ -110,5 +115,9 @@ public class Enemy_Movement : MonoBehaviour
         Taking_Action = true;
         yield return new WaitForSeconds(2);
         Taking_Action = false;
+    }
+    public void muzzleFlash()
+    {
+        Muzzleflash.Play();
     }
 }
