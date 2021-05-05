@@ -68,7 +68,7 @@ public class Enemy_Manager : MonoBehaviour
         {
             if (Model.activeSelf == true)
             {
-                Model.SetActive(true);
+                Model.SetActive(false);
                 healthBar.gameObject.SetActive(false);
             }
         }
