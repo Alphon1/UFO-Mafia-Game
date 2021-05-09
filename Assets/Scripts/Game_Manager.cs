@@ -29,6 +29,12 @@ public class Game_Manager : MonoBehaviour
     private GameObject End_Screen;
     [SerializeField]
     private Text Mode_Change_Button_Text;
+    [SerializeField]
+    private Button Mode_Change_Button;
+    [SerializeField]
+    private Sprite Attack_Image;
+    [SerializeField]
+    private Sprite Move_Image;
 
     // Start is called before the first frame update
     void Awake()
@@ -143,10 +149,12 @@ public class Game_Manager : MonoBehaviour
             if (Mode_Change_Button_Text.text == "Attack")
             {
                 Mode_Change_Button_Text.text = "Move";
+                Mode_Change_Button.image.sprite = Move_Image;
             }
             else
             {
                 Mode_Change_Button_Text.text = "Attack";
+                Mode_Change_Button.image.sprite = Attack_Image;
             }
         }
     }
