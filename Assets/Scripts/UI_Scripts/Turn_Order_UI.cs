@@ -50,13 +50,17 @@ public class Turn_Order_UI : MonoBehaviour
             {
                 Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i;
             }
-            if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Enemy")
+            Turn_Order_Slots[i].GetComponentInChildren<TextMeshProUGUI>().text = Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].name;
+            if (i == 0)
             {
-                Turn_Order_Slots[i].GetComponent<Image>().sprite = Enemy_Image;
-            }
-            else if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Player")
-            {
-                Turn_Order_Slots[i].GetComponent<Image>().sprite = Player_Image;
+                if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Enemy")
+                {
+                    Turn_Order_Slots[i].GetComponent<Image>().sprite = Enemy_Image;
+                }
+                else if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Player")
+                {
+                    Turn_Order_Slots[i].GetComponent<Image>().sprite = Player_Image;
+                }
             }
         }
     }
