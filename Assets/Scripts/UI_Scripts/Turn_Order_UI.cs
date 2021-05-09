@@ -21,8 +21,8 @@ public class Turn_Order_UI : MonoBehaviour
     private int Current_Displayed_Char_Pos;
     [SerializeField]
     private Sprite Player_Image;
-    [SerializeField]
-    private Sprite Enemy_Image;
+     [SerializeField]
+     private Sprite Enemy_Image;
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,9 +33,7 @@ public class Turn_Order_UI : MonoBehaviour
         Turn_Order_Slots.Add(Slot5);     
         Game_Manager = GameObject.FindWithTag("Game_Manager");
         Game_Manager_Script = Game_Manager.GetComponent<Game_Manager>();
-
     }
-
     private void Start()
     {
         Update_UI();
@@ -52,15 +50,15 @@ public class Turn_Order_UI : MonoBehaviour
             {
                 Current_Displayed_Char_Pos = Game_Manager_Script.Current_Char_Pos + i;
             }
-            Turn_Order_Slots[i].GetComponentInChildren<TextMeshProUGUI>().text = Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].name;
             if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Enemy")
             {
                 Turn_Order_Slots[i].GetComponent<Image>().sprite = Enemy_Image;
             }
             else if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Player")
             {
-                Turn_Order_Slots[i].GetComponent<Image>().sprite = Player_Image);
+                Turn_Order_Slots[i].GetComponent<Image>().sprite = Player_Image;
             }
         }
     }
 }
+
