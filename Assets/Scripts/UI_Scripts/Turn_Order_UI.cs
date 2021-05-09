@@ -19,6 +19,10 @@ public class Turn_Order_UI : MonoBehaviour
     private GameObject Slot5;
     private List<GameObject> Turn_Order_Slots = new List<GameObject>();
     private int Current_Displayed_Char_Pos;
+    [SerializeField]
+    private Sprite Player_Image;
+    [SerializeField]
+    private Sprite Enemy_Image;
     // Start is called before the first frame update
     void Awake()
     {
@@ -51,11 +55,11 @@ public class Turn_Order_UI : MonoBehaviour
             Turn_Order_Slots[i].GetComponentInChildren<TextMeshProUGUI>().text = Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].name;
             if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Enemy")
             {
-                Turn_Order_Slots[i].GetComponent<Image>().color = new Color32(220, 20, 60, 255);
+                Turn_Order_Slots[i].GetComponent<Image>().sprite = Enemy_Image;
             }
             else if (Game_Manager_Script.Turn_Order[Current_Displayed_Char_Pos].tag == "Player")
             {
-                Turn_Order_Slots[i].GetComponent<Image>().color = new Color32(70, 130,180, 255);
+                Turn_Order_Slots[i].GetComponent<Image>().sprite = Player_Image);
             }
         }
     }
