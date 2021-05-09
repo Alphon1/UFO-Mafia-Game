@@ -17,15 +17,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject Characterinfomenu;
     public GameObject playerturnicon;
     public GameObject enemyturnicon;
-
     public bool isPaused;
 
 
-    void Update()
+    public void Pause_Game()
     {
-       
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             if (isPaused)
             {
                 ResumeGame();
@@ -45,7 +41,6 @@ public class PauseMenu : MonoBehaviour
 
                 Time.timeScale = 0f;
             }
-        }
     }
     public void ResumeGame()
     {
