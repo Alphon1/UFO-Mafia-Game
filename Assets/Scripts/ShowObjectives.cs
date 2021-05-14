@@ -11,9 +11,9 @@ public class ShowObjectives : MonoBehaviour
     private GameObject Minimized_Objectives;
 
     // Start is called before the first frame update
-    void Toggle_Objectives()
+    public void Toggle_Objectives()
     {
-        if(Expanded_Objectives.activeSelf)
+        if (Expanded_Objectives.activeSelf)
         {
             Expanded_Objectives.SetActive(false);
             Minimized_Objectives.SetActive(true);
