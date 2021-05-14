@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject Characterinfomenu;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -14,4 +16,13 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
 
     }
+    public void Show_Char_Info()
+    {
+        Characterinfomenu.SetActive(true);
+    }
+
+    public void Hide_Char_Info()
+    {
+        Characterinfomenu.SetActive(false);
+    }    
 }

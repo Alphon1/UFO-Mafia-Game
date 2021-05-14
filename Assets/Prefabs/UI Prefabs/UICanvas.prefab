@@ -2808,6 +2808,8 @@ MonoBehaviour:
   Slot3: {fileID: 895723512045235662}
   Slot4: {fileID: 4753282682930840789}
   Slot5: {fileID: 1700722981167859452}
+  Player_Image: {fileID: 0}
+  Enemy_Image: {fileID: 0}
 --- !u!1 &7696603391360212561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,7 +4220,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 9171739443847811448}
   Buttons: {fileID: 5201552382867141376}
   APMenu: {fileID: 6307753790927169146}
-  tutorialMenu: {fileID: 0}
   Playercounter: {fileID: 4528474547106345176}
   popUps: {fileID: 0}
   Turnorder: {fileID: 0}
@@ -4378,6 +4379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 25.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672186904096236263, guid: 851b4b2a02efc6b468b90303a8215366,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5224901135945863747, guid: 851b4b2a02efc6b468b90303a8215366,
         type: 3}
