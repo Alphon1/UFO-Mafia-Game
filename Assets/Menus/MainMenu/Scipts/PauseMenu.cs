@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     public string mainMenuScene;
     public GameObject pauseMenu;
+    public GameObject Pausemenubuttons;
     public GameObject Buttons;
     public GameObject APMenu;
     //public GameObject tutorialMenu;
@@ -78,6 +79,7 @@ public class PauseMenu : MonoBehaviour
     public void Characterinfomenubutton()
     {
         Characterinfomenu.SetActive(true);
+        Pausemenubuttons.SetActive(false);
     }
 
     public void Quit()

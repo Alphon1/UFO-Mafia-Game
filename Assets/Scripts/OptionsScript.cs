@@ -13,6 +13,7 @@ public class OptionsScript : MonoBehaviour
     public GameObject Tankscreen;
     public GameObject Sniperscreen;
     public GameObject Charselectscreen;
+    public GameObject pausemenubuttons;
     public void Scoutscreen()
     {
         scoutscreen.SetActive(true);
@@ -45,6 +46,7 @@ public class OptionsScript : MonoBehaviour
     {
         
         Charselectscreen.SetActive(false);
+        pausemenubuttons.SetActive(true);
 
     }
 }
