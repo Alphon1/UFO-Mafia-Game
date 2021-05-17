@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     public int damageReduction;
     public bool Moving;
     public GameObject gun;
-    public GameObject bulletPrefab;
     private Transform coverDetect;
     private int damageReduced;
     private GameObject Game_Manager;
@@ -129,9 +128,6 @@ public class PlayerMovement : MonoBehaviour
                                         //Update UI here
                                         gm.UpdateAPUI(Player_Char.GetComponent<Player_Character>().Action_Points);
                                         Attack(hit);
-                                        GameObject bulletObject = Instantiate(bulletPrefab);
-                                        bulletObject.transform.position = gun.transform.position + gun.transform.forward;
-                                        bulletObject.transform.forward = gun.transform.forward;
                                     }
                                     else
                                     {
