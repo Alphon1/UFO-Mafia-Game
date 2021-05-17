@@ -35,6 +35,8 @@ public class Game_Manager : MonoBehaviour
     private Sprite Attack_Image;
     [SerializeField]
     private Sprite Move_Image;
+    [SerializeField]
+    private Button End_Turn_Button;
 
     // Start is called before the first frame update
     void Awake()
@@ -68,6 +70,7 @@ public class Game_Manager : MonoBehaviour
             enemyTurnIndicator.SetActive(true);
             Is_Player_Turn = false;
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
+            End_Turn_Button.GetComponent<Button>().interactable = false;
         }
         if (Current_Char.GetComponent<Player_Character>())
         {
@@ -117,6 +120,7 @@ public class Game_Manager : MonoBehaviour
             enemyTurnIndicator.SetActive(false);
             Current_Char.GetComponent<Player_Character>().End_turn();
             Is_Player_Turn = true;
+            End_Turn_Button.GetComponent<Button>().interactable = true;
         }
         else
         {
@@ -124,6 +128,7 @@ public class Game_Manager : MonoBehaviour
             enemyTurnIndicator.SetActive(true);
             Current_Char.GetComponent<Enemy_Manager>().End_turn();
             Is_Player_Turn = false;
+            End_Turn_Button.GetComponent<Button>().interactable = false;
         }
         Turn_Order_Manager.GetComponent<Turn_Order_UI>().Update_UI();
         if (Current_Char.tag == "Player")
