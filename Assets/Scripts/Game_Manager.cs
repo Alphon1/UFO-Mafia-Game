@@ -37,6 +37,10 @@ public class Game_Manager : MonoBehaviour
     private Sprite Move_Image;
     [SerializeField]
     private Button End_Turn_Button;
+    [SerializeField]
+    private Sprite Win_Image;
+    [SerializeField]
+    private GameObject End_Screen_Image;
 
     // Start is called before the first frame update
     void Awake()
@@ -81,18 +85,19 @@ public class Game_Manager : MonoBehaviour
     public void End_Game(bool Victory)
     {
         End_Screen.SetActive(true);
+        APMenu.SetActive(false);
+        Turnorder.SetActive(false);
+        Playercounter.SetActive(false);
+        playerTurnIndicator.SetActive(false);
+        enemyTurnIndicator.SetActive(false);
         if (Victory)
         {
-            APMenu.SetActive(false);
-            Turnorder.SetActive(false);
-            Playercounter.SetActive(false);
+            End_Screen_Image.SetActive(false);
             End_Text.GetComponent<TextMeshProUGUI>().text = "VICTORY";
+            End_Screen.GetComponent<Image>().sprite = Win_Image;
         }
         else
         {
-            APMenu.SetActive(false);
-            Turnorder.SetActive(false);
-            Playercounter.SetActive(false);
             End_Text.GetComponent<TextMeshProUGUI>().text = "DEFEAT";
         }
     }
