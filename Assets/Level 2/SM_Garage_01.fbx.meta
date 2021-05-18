@@ -12,13 +12,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Roof
-    second: {fileID: 2100000, guid: 4b4cff0cd319b9c4e873d8759be8983d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stained_Brick
-    second: {fileID: 2100000, guid: c544d3751b65bed4c9b2fe1108b377c7, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: 6d190bb25d8650145bb2803f5d97435c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
