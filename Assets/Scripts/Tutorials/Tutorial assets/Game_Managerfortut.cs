@@ -26,6 +26,12 @@ public class Game_Managerfortut : MonoBehaviour
     private Linepointsfortut linePoints;
     [SerializeField]
     private Text Mode_Change_Button_Text;
+    [SerializeField]
+    private Button Mode_Change_Button;
+    [SerializeField]
+    private Sprite Attack_Image;
+    [SerializeField]
+    private Sprite Move_Image;
 
 
     [SerializeField]
@@ -276,10 +282,12 @@ public class Game_Managerfortut : MonoBehaviour
             if (Mode_Change_Button_Text.text == "Attack")
             {
                 Mode_Change_Button_Text.text = "Move";
+                Mode_Change_Button.image.sprite = Move_Image;
             }
             else
             {
                 Mode_Change_Button_Text.text = "Attack";
+                Mode_Change_Button.image.sprite = Attack_Image;
             }
         }
     }
