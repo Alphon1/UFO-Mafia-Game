@@ -4110,7 +4110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Scount Infomation
+  m_text: Scout Infomation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e6b3552f09225f4b9d50b2a90baed30, type: 2}
   m_sharedMaterial: {fileID: 6182779200723862658, guid: 4e6b3552f09225f4b9d50b2a90baed30,
