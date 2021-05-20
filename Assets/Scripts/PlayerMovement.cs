@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public Camera MainCamera;
     public float maxdistance = 3;
-    public VisualEffect Muzzleflash;
+   // public VisualEffect Muzzleflash;
     public AudioSource Gunsound;
     public GameObject Player_Char;
     public GameObject ClickIndicator;
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
                             if (Player_Char.GetComponent<Player_Character>().Is_Attacking)
                             {
                                 //muzzle flash goes here
-                                muzzleFlash();
+                                //muzzleFlash();
                                 Gunsound.Play();
                                 //checks if there's nothing in the way of the attack
                                 if (!Physics.Linecast(Player_Char.transform.position, hit.transform.position, shotMask))
@@ -185,9 +185,9 @@ public class PlayerMovement : MonoBehaviour
 
    
 
-    public void muzzleFlash()
-    {
-        Muzzleflash.Play();
-    }
+    //public void muzzleFlash()
+    //{
+    //    Muzzleflash.Play();
+    //}
 }
     
